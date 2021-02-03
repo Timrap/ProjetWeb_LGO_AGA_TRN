@@ -15,9 +15,9 @@ Prérequis :
 - debugeur foncionnel (optionnel)
 
 Auteur : 
-IHM : Luca Gatto
-Modèle : Andreas Granada
-Controleur : Timothée Rapin
+	IHM : 		Luca Gatto
+	Modèle : 	Andreas Granada
+	Controleur : 	Timothée Rapin
 
 Entreprise : CPNV
 
