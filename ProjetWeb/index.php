@@ -17,7 +17,7 @@ if (isset($_GET['action'])) {
         case 'logout' :
             logout();
             break;
-        case 'register' :
+            case 'register' :
             register($_POST);
             break;
         default :
