@@ -7,7 +7,7 @@
  * @version   13-APR-2020
  */
 
-$title = 'Rent A Snow - Lost';
+$title = 'annoncesfaciles - home';
 
 ob_start();
 ?>   <!-- Title Page -->
@@ -17,7 +17,7 @@ ob_start();
 	</div>
 	<div class="boxA">
 		<div class="box">
-			<img src="images/img02.jpg" width="320" height="180" alt="" />
+			<img src="view/contents/images/img02.jpg" width="320" height="180" alt="" />
 			<h3>Mauris vulputate  </h3>
 			<p>Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna congue rutrum.</p>
 			<a href="#" class="button">Read More</a>

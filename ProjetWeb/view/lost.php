@@ -7,7 +7,7 @@
  * @version   13-APR-2020
  */
 
-$title = 'Rent A Snow - Lost';
+$title = 'annoncesfaciles - Lost';
 
 ob_start();
 ?>   <!-- Title Page -->
