@@ -23,7 +23,7 @@ ob_start();
 			<a href="#" class="button">Read More</a>
 		</div>
 		<div class="box">
-			<img src="images/img05.jpg" width="320" height="180" alt="" />
+			<img src="view/contents/images/img05.jpg" width="320" height="180" alt="" />
 			<h3>Praesent scelerisque</h3>
 			<p>Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna congue rutrum.</p>
 			<a href="#" class="button">Read More</a>
