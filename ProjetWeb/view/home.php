@@ -45,13 +45,13 @@ ob_start();
 	</div>
 	<div class="boxC">
 		<div class="box">
-			<img src="images/img04.jpg" width="320" height="180" alt="" />
+			<img src="view/contents/annonce5-ordinateur/ordinateur1.jpg" width="320" height="180" alt="" />
 			<h3>Integer gravida nibh</h3>
 			<p>Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna congue rutrum.</p>
 			<a href="#" class="button">Read More</a>
 		</div>
 		<div class="box">
-			<img src="images/img07.jpg" width="320" height="180" alt="" />
+			<img src="view/contents/annonce6-playstation/playstation1.jpg" width="320" height="180" alt="" />
 			<h3>Fusce ultrices fringilla</h3>
 			<p>Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna congue rutrum.</p>
 			<a href="#" class="button">Read More</a>
