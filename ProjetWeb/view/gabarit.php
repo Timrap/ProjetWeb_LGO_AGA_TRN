@@ -31,11 +31,9 @@ Released   : 20130902
 		</div>
 		<div id="menu">
 			<ul>
-				<li><a href="#" accesskey="1" title="">Homepage</a></li>
-				<li><a href="#" accesskey="2" title="">Our Clients</a></li>
-				<li><a href="#" accesskey="3" title="">About Us</a></li>
-				<li><a href="#" accesskey="4" title="">Careers</a></li>
-				<li><a href="#" accesskey="5" title="">Contact Us</a></li>
+				<li><a href="index.php?action=home">Accueil</a></li>
+				<li><a href="index.php?action=login">Se connecter</a></li>
+				<li><a href="index.php?action=register">s'enregistrer</a></li>
 			</ul>
 		</div>
 	</div>
