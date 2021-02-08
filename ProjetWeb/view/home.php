@@ -31,7 +31,7 @@ ob_start();
 	</div>
 	<div class="boxB">
 		<div class="box">
-			<img src="images/img03.jpg" width="320" height="180" alt="" />
+			<img src="view/contents/images/img03.jpg" width="320" height="180" alt="" />
 			<h3>Donec dictum metus</h3>
 			<p>Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna congue rutrum.</p>
 			<a href="#" class="button">Read More</a>
