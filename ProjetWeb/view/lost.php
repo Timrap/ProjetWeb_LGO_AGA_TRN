@@ -11,6 +11,7 @@ $title = 'annoncesfaciles - Lost';
 
 ob_start();
 ?>   <!-- Title Page -->
+<div id="page" class="container">
 <section class="bg-title-page p-t-40 p-b-50 flex-col-c-m" style="background-image: url(view/content/images/home_slide_11.jpg);">
     <h2 class="l-text2 t-center">
         Erreur
@@ -25,6 +26,7 @@ ob_start();
         </div>
     </div>
 </section>
+</div>
 <?php
 $content = ob_get_clean();
 require 'gabarit.php';

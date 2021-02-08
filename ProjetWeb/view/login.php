@@ -17,6 +17,7 @@ ob_start();
 <?php endif ?>
 
     <!-- Title Page -->
+<div id="page" class="container">
     <section class="bg-title-page p-t-40 p-b-50 flex-col-c-m" style="background-image: url(view/content/images/home_slide_2.jpg);">
         <h2 class="l-text2 t-center">
             Login
@@ -48,7 +49,7 @@ ob_start();
         </div>
         </div>
     </section>
-
+    </div>
 <?php
 $content = ob_get_clean();
 require 'gabarit.php';

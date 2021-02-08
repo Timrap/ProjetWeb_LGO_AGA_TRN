@@ -261,7 +261,7 @@
 	#header-wrapper
 	{
 		overflow: hidden;
-		height: 40em;
+		height: 12em;
 	}
 
 	#header
@@ -366,7 +366,7 @@
 		overflow: hidden;
 		width: 1000px;
 		padding: 7em 100px 3em 100px;
-		background: #FFF;
+		background-color: rgba(255,255,255,0.9);
 	}
 
 	#page .boxA,
