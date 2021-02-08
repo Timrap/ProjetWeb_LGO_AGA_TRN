@@ -27,7 +27,7 @@ Released   : 20130902
 <div id="header-wrapper">
 	<div id="header" class="container">
 		<div id="logo">
-			<h1><a href="#">AnnoncesFaciles</a></h1>
+			<h1><a href="index.php?action=home">AnnoncesFaciles</a></h1>
 		</div>
 		<div id="menu">
 			<ul>

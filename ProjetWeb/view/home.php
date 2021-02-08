@@ -13,18 +13,18 @@ ob_start();
 ?>   <!-- Title Page -->
 <div id="page" class="container">
 	<div class="title">
-		<h2>Maecenas luctus lectus</h2>
+		<h2>Catégories</h2>
 	</div>
 	<div class="boxA">
 		<div class="box">
 			<img src="view/contents/annonce1-passat/1.jpg" width="320" height="180" alt="" />
-			<h3>Mauris vulputate  </h3>
+			<h3>Voitures</h3>
 			<p>Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna congue rutrum.</p>
 			<a href="#" class="button">Read More</a>
 		</div>
 		<div class="box">
 			<img src="view/contents/annonce2-iphone/iphone1.jpg" width="320" height="180" alt="" />
-			<h3>Praesent scelerisque</h3>
+			<h3>Smartphones</h3>
 			<p>Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna congue rutrum.</p>
 			<a href="#" class="button">Read More</a>
 		</div>
@@ -32,13 +32,13 @@ ob_start();
 	<div class="boxB">
 		<div class="box">
 			<img src="view/contents/annonce3-montre/montre1.jpg" width="320" height="180" alt="" />
-			<h3>Donec dictum metus</h3>
+			<h3>Montres</h3>
 			<p>Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna congue rutrum.</p>
 			<a href="#" class="button">Read More</a>
 		</div>
 		<div class="box">
 			<img src="view/contents/annonce4-table/table.jpg" width="320" height="180" alt="" />
-			<h3>Nulla luctus eleifend</h3>
+			<h3>Tables</h3>
 			<p>Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna congue rutrum.</p>
 			<a href="#" class="button">Read More</a>
 		</div>
@@ -46,13 +46,13 @@ ob_start();
 	<div class="boxC">
 		<div class="box">
 			<img src="view/contents/annonce5-ordinateur/ordinateur1.jpg" width="320" height="180" alt="" />
-			<h3>Integer gravida nibh</h3>
+			<h3>Ordinateurs</h3>
 			<p>Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna congue rutrum.</p>
 			<a href="#" class="button">Read More</a>
 		</div>
 		<div class="box">
 			<img src="view/contents/annonce6-playstation/playstation1.jpg" width="320" height="180" alt="" />
-			<h3>Fusce ultrices fringilla</h3>
+			<h3>Consoles</h3>
 			<p>Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna congue rutrum.</p>
 			<a href="#" class="button">Read More</a>
 		</div>
