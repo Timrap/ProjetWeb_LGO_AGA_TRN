@@ -7,7 +7,7 @@
 	{
 		margin: 0px;
 		padding: 0px;
-		background: #000 url(images/img01.jpg) no-repeat center top;
+		background: #000 url(images/img01.jpg) no-repeat fixed center top;
 		font-family: 'Source Sans Pro', sans-serif;
 		font-size: 12pt;
 		font-weight: 300;
