@@ -371,14 +371,22 @@
 		background-color: rgba(255, 255, 255, 0.9);
 	}
 	/*login*/
+	#formulaire
+	{
+	color: #000000;
+	text-align: center;
+	font-size: 200%;
+	font-weight: bold;
+	border-width: thin;
+
+	}
+
 	#formulaire1
 	{
 	color: #000000;
-	}
-
-	#formulaire
-	{
-		color: #000000;
+	font-size: 140%;
+	text-align: center;
+	border-width: thin;
 	}
 	#page .boxA,
 	#page .boxB,
