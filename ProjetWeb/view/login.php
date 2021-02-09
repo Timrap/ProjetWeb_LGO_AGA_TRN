@@ -42,7 +42,7 @@ ob_start();
                         <div class="bo4 of-hidden size15 m-b-20">
                             <input class="sizefull s-text7 p-l-22 p-r-22" type="password" name="inputUserPsw" placeholder="Mot de passe">
                         </div class="md-12">
-                        <input type="submit" value="login" class="flex-c-m size10 bg4 bo-rad-23 hov1 m-text3 trans-0-4"> <br>Pas de compte ? Inscrivez-vous
+                        <input type="submit" value="login" class="flex-c-m size10 bg4 bo-rad-23 hov1 m-text3 trans-0-4"> <br>Pas de compte ? <A href="index.php?action=register">Inscrivez-vous</A>
                 </div>
                 </form>
             </div>
