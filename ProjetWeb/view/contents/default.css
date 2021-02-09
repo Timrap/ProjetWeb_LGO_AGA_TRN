@@ -348,7 +348,7 @@
 		width: 1000px;
 		margin-top: 3em;
 		padding: 4em 100px 3em 100px;
-		background: #FFF;
+		background: #ffffff;
 	}
 
 	
@@ -368,9 +368,18 @@
 		overflow: hidden;
 		width: 75%;
 		padding: 7em 100px 3em 100px;
-		background-color: rgba(255,255,255,0.9);
+		background-color: rgba(255, 255, 255, 0.9);
+	}
+	/*login*/
+	#formulaire1
+	{
+	color: #000000;
 	}
 
+	#formulaire
+	{
+		color: #000000;
+	}
 	#page .boxA,
 	#page .boxB,
 	#page .boxC
