@@ -17,11 +17,6 @@ ob_start();
 <?php endif ?>
 <div id="page" class="container">
     <!-- Title Page -->
-    <section class="bg-title-page p-t-40 p-b-50 flex-col-c-m" style="background-image: url(view/content/images/home_slide_2.jpg);">
-        <h2 class="l-text2 t-center" id="formulaire">
-            S'inscrire
-        </h2>
-    </section>
 
     <!--   <section class="login_part padding_top">-->
     <section class="bgwhite p-t-66 p-b-60">
@@ -35,7 +30,7 @@ ob_start();
                 </div>
                 <div class="col-lg-6 col-md-6 bg-light">
                     <div class="login_part_form">
-                        <div class="login_part_form_iner">
+                        <div class="login_part_form_iner" id="formulaire1">
                              <h3>S'inscrire</h3>
                             <form class="form" action="index.php?action=register" method="post">
                                 <div class="col-md-12 form-group p_star">
@@ -55,11 +50,7 @@ ob_start();
                                             href="https://termsfeed.com/blog/privacy-policies-vs-terms-conditions/">CGU et vie privée</a>.
                                     </div>
                                     <input type="submit" value="Inscrivez-vous" class="flex-c-m size10 bg4 bo-rad-23 hov1 m-text3 trans-0-4">
-                                    <div class="login_part_text_iner" id="dejacompte">
-                                        <h1><br>Vous avez déjà un compte ?<br></h1>
-                                        <p>Dans ce cas, afin de retrouver vos données, <br>cliquez sur le lien qui suit :<br>
-                                            <a href="index.php?action=register" class="tag_btn  ">Login</a>
-                                    </div>
+                                  
                                 </div>
 
                             </form>
