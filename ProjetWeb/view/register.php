@@ -47,7 +47,7 @@ ob_start();
                                 <div class="col-md-12 form-group">
                                     <div class="creat_account d-flex align-items-center">
                                         <input type="checkbox" name="CGU">
-                                            J'ai lu et j'accepte<a href="https://termsfeed.com/blog/privacy-policies-vs-terms-conditions/"> les conditions générales d'utilisation</a>.
+                                            J'ai lu et j'accepte<a href=index.php?action=CGU"> les conditions générales d'utilisation</a>.
                                         </input>
                                     </div>
                                     <input type="submit" value="Inscrivez-vous" class="flex-c-m size10 bg4 bo-rad-23 hov1 m-text3 trans-0-4">

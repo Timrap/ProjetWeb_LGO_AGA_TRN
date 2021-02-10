@@ -20,6 +20,9 @@ if (isset($_GET['action'])) {
             case 'register' :
             register($_POST);
             break;
+        case 'CGU' :
+            CGU();
+            break;
         default :
             lost();
     }

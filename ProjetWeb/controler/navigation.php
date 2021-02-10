@@ -22,3 +22,7 @@ function lost()
 {
     require "view/lost.php";
 }
+
+function CGU(){
+    require "view/CGU.php";
+}
