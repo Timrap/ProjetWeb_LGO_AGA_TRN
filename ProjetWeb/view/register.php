@@ -50,7 +50,7 @@ ob_start();
                                             href="https://termsfeed.com/blog/privacy-policies-vs-terms-conditions/">CGU et vie privée</a>.
                                     </div>
                                     <input type="submit" value="Inscrivez-vous" class="flex-c-m size10 bg4 bo-rad-23 hov1 m-text3 trans-0-4">
-                                  
+
                                 </div>
 
                             </form>
