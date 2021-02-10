@@ -31,26 +31,25 @@ ob_start();
                 <div class="col-lg-6 col-md-6 bg-light">
                     <div class="login_part_form">
                         <div class="login_part_form_iner" id="formulaire1">
-                             <h3>S'inscrire</h3>
+                             <h2>S'inscrire</h2>
                             <form class="form" action="index.php?action=register" method="post">
                                 <div class="col-md-12 form-group p_star">
-                                    <label for="userEmail"><b>Adresse email</b></label><input type="email" class="form-control" placeholder="Adresse email" name="inputUserEmailAddress" required>
+                                    <label for="userEmail"></label><input type="email" class="form-control" placeholder="Adresse email" id="email" name="inputUserEmailAddress" required>
+                                </div>
+                                <div class="col-md-12 form-group p_star" >
+                                    <label for="userPsw"></label><input type="password" class="form-control" id="email" name="inputUserPsw" value="" placeholder="Mot de passe">
                                 </div>
                                 <div class="col-md-12 form-group p_star">
-                                    <label for="userPsw"><b>Mot de passe</b></label><input type="password" class="form-control" id="password" name="inputUserPsw" value=""
-                                                                                           placeholder="Mot de passe">
-                                </div>
-                                <div class="col-md-12 form-group p_star">
-                                    <label for="psw-repeat"><b>Vérifier le mot de passe</b></label><input type="password" class="form-control" id="password" name="inputUserPswRepeat" value=""
+                                    <input type="password" class="form-control" id="email" name="inputUserPswRepeat" value=""
                                                                                                           placeholder="Mot de passe (vérification)">
                                 </div>
                                 <div class="col-md-12 form-group">
-                                    <div class="creat_account d-flex align-items-center">
+                                    <div class="creat_account d-flex align-items-center" id="condition">
                                         <input type="checkbox" name="CGU">
                                             J'ai lu et j'accepte<a href=index.php?action=CGU"> les conditions générales d'utilisation</a>.
                                         </input>
                                     </div>
-                                    <input type="submit" value="Inscrivez-vous" class="flex-c-m size10 bg4 bo-rad-23 hov1 m-text3 trans-0-4">
+                                    <input type="submit" id="boutonlogin" value="Inscrivez-vous" class="flex-c-m size10 bg4 bo-rad-23 hov1 m-text3 trans-0-4">
 
                                 </div>
 

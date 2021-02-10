@@ -397,6 +397,11 @@
 		color: #000000;
 		font-size: 75%;
 	}
+
+	#condition
+	{
+		padding: 20px;
+	}
 	#page .boxA,
 	#page .boxB,
 	#page .boxC
