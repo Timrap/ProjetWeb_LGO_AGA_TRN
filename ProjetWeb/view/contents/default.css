@@ -375,7 +375,7 @@
 	{
 	color: #000000;
 	text-align: center;
-	font-size: 200%;
+	font-size: 300%;
 	font-weight: bold;
 	border-width: thin;
 
@@ -384,10 +384,16 @@
 	#formulaire1
 	{
 	color: #000000;
-	font-size: 140%;
+	font-size: 200%;
 	text-align: center;
 	border-width: thin;
 	}
+
+	#email
+	{
+		font-size: large;
+	}
+
 	#page .boxA,
 	#page .boxB,
 	#page .boxC
