@@ -63,18 +63,18 @@ function logout()
 
 /**
  * @brief This function is designed manage the register request
- * @param $registerRequest : contains all fields mandatory and optional to register a new user (coming from a form)
+ * @param $register : contains all fields mandatory and optional to register a new user (coming from a form)
  */
-function register($registerRequest)
+function register($register)
 {
     try {
         //variable set
-        if (isset($registerRequest['inputUserEmailAddress']) && isset($registerRequest['inputUserPsw']) && isset($registerRequest['inputUserPswRepeat'])) {
+        if (isset($register['inputUserEmailAddress']) && isset($register['inputUserPsw']) && isset($register['inputUserPswRepeat'])) {
 
             //extract register parameters
-            $userEmailAddress = $registerRequest['inputUserEmailAddress'];
-            $userPsw = $registerRequest['inputUserPsw'];
-            $userPswRepeat = $registerRequest['inputUserPswRepeat'];
+            $userEmailAddress = $register['inputUserEmailAddress'];
+            $userPsw = $register['inputUserPsw'];
+            $userPswRepeat = $register['inputUserPswRepeat'];
 
             if ($userPsw == $userPswRepeat) {
                 require_once "model/usersManager.php";

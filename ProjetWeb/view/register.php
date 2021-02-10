@@ -13,7 +13,7 @@ ob_start();
 ?>
 
 <?php if ($registerErrorMessage != null) : ?>
-    <h5><span style="color:red"><?= $registerErrorMessage; ?></span></h5>
+    <h5 xmlns="http://www.w3.org/1999/html"><span style="color:red"><?= $registerErrorMessage; ?></span></h5>
 <?php endif ?>
 <div id="page" class="container">
     <!-- Title Page -->
@@ -34,20 +34,21 @@ ob_start();
                              <h3>S'inscrire</h3>
                             <form class="form" action="index.php?action=register" method="post">
                                 <div class="col-md-12 form-group p_star">
-                                    <label for="userEmail"><b>Adresse email</b></label><input type="email" class="form-control" placeholder="Email address" name="inputUserEmailAddress" required>
+                                    <label for="userEmail"><b>Adresse email</b></label><input type="email" class="form-control" placeholder="Adresse email" name="inputUserEmailAddress" required>
                                 </div>
                                 <div class="col-md-12 form-group p_star">
-                                    <label for="userPsw"><b>Mot de passe</b></label><input type="password" class="form-control" id="password" name="password" value=""
+                                    <label for="userPsw"><b>Mot de passe</b></label><input type="password" class="form-control" id="password" name="inputUserPsw" value=""
                                                                                            placeholder="Mot de passe">
                                 </div>
                                 <div class="col-md-12 form-group p_star">
-                                    <label for="psw-repeat"><b>Vérifier le mot de passe</b></label><input type="password" class="form-control" id="password" name="password" value=""
+                                    <label for="psw-repeat"><b>Vérifier le mot de passe</b></label><input type="password" class="form-control" id="password" name="inputUserPswRepeat" value=""
                                                                                                           placeholder="Mot de passe (vérification)">
                                 </div>
                                 <div class="col-md-12 form-group">
                                     <div class="creat_account d-flex align-items-center">
-                                        En soumettant votre demande de compte, vous validez les conditions générales d'utilisation.<a
-                                            href="https://termsfeed.com/blog/privacy-policies-vs-terms-conditions/">CGU et vie privée</a>.
+                                        <input type="checkbox" name="CGU">
+                                            J'ai lu et j'accepte<a href="https://termsfeed.com/blog/privacy-policies-vs-terms-conditions/"> les conditions générales d'utilisation</a>.
+                                        </input>
                                     </div>
                                     <input type="submit" value="Inscrivez-vous" class="flex-c-m size10 bg4 bo-rad-23 hov1 m-text3 trans-0-4">
 
