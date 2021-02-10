@@ -49,7 +49,7 @@ ob_start();
                                             J'ai lu et j'accepte<a href=index.php?action=CGU"> les conditions générales d'utilisation</a>.
                                         </input>
                                     </div>
-                                    <input type="submit" id="boutonlogin" value="Inscrivez-vous" class="flex-c-m size10 bg4 bo-rad-23 hov1 m-text3 trans-0-4">
+                                    <input type="submit" id="boutonlogin" value="S'inscrire" class="flex-c-m size10 bg4 bo-rad-23 hov1 m-text3 trans-0-4">
 
                                 </div>
 

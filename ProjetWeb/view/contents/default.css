@@ -303,6 +303,8 @@
 		position: absolute;
 		top: 2.4em;
 		right: 2em;
+		font-size: 100%;
+
 	}
 	
 	#menu ul
@@ -321,7 +323,9 @@
 	{
 		text-decoration: none;
 		padding: 1em 1.5em;
-		color: #FFF;
+		color: #ffffff;
+		font-size:  20px;
+
 	}
 	
 	#menu li:hover a, #menu li.active a, #menu li.active span
