@@ -33,7 +33,6 @@ Released   : 20130902
 			<ul>
 				<li><a href="index.php?action=home">Accueil</a></li>
 				<li><a href="index.php?action=login">Se connecter</a></li>
-                <li><a href="index.php?action=register">S'inscrire</a></li>
 			</ul>
 		</div>
 	</div>
@@ -41,7 +40,7 @@ Released   : 20130902
 
 <?=$content; ?>
 <div id="copyright" class="container">
-    <p>&copy; Untitled. All rights reserved. | Photos by <a href="http://fotogrph.com/">Fotogrph</a> | Design by <a href="http://templated.co" rel="nofollow">TEMPLATED</a>.</p>
+    <p>&copy; Tout droits résérvés. | Par Luca GATTO, Andreas GRANADA et Timothée RAPIN.</p>
 </div>
 </body>
 </html>
