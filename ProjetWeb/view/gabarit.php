@@ -33,6 +33,7 @@ Released   : 20130902
 			<ul>
 				<li><a href="index.php?action=home">Accueil</a></li>
 				<li><a href="index.php?action=login">Se connecter</a></li>
+                <li><a href="index.php?action=register">S'enregister</a></li>
 			</ul>
 		</div>
 	</div>
