@@ -18,11 +18,7 @@ ob_start();
 
     <!-- Title Page -->
 <div id="page" class="container" >
-    <section class="bg-title-page p-t-40 p-b-50 flex-col-c-m" style="background-image: url(view/content/images/home_slide_2.jpg);">
-        <h4 class="l-text2 t-center" id="formulaire">
-            S'enregistrer
-        </h4>
-    </section>
+
 
     <!-- content page -->
     <section class="bgwhite p-t-66 p-b-60">
@@ -31,18 +27,20 @@ ob_start();
 
                 <div class="col-md-12 p-b-30" id="formulaire1">
                     <form class="leave-comment" action="index.php?action=login" method="post" >
-                        <h4 class="m-text26 p-b-36 p-t-15">
+                        <h2 class="m-text26 p-b-36 p-t-15">
                             Connectez-vous
-                        </h4>
+                        </h2>
 
-                        <div class="bo4 of-hidden size15 m-b-20" id="email">
-                            <input class="sizefull s-text7 p-l-22 p-r-22" type="email" name="inputUserEmailAddress" placeholder="Adresse email">
+                        <div class="bo4 of-hidden size15 m-b-20" >
+                            <input class="sizefull s-text7 p-l-22 p-r-22" id="email" type="email" name="inputUserEmailAddress" placeholder="Adresse email">
                         </div>
 
                         <div class="bo4 of-hidden size15 m-b-20" id="password">
-                            <input class="sizefull s-text7 p-l-22 p-r-22" type="password" name="inputUserPsw" placeholder="Mot de passe">
+                            <input class="sizefull s-text7 p-l-22 p-r-22" id="email" type="password" name="inputUserPsw" placeholder="Mot de passe">
                         </div class="md-12">
-                        <input type="submit" value="login" class="flex-c-m size10 bg4 bo-rad-23 hov1 m-text3 trans-0-4"> <br>Pas de compte ? <A href="index.php?action=register">Inscrivez-vous</A>
+                        <br>
+                        <input type="submit" value="login" class="flex-c-m size10 bg4 bo-rad-23 hov1 m-text3 trans-0-4" id="boutonlogin"><br><br>Pas de compte ? <A href="index.php?action=register">Inscrivez-vous</A><br>
+                        <br>
                 </div>
                 </form>
             </div>
