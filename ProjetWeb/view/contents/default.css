@@ -391,6 +391,19 @@
 		font-size: 100%;
 	}
 
+	#titreconditions
+	{
+		text-align: center;
+		color: #2f56a5;
+	}
+
+	#conditions
+	{
+		text-align: center;
+		font-size: 50%;
+		color: #000000;
+	}
+
 	#email
 	{
 		font-size: large;
