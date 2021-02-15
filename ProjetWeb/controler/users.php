@@ -103,5 +103,6 @@ function register($register)
 }
 
 function userName($userEmail){
+    require_once "model/usersManager.php";
     return firstNameLastName($userEmail);
 }
