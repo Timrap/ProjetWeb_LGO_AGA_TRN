@@ -56,7 +56,7 @@ ob_start();
         </div>
 
         <br>
-        <input type="submit" value="J'ai lu les conditions générales" class="flex-c-m size10 bg4 bo-rad-23 hov1 m-text3 trans-0-4" id="boutoncgu">
+        <a href="index.php?action=register"><input type="submit" value="J'ai lu les conditions générales" class="flex-c-m size10 bg4 bo-rad-23 hov1 m-text3 trans-0-4" id="boutoncgu" <a href="index.php?action=register"></a></a>
         <br>
 
 <?php
