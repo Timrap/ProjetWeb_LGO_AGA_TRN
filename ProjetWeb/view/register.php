@@ -39,9 +39,6 @@ ob_start();
                                 <div class="col-md-12 form-group p_star" >
                                     <label for="userPsw"></label><input type="text" class="form-control" id="email" name="inputUserPsw" value="" placeholder="Prénom">
                                 </div>
-                                <div class="col-md-12 form-group p_star" >
-                                    <label for="userPsw"></label><input type="text" class="form-control" id="email" name="inputUserPsw" value="" placeholder="Mot de passe">
-                                </div>
                                 <div class="col-md-12 form-group p_star">
                                     <label for="userEmail"></label><input type="email" class="form-control" placeholder="Adresse email" id="email" name="inputUserEmailAddress" required>
                                 </div>
