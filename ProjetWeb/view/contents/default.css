@@ -225,6 +225,7 @@
 	.boxA,
 	.boxB
 	{
+		margin-left: 100px;
 		float: left;
 		text-align: center;
 
@@ -386,6 +387,11 @@
 	border-width: thin;
 	}
 
+	#box1
+	{
+		text-align: center;
+	}
+
 	#dejacompte
 	{
 		text-align: center;
@@ -444,12 +450,13 @@
 	
 	#page .boxA
 	{
-
+		text-align: left;
 	}
 	
 	#page .box
 	{
 		margin-bottom: 4em;
+		text-align: left;
 	}
 	
 	#page img

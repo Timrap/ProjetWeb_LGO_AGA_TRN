@@ -32,7 +32,7 @@ ob_start();
                             </h2>
 
                             <div class="bo4 of-hidden size15 m-b-20" >
-                          Titre du produit<br> <input class="sizefull s-text7 p-l-22 p-r-22" id="email" type="text" name="inputUserEmailAddress" placeholder="Titre">
+                          <br> <input class="sizefull s-text7 p-l-22 p-r-22" id="email" type="text" name="inputUserEmailAddress" placeholder="Titre du produit">
                             </div>
     <br>
                             <div class="bo4 of-hidden size15 m-b-20" id="description">

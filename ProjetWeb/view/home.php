@@ -29,7 +29,7 @@ ob_start();
 			<a href="#" class="button">Read More</a>
 		</div>
 	</div>
-	<div class="boxB">
+	<div class="boxB" id="box1">
 		<div class="box">
 			<img src="view/contents/annonce3-montre/montre1.jpg" width="320" height="180" alt="" />
 			<h3>Montres</h3>
