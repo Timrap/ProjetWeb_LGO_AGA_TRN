@@ -26,7 +26,7 @@ ob_start();
                 <div class="row">
 
                     <div class="col-md-12 p-b-30" id="formulaire1">
-                        <form class="leave-comment" action="index.php?action=login" method="post" >
+                        <form class="leave-comment" action="index.php?action=validationad" method="post" >
                             <h2 class="m-text26 p-b-36 p-t-15">
                                 Insérer une annonce
                             </h2>
@@ -39,7 +39,7 @@ ob_start();
                               <textarea id="description" name="description" cols="50" rows="10" placeholder="Description" required></textarea>
                             </div class="md-12">
                             <br>
-                            <input type="submit" value="Se connecter" class="flex-c-m size10 bg4 bo-rad-23 hov1 m-text3 trans-0-4" id="boutonlogin"><br><br>Pas de compte ? <A href="index.php?action=register">Inscrivez-vous</A><br>
+                            <input type="submit" value="Valider mon annonces" class="flex-c-m size10 bg4 bo-rad-23 hov1 m-text3 trans-0-4" id="boutoncgu"/>
                             <br>
                     </div>
                     </form>

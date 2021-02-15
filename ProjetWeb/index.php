@@ -30,6 +30,9 @@ if (isset($_GET['action'])) {
         case "annoncesmenu" :
             annoncesmenu ();
             break;
+        case "validationad" :
+            validationad();
+            break;
         default :
             lost();
     }

@@ -8,3 +8,8 @@ function annoncesmenu()
 {
     require "view/annoncesmenu.php";
 }
+
+function validationad ()
+{
+    require "view/validationad.php";
+}
