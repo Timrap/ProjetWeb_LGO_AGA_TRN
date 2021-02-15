@@ -17,9 +17,11 @@ ob_start();
 
 
 
+
+    </div>
         <div class="boxA" id="conditions">
             <h2>
-            <br>Prix<br>
+                <br>Prix<br>
                 Les prix de ce catalogue sont indiqués en francs suisses, montants nets, TVA comprise et garantis.
                 Les articles bénéficiant d'une garantie sont soumis aux conditions de l'offre valable lors de l'achat. La garantie prend effet à la date de livraison de l'article, justifiée par le document d'accompagnement (facture) que nous vous demandons de conserver soigneusement. Ne sont pas couverts : les dommages dus à un mauvais entretien, au non respect du mode d'emploi, ou à une usure normale.
                 <br><br>
@@ -50,7 +52,6 @@ ob_start();
                 <br>
             </h2>
         </div>
-    </div>
 <?php
 $content = ob_get_clean();
 require 'gabarit.php';

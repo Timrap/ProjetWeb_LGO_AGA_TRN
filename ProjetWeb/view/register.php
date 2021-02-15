@@ -33,6 +33,15 @@ ob_start();
                         <div class="login_part_form_iner" id="formulaire1">
                              <h2>S'inscrire</h2>
                             <form class="form" action="index.php?action=register" method="post">
+                                <div class="col-md-12 form-group p_star" >
+                                    <label for="userPsw"></label><input type="text" class="form-control" id="email" name="inputUserPsw" value="" placeholder="Nom">
+                                </div>
+                                <div class="col-md-12 form-group p_star" >
+                                    <label for="userPsw"></label><input type="text" class="form-control" id="email" name="inputUserPsw" value="" placeholder="Prénom">
+                                </div>
+                                <div class="col-md-12 form-group p_star" >
+                                    <label for="userPsw"></label><input type="text" class="form-control" id="email" name="inputUserPsw" value="" placeholder="Mot de passe">
+                                </div>
                                 <div class="col-md-12 form-group p_star">
                                     <label for="userEmail"></label><input type="email" class="form-control" placeholder="Adresse email" id="email" name="inputUserEmailAddress" required>
                                 </div>

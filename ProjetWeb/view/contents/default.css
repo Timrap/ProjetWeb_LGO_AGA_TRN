@@ -226,7 +226,8 @@
 	.boxB
 	{
 		float: left;
-		margin-right: 20px;
+		text-align: center;
+
 	}
 	
 	.boxC
@@ -331,7 +332,7 @@
 	#menu li:hover a, #menu li.active a, #menu li.active span
 	{
 		 /*background-color: rgb(0,0,100);*/
-		color: rgb(83, 142, 248);
+		color: rgb(80, 140, 250);
 	}
 	
 	#menu .current_page_item a
@@ -394,14 +395,15 @@
 	#titreconditions
 	{
 		text-align: center;
-		color: #2f56a5;
+		color: rgb(80, 140, 250);
 	}
 
 	#conditions
 	{
-		text-align: center;
+		text-align: left;
 		font-size: 50%;
 		color: #000000;
+		width: 100%;
 	}
 
 	#email
@@ -427,6 +429,7 @@
 	
 	#page .boxA
 	{
+
 	}
 	
 	#page .box
