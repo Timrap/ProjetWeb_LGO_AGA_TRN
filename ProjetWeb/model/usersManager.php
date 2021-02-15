@@ -35,6 +35,27 @@ function isLoginCorrect($userEmailAddress, $userPsw)
 }
 
 /**
+ * @param $userEmailAddress
+ * @return string
+ */
+function firstNameLastName($userEmailAddress){
+    $res = json_decode(file_get_contents("model/data/users.json"),true);
+
+    // Scan the users JSON's file to get firstName and lastName
+    foreach ($res as $item) {
+
+        if ($userEmailAddress == $item['email']) {
+            $firstName = $item['firstName'];
+            $lastName = $item['lastName'];
+        }
+    }
+
+    $result = "$firstName $lastName";
+
+    return $result;
+}
+
+/**
  * @brief This function is designed to register a new account
  * @param $userEmailAddress : must be meet RFC 5321/5322
  * @param $userPsw : user's password

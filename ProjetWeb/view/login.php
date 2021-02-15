@@ -13,7 +13,7 @@ ob_start();
 ?>
 <?php //if ($loginErrorMessage != null) : ?>
 <?php if (isset($loginErrorMessage)) : ?>
-    <h5><span style="color:red"><?= $loginErrorMessage; ?></span></h5>
+    <h5><span style="color:#ff0000"><?= $loginErrorMessage; ?></span></h5>
 <?php endif ?>
 
     <!-- Title Page -->

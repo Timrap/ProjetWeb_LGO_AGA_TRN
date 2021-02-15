@@ -43,7 +43,7 @@ Released   : 20130902
 		</div>
         <?php if (isset($_SESSION['userEmailAddress'])) : ?>
             <div id="userConnected">
-                <?=$_SESSION['userEmailAddress']; ?>
+                <?/*=userName($_SESSION['userEmailAddress']); */?>
             </div>
         <?php endif;?>
 	</div>
