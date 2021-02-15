@@ -101,3 +101,7 @@ function register($register)
         require "view/register.php";
     }
 }
+
+function userName($userEmail){
+    return firstNameLastName($userEmail);
+}
