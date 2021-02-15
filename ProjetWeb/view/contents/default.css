@@ -395,7 +395,8 @@
 	#titreconditions
 	{
 		text-align: center;
-		color: rgb(80, 140, 250);
+		color: rgb(0, 0, 0);
+		font-size: 150%;
 	}
 
 	#conditions

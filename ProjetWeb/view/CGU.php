@@ -12,7 +12,7 @@ $title = 'annoncesfaciles - contidions';
 ob_start();
 ?>   <!-- Title Page -->
     <div id="page" class="container">
-        <div class="title" id="formulaire1>
+        <div class="title" id="titreconditions">
             <h2>Conditions générales d'utilisation</h2>
 
 
