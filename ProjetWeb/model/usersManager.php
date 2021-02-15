@@ -41,13 +41,13 @@ function isLoginCorrect($userEmailAddress, $userPsw)
  * @return bool : "true" only if the user doesn't already exist. In all other cases will be "false".
  * @throws ModelDataBaseException : will be throw if something goes wrong with the database opening process
  */
-function registerNewAccount($userEmailAddress, $userPsw)
+function registerNewAccount($userFirstName, $userLastName, $userEmailAddress, $userPsw)
 {
     $result = false;
 
 //  hash password and create an array to add in JSON file
     $userHashPsw = password_hash($userPsw, PASSWORD_DEFAULT);
-    $data2add = array('email' =>$userEmailAddress, 'hashPwd' => $userHashPsw, 'userType' =>'1');
+    $data2add = array('firstName' => $userFirstName, 'lastName' => $userLastName, 'email' =>$userEmailAddress, 'hashPwd' => $userHashPsw, 'userType' =>'1');
 
     $file = "model/data/users.json";
 

@@ -72,13 +72,15 @@ function register($register)
         if (isset($register['inputUserEmailAddress']) && isset($register['inputUserPsw']) && isset($register['inputUserPswRepeat'])) {
 
             //extract register parameters
+            $userFirstName = $register['inputUserFirstName'];
+            $userLastName = $register['inputUserLastName'];
             $userEmailAddress = $register['inputUserEmailAddress'];
             $userPsw = $register['inputUserPsw'];
             $userPswRepeat = $register['inputUserPswRepeat'];
 
             if ($userPsw == $userPswRepeat) {
                 require_once "model/usersManager.php";
-                if (registerNewAccount($userEmailAddress, $userPsw)) {
+                if (registerNewAccount($userFirstName, $userLastName, $userEmailAddress, $userPsw)) {
                     createSession($userEmailAddress);
                     $registerErrorMessage = null;
                     require "view/home.php";
