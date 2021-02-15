@@ -3,6 +3,7 @@
 session_start();
 require "controler/navigation.php";
 require "controler/users.php";
+require "controler/ad.php";
 
 
 if (isset($_GET['action'])) {
@@ -22,6 +23,9 @@ if (isset($_GET['action'])) {
             break;
         case 'CGU' :
             CGU();
+            break;
+        case 'createad' :
+            createad();
             break;
         default :
             lost();

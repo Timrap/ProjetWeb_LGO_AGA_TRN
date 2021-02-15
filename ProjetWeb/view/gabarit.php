@@ -34,6 +34,7 @@ Released   : 20130902
 				<li><a href="index.php?action=home">Accueil</a></li>
 				<li><a href="index.php?action=login">Se connecter</a></li>
                 <li><a href="index.php?action=register">S'inscrire</a></li>
+                <li><a href="index.php?action=createad">Annonces</a></li>
 			</ul>
 		</div>
 	</div>
