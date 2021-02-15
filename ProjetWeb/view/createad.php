@@ -28,15 +28,15 @@ ob_start();
                     <div class="col-md-12 p-b-30" id="formulaire1">
                         <form class="leave-comment" action="index.php?action=login" method="post" >
                             <h2 class="m-text26 p-b-36 p-t-15">
-                                Connectez-vous
+                                Insérer une annonce
                             </h2>
 
                             <div class="bo4 of-hidden size15 m-b-20" >
-                                <input class="sizefull s-text7 p-l-22 p-r-22" id="email" type="email" name="inputUserEmailAddress" placeholder="Adresse email">
+                          Titre du produit<br> <input class="sizefull s-text7 p-l-22 p-r-22" id="email" type="email" name="inputUserEmailAddress" placeholder="Adresse email">
                             </div>
-
+    <br>
                             <div class="bo4 of-hidden size15 m-b-20" id="password">
-                                <input class="sizefull s-text7 p-l-22 p-r-22" id="email" type="password" name="inputUserPsw" placeholder="Mot de passe">
+                               Description<br><input class="sizefull s-text7 p-l-22 p-r-22" id="email" type="password" name="inputUserPsw" placeholder="Mot de passe">
                             </div class="md-12">
                             <br>
                             <input type="submit" value="Se connecter" class="flex-c-m size10 bg4 bo-rad-23 hov1 m-text3 trans-0-4" id="boutonlogin"><br><br>Pas de compte ? <A href="index.php?action=register">Inscrivez-vous</A><br>
