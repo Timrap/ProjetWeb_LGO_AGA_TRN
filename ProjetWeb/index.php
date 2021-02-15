@@ -27,6 +27,9 @@ if (isset($_GET['action'])) {
         case 'createad' :
             createad();
             break;
+        case "annoncesmenu" :
+            annoncesmenu ();
+            break;
         default :
             lost();
     }

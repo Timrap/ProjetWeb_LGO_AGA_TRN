@@ -33,7 +33,7 @@ Released   : 20130902
 			<ul>
 				<li><a href="index.php?action=home">Accueil</a></li>
                 <?php if (isset($_SESSION['userEmailAddress'])) : ?>
-                    <li><a href="index.php?action=createad">Mes annonces</a></li>
+                    <li><a href="index.php?action=annoncesmenu">Mes annonces</a></li>
                     <li><a href="index.php?action=logout">Se déconnecter</a></li>
                 <?php else: ?>
                     <li><a href="index.php?action=login">Se connecter</a></li>

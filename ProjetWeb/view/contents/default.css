@@ -407,9 +407,17 @@
 		width: 100%;
 	}
 
+
+
 	#email
 	{
 		font-size: large;
+	}
+
+	#boutonmenuad
+	{
+		text-align: center;
+		font-size: 100%;
 	}
 
 	#boutonlogin
