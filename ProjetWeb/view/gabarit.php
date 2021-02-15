@@ -32,11 +32,20 @@ Released   : 20130902
 		<div id="menu">
 			<ul>
 				<li><a href="index.php?action=home">Accueil</a></li>
-				<li><a href="index.php?action=login">Se connecter</a></li>
-                <li><a href="index.php?action=register">S'inscrire</a></li>
                 <li><a href="index.php?action=createad">Annonces</a></li>
+                <?php if (isset($_SESSION['userEmailAddress'])) : ?>
+                    <li><a href="index.php?action=logout">Se déconnecter</a></li>
+                <?php else: ?>
+                    <li><a href="index.php?action=login">Se connecter</a></li>
+                    <li><a href="index.php?action=register">S'inscrire</a></li>
+                <?php endif;?>
 			</ul>
 		</div>
+        <?php if (isset($_SESSION['userEmailAddress'])) : ?>
+            <div id="userConnected">
+                <?=$_SESSION['userEmailAddress']; ?>
+            </div>
+        <?php endif;?>
 	</div>
 </div>
 
