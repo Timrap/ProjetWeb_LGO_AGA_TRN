@@ -51,14 +51,7 @@ ob_start();
                 Le for juridique est pour une personne physique, celui de son domicile et pour une personne morale (entreprise inscrite au registre du commerce), celui de son siège. Cliquez-ici pour trouver le Tribunal d'arrondissement correspondant à votre localité pour la canton de Vaud.
                 <br>
             </h2>
-
-
         </div>
-
-        <br>
-        <a href="index.php?action=register"><input type="submit" value="J'ai lu les conditions générales" class="flex-c-m size10 bg4 bo-rad-23 hov1 m-text3 trans-0-4" id="boutoncgu" <a href="index.php?action=register"></a></a>
-        <br>
-
 <?php
 $content = ob_get_clean();
 require 'gabarit.php';
