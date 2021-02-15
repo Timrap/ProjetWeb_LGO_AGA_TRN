@@ -344,10 +344,7 @@
 	{
 	}
 
-	#userConnected{
-		color: rgb(80, 140, 250);
 
-	}
 
 /*********************************************************************************/
 /* Welcome                                                                       */
@@ -456,6 +453,7 @@
 	#page .boxA
 	{
 		text-align: left;
+		margin-left: 0px;
 	}
 	
 	#page .box
