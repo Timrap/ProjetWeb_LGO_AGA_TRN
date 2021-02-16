@@ -23,9 +23,10 @@ ob_start();
             </h2>
             <div>
                 error
-                <input type="submit" value="OK" id="btnClose" class="btnClose">
+
             </div>
             <br>
+            <input type="submit" value="OK" id="btnClose" class="btnClose">
         </div>
     </div>
 
@@ -42,7 +43,7 @@ ob_start();
 						Member Login
 					</span>
 
-                    <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+                    <div class="wrap-input100 validate-input" data-validate = "une adresse E-mail est obligatoire: ex@abc.xyz">
                         <input class="input100" type="text" name="inputUserEmailAddress" placeholder="Adresse email">
                         <span class="focus-input100"></span>
                         <span class="symbol-input100">
@@ -50,7 +51,7 @@ ob_start();
 						</span>
                     </div>
 
-                    <div class="wrap-input100 validate-input" data-validate = "Password is required">
+                    <div class="wrap-input100 validate-input" data-validate = "un mot de passe est obligatoire">
                         <input class="input100" type="password" name="inputUserPsw" placeholder="Mot de passe">
                         <span class="focus-input100"></span>
                         <span class="symbol-input100">

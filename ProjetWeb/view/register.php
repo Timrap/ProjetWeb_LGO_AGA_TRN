@@ -13,59 +13,111 @@ ob_start();
 ?>
 
 <?php if ($registerErrorMessage != null) : ?>
-    <h5 xmlns="http://www.w3.org/1999/html"><span style="color:red"><?= $registerErrorMessage; ?></span></h5>
+    <head>
+        <link rel="stylesheet" href="view/contents/css/PopUp.css">
+    </head>
+    <div id="overlay" class="overlay">
+        <div id="popup" class="popup">
+            <h2>
+                Exemple simple de popup
+            </h2>
+            <div>
+                les informations ne sont pas correctes, veuillez entre une adresse mail valide
+                <input type="submit" value="OK" id="btnClose" class="btnClose">
+            </div>
+            <br>
+        </div>
+    </div>
+
+    <script src="view/contents/js/PopUp.js"></script>
 <?php endif ?>
-<div id="page" class="container">
-    <!-- Title Page -->
+
+
+
+    <div class="container-login100">
+        <div class="wrap-login100">
+            <form class="login100-form validate-form" action="index.php?action=login" method="post" >
+					<span class="login100-form-title">
+						Member Login
+					</span>
+
+                <div class="wrap-input100 validate-input" data-validate = "vous devez ajouter votre nom">
+                    <input class="input100" type="text" name="inputUserLastName" placeholder="Nom">
+                    <span class="focus-input100"></span>
+                    <span class="symbol-input100">
+							<i class="fa fa-user-circle-o" aria-hidden="true"></i>
+						</span>
+                </div>
+
+                <div class="wrap-input100 validate-input" data-validate = "vous devez ajouter votre prénom">
+                    <input class="input100" type="text" name="inputUserFirstName" placeholder="Prénom">
+                    <span class="focus-input100"></span>
+                    <span class="symbol-input100">
+							<i class="fa fa-user-circle-o" aria-hidden="true"></i>
+						</span>
+                </div>
+
+                <div class="wrap-input100 validate-input" data-validate = "une adresse E-mail est obligatoire: ex@abc.xyz">
+                    <input class="input100" type="text" name="inputUserEmailAddress" placeholder="Adresse email">
+                    <span class="focus-input100"></span>
+                    <span class="symbol-input100">
+							<i class="fa fa-envelope" aria-hidden="true"></i>
+						</span>
+                </div>
+
+                <div class="wrap-input100 validate-input" data-validate = "un mot de passe est obligatoire">
+                    <input class="input100" type="password" name="inputUserPsw" placeholder="Mot de passe">
+                    <span class="focus-input100"></span>
+                    <span class="symbol-input100">
+							<i class="fa fa-lock" aria-hidden="true"></i>
+						</span>
+                </div>
+
+                <div class="wrap-input100 validate-input" data-validate = "rentrez le même mot de passe à nouveau">
+                    <input class="input100" type="password" name="inputUserPswRepeat" placeholder="Mot de passe (vérif)">
+                    <span class="focus-input100"></span>
+                    <span class="symbol-input100">
+							<i class="fa fa-lock" aria-hidden="true"></i>
+						</span>
+                </div>
+                <div class="col-md-12 form-group">
+                    <div class="creat_account d-flex align-items-center" id="condition">
+                        <input type="checkbox" name="CGU" required>
+                        J'ai lu et j'accepte<a href="index.php?action=CGU"> les conditions générales d'utilisation</a>.
+                        </input>
+                    </div>
+
+
+                <div class="container-login100-form-btn">
+                    <button type="submit" class="login100-form-btn">
+                        S'inscrire
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!--===============================================================================================-->
+    <script src="view/contents/vendor/jquery/jquery-3.2.1.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="view/contents/vendor/bootstrap/js/popper.js"></script>
+    <script src="view/contents/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="view/contents/vendor/select2/select2.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="view/contents/vendor/tilt/tilt.jquery.min.js"></script>
+    <script >
+        $('.js-tilt').tilt({
+            scale: 1.1
+        })
+    </script>
+    <!--===============================================================================================-->
+    <script src="view/contents/js/main.js"></script>
+
+
 
     <!--   <section class="login_part padding_top">-->
-    <section class="bgwhite p-t-66 p-b-60">
 
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6 col-md-6">
-                    <div class="login_part_text text-center">
-
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6 bg-light">
-                    <div class="login_part_form">
-                        <div class="login_part_form_iner" id="formulaire1">
-                             <h2>S'inscrire</h2>
-                            <form class="form" action="index.php?action=register" method="post">
-                                <div class="col-md-12 form-group p_star" >
-                                    <label for="userPsw"></label><input type="text" class="form-control" id="email" name="inputUserLastName" value="" placeholder="Nom" required>
-                                </div>
-                                <div class="col-md-12 form-group p_star" >
-                                    <label for="userPsw"></label><input type="text" class="form-control" id="email" name="inputUserFirstName" value="" placeholder="Prénom" required>
-                                </div>
-                                <div class="col-md-12 form-group p_star">
-                                    <label for="userEmail"></label><input type="email" class="form-control" placeholder="Adresse email" id="email" name="inputUserEmailAddress" required>
-                                </div>
-                                <div class="col-md-12 form-group p_star" >
-                                    <label for="userPsw"></label><input type="password" class="form-control" id="email" name="inputUserPsw" value="" placeholder="Mot de passe" required>
-                                </div>
-                                <div class="col-md-12 form-group p_star">
-                                    <input type="password" class="form-control" id="email" name="inputUserPswRepeat" value="" placeholder="Mot de passe (vérification)" required>
-                                </div>
-                                <div class="col-md-12 form-group">
-                                    <div class="creat_account d-flex align-items-center" id="condition">
-                                        <input type="checkbox" name="CGU" required>
-                                            J'ai lu et j'accepte<a href="index.php?action=CGU"> les conditions générales d'utilisation</a>.
-                                        </input>
-                                    </div>
-                                    <input type="submit" id="boutonlogin" value="S'inscrire" class="flex-c-m size10 bg4 bo-rad-23 hov1 m-text3 trans-0-4">
-
-                                </div>
-
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-</div>
 <?php
 $content = ob_get_clean();
 require 'gabarit.php';

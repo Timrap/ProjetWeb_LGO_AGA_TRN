@@ -12,14 +12,15 @@
 
 .popup{
     margin: 10% auto;
-    width : 70%;
+    width : 40%;
     background-color: rgb(243, 243, 243);
-    padding: 1em;
+    padding: 6em;
     box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);
     border-radius: 5px;
 }
 
 .btnClose {
+    padding-top: 20px;
     float: right;
     font-size:16pt;
     cursor: pointer;
