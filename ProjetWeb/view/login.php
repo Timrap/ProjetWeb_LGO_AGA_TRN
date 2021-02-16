@@ -13,7 +13,24 @@ ob_start();
 ?>
 <?php //if ($loginErrorMessage != null) : ?>
 <?php if (isset($loginErrorMessage)) : ?>
-    <h5><span style="color:#ff0000"><?= $loginErrorMessage; ?></span></h5>
+    <head>
+        <link rel="stylesheet" href="view/contents/css/PopUp.css">
+    </head>
+    <div id="overlay" class="overlay">
+        <div id="popup" class="popup">
+            <h2>
+                Exemple simple de popup
+            </h2>
+            <div>
+                error
+                <input type="submit" value="OK" id="btnClose" class="btnClose">
+            </div>
+            <br>
+        </div>
+    </div>
+
+    <script src="view/contents/js/PopUp.js"></script>
+
 <?php endif ?>
 
     <!-- Title Page -->
