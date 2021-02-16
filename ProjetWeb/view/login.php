@@ -17,37 +17,65 @@ ob_start();
 <?php endif ?>
 
     <!-- Title Page -->
-<div id="page" class="container" >
+
+        <div class="container-login100">
+            <div class="wrap-login100">
+                <form class="login100-form validate-form" action="index.php?action=login" method="post" >
+					<span class="login100-form-title">
+						Member Login
+					</span>
+
+                    <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+                        <input class="input100" type="text" name="inputUserEmailAddress" placeholder="Adresse email">
+                        <span class="focus-input100"></span>
+                        <span class="symbol-input100">
+							<i class="fa fa-envelope" aria-hidden="true"></i>
+						</span>
+                    </div>
+
+                    <div class="wrap-input100 validate-input" data-validate = "Password is required">
+                        <input class="input100" type="password" name="inputUserPsw" placeholder="Mot de passe">
+                        <span class="focus-input100"></span>
+                        <span class="symbol-input100">
+							<i class="fa fa-lock" aria-hidden="true"></i>
+						</span>
+                    </div>
 
 
-    <!-- content page -->
-    <section class="bgwhite p-t-66 p-b-60">
-        <div class="container">
-            <div class="row">
+                    <div class="container-login100-form-btn">
+                        <button type="submit" class="login100-form-btn">
+                           Se connecter
+                        </button>
+                    </div>
 
-                <div class="col-md-12 p-b-30" id="formulaire1">
-                    <form class="leave-comment" action="index.php?action=login" method="post" >
-                        <h2 class="m-text26 p-b-36 p-t-15">
-                            Connectez-vous
-                        </h2>
-
-                        <div class="bo4 of-hidden size15 m-b-20" >
-                            <input class="sizefull s-text7 p-l-22 p-r-22" id="email" type="email" name="inputUserEmailAddress" placeholder="Adresse email">
-                        </div>
-
-                        <div class="bo4 of-hidden size15 m-b-20" id="password">
-                            <input class="sizefull s-text7 p-l-22 p-r-22" id="email" type="password" name="inputUserPsw" placeholder="Mot de passe">
-                        </div class="md-12">
-                        <br>
-                        <input type="submit" value="Se connecter" class="flex-c-m size10 bg4 bo-rad-23 hov1 m-text3 trans-0-4" id="boutonlogin"><br><br>Pas de compte ? <A href="index.php?action=register">Inscrivez-vous</A><br>
-                        <br>
-                </div>
+                    <div class="text-center p-t-136">
+                        <a class="txt2" href="index.php?action=register">
+                            Pas de compte ?
+                            <i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
+                        </a>
+                    </div>
                 </form>
             </div>
         </div>
-        </div>
-    </section>
-    </div>
+
+    <!--===============================================================================================-->
+    <script src="view/contents/vendor/jquery/jquery-3.2.1.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="view/contents/vendor/bootstrap/js/popper.js"></script>
+    <script src="view/contents/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="view/contents/vendor/select2/select2.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="view/contents/vendor/tilt/tilt.jquery.min.js"></script>
+    <script >
+        $('.js-tilt').tilt({
+            scale: 1.1
+        })
+    </script>
+    <!--===============================================================================================-->
+    <script src="view/contents/js/main.js"></script>
+
+
 <?php
 $content = ob_get_clean();
 require 'gabarit.php';
