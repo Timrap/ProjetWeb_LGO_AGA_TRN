@@ -15,6 +15,7 @@ ob_start();
 	<div class="title">
 		<h2>Catégories</h2>
 	</div>
+
 	<div class="boxA">
 		<div class="box">
 			<img src="view/contents/annonce1-passat/1.jpg" width="320" height="180" alt="" />
@@ -56,6 +57,7 @@ ob_start();
 			<p>Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna congue rutrum.</p>
 			<a href="#" class="button">Read More</a>
 		</div>
+
 	</div>
 </div>
 <?php

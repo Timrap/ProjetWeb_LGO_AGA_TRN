@@ -222,7 +222,10 @@
 		width: 320px;
 	}
 
-	.boxA,
+	.boxA
+	{
+
+	}
 	.boxB
 	{
 		margin-left: 100px;
@@ -284,10 +287,12 @@
 		position: absolute;
 		top: 1.5em;
 		left: 2em;
+
 	}
 	
 	#logo h1
 	{
+
 	}
 	
 	#logo a
@@ -389,6 +394,8 @@
 	border-width: thin;
 	}
 
+
+
 	#box1
 	{
 		text-align: center;
@@ -419,7 +426,7 @@
 
 	#email
 	{
-		font-size: large;
+		font-size: 35px;
 	}
 
 	#boutonmenuad
