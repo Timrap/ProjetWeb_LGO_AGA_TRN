@@ -448,7 +448,15 @@
 
 	#description
 	{
+		border: solid;
+		border-color: #000000;
+	}
 
+	#prix
+	{
+		border: solid;
+		border-color: #000000;
+	
 	}
 
 	#page .boxA,
