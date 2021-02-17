@@ -19,11 +19,10 @@ ob_start();
     <div id="overlay" class="overlay">
         <div id="popup" class="popup">
             <h2>
-                Exemple simple de popup
+                Erreur de connexion
             </h2>
             <div>
-                error
-
+                <?=$loginErrorMessage;?>
             </div>
             <br>
             <input type="submit" value="OK" id="btnClose" class="btnClose">

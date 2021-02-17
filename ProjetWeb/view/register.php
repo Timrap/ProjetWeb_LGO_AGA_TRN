@@ -19,10 +19,10 @@ ob_start();
     <div id="overlay" class="overlay">
         <div id="popup" class="popup">
             <h2>
-                Exemple simple de popup
+                Erreur d'inscription
             </h2>
             <div>
-                les informations ne sont pas correctes, veuillez entre une adresse mail valide
+                <?=$registerErrorMessage;?>
                 <input type="submit" value="OK" id="btnClose" class="btnClose">
             </div>
             <br>
@@ -36,7 +36,7 @@ ob_start();
 
     <div class="container-login100">
         <div class="wrap-login100">
-            <form class="login100-form validate-form" action="index.php?action=login" method="post" >
+            <form class="login100-form validate-form" action="index.php?action=register" method="post" >
 					<span class="login100-form-title">
 						Member Login
 					</span>
@@ -83,7 +83,7 @@ ob_start();
                 <div class="col-md-12 form-group">
                     <div class="creat_account d-flex align-items-center" id="condition">
                         <input type="checkbox" name="CGU" required>
-                        J'ai lu et j'accepte<a href="index.php?action=CGU"> les conditions générales d'utilisation</a>.
+                        J'ai lu et j'accepte<a class="conditiongeneral" href="index.php?action=CGU"> les conditions générales d'utilisation</a>.
                         </input>
                     </div>
 
