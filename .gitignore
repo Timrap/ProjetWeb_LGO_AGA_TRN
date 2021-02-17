@@ -1,1 +1,2 @@
-curl ProjetWeb/model/data/users.json > .gitignore
+ProjetWeb/model/data/users.json
+users.json
