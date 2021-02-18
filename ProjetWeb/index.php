@@ -24,14 +24,14 @@ if (isset($_GET['action'])) {
         case 'CGU' :
             CGU();
             break;
-        case 'createad' :
-            createad();
+        case 'createAd' :
+            createAd();
             break;
-        case "annoncesmenu" :
-            annoncesmenu ();
+        case "adMenu" :
+            adMenu ();
             break;
-        case "validationad" :
-            validationad();
+        case "validationAd" :
+            validationAd($_POST);
             break;
         default :
             lost();

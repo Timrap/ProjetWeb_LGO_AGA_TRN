@@ -25,20 +25,20 @@ ob_start();
             <div class="container">
                 <div class="row">
                     <div class="col-md-12 p-b-30" id="formulaire1">
-                        <form class="leave-comment" action="index.php?action=validationad" method="post" >
+                        <form class="leave-comment" action="index.php?action=validationAd" method="post" >
                             <h2 class="m-text26 p-b-36 p-t-15">
                                 Insérer une annonce
                             </h2>
                             <div class="bo4 of-hidden size15 m-b-20" >
-                          <br> <input class="sizefull s-text7 p-l-22 p-r-22" id="description" type="text" name="titreduproduit" placeholder="Titre du produit" required>
+                          <br> <input class="sizefull s-text7 p-l-22 p-r-22" id="description" type="text" name="title" placeholder="Titre du produit" required>
                             </div>
     <br>
                             <div class="bo4 of-hidden size15 m-b-20">
-                              <textarea id="description" name="description" cols="50" rows="10" placeholder="Description" required></textarea>
+                              <textarea id="description" name="description" cols="50" rows="10" placeholder="description" required></textarea>
                             </div class="md-12">
                             <br>
                             <div class="bo4 of-hidden size15 m-b-20" >
-                                <br> <input class="sizefull s-text7 p-l-22 p-r-22" id="prix" type="number" name="prixduproduit" placeholder="Prix du produit" required>
+                                <br> <input class="sizefull s-text7 p-l-22 p-r-22" id="prix" type="number" name="price" placeholder="Prix du produit" required>
                             </div>
                             <br>
                             <input type="submit" value="Valider mon annonces" class="flex-c-m size10 bg4 bo-rad-23 hov1 m-text3 trans-0-4" id="boutoncgu"/>
