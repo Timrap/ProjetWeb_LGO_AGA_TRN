@@ -50,7 +50,7 @@ ob_start();
                                 <form class="my-form">
                                     <p>Upload multiple files with the file dialog or by dragging and dropping images onto the dashed region</p>
                                     <input type="file" id="fileElem" multiple accept="image/*" onchange="handleFiles(this.files)">
-                                    <label class="button" for="fileElem">Select some files</label>
+                                    <label class="buttondrop" for="fileElem">Select some files</label>
                                 </form>
                                 <div id="gallery"></div>
                             </div>
