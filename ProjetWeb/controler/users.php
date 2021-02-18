@@ -80,22 +80,32 @@ function register($register)
 
             if ($userPsw == $userPswRepeat) {
                 require_once "model/usersManager.php";
-                if (registerNewAccount($userFirstName, $userLastName, $userEmailAddress, $userPsw)) {
+                if (registerNewAccount($userFirstName, $userLastName, $userEmailAddress, $userPsw))
+                {
                     createSession($userEmailAddress);
                     $registerErrorMessage = null;
                     require "view/home.php";
-                } else {
+                }
+                else
+                {
                     $registerErrorMessage = "L'inscription n'est pas possible avec les valeurs saisies !";
                     require "view/register.php";
                 }
-            } else {
-                $registerErrorMessage = "Les mots de passe ne sont pas similaires !";
-                require "view/register.php";
+
             }
-        } else {
+        else
+        {
+            $registerErrorMessage = "Les mots de passe ne sont pas similaires !";
+            require "view/register.php";
+        }
+
+        }
+        else
+            {
             $registerErrorMessage = null;
             require "view/register.php";
         }
+
     } catch (ModelDataBaseException $ex) {
         $registerErrorMessage = "Nous rencontrons actuellement un problème technique. Il est temporairement impossible de s'enregistrer. Désolé du dérangement !";
         require "view/register.php";

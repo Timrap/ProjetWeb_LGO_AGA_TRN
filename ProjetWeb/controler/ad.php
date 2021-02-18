@@ -1,15 +1,28 @@
 <?php
-function createad()
+function createAd()
 {
-    require "view/createad.php";
+    require "view/createAd.php";
 }
 
-function annoncesmenu()
+function adMenu()
 {
-    require "view/annoncesmenu.php";
+    require "view/adMenu.php";
 }
 
-function validationad ()
+function validationAd ($validationAd)
 {
-    require "view/validationad.php";
+    require_once "model/adManager.php";
+    $adTitle = $validationAd['title'];
+    $adDescription = $validationAd['description'];
+    $adPrice = $validationAd['price'];
+    registerNewAd($adTitle, $adDescription, $adPrice);
+    require "view/validationAd.php";
 }
+/*
+function registerNewAdInJson($validationAd){
+    require_once "data/adManager";
+    $adTitle = $validationAd['title'];
+    $adDescription = $validationAd['description'];
+    $adPrice = $validationAd['price'];
+    registerNewAccount($adTitle, $adDescription, $adPrice);
+}*/

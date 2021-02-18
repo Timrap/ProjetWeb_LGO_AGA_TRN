@@ -34,7 +34,7 @@ ob_start();
 <center>
                     <a href="index.php?action=home"><input type="submit" value="Visionner mes annonces" class="flex-c-m size10 bg4 bo-rad-23 hov1 m-text3 trans-0-4" id="boutonmenuad"</a></a>
                     <br><br>
-                    <a href="index.php?action=createad"><input type="submit" value="Insérer une annonce" class="flex-c-m size10 bg4 bo-rad-23 hov1 m-text3 trans-0-4" id="boutonmenuad" </a></a>
+                    <a href="index.php?action=createAd"><input type="submit" value="Insérer une annonce" class="flex-c-m size10 bg4 bo-rad-23 hov1 m-text3 trans-0-4" id="boutonmenuad" </a></a>
 </center>
 
 

@@ -16,7 +16,7 @@ ob_start();
 		<h2>Catégories</h2>
 	</div>
 
-	<div class="boxA">
+	<div class="boxA" >
 		<div class="box">
 			<img src="view/contents/annonce1-passat/1.jpg" width="320" height="180" alt="" />
 			<h3>Voitures</h3>
