@@ -15,14 +15,7 @@ function validationAd ($validationAd)
     $adTitle = $validationAd['title'];
     $adDescription = $validationAd['description'];
     $adPrice = $validationAd['price'];
-    registerNewAd($adTitle, $adDescription, $adPrice);
+    $userEmail = $_SESSION['userEmailAddress'];
+    registerNewAd($adTitle, $adDescription, $adPrice, $userEmail);
     require "view/validationAd.php";
 }
-/*
-function registerNewAdInJson($validationAd){
-    require_once "data/adManager";
-    $adTitle = $validationAd['title'];
-    $adDescription = $validationAd['description'];
-    $adPrice = $validationAd['price'];
-    registerNewAccount($adTitle, $adDescription, $adPrice);
-}*/
