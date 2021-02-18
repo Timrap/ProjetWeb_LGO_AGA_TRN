@@ -39,7 +39,7 @@ ob_start();
             <div class="wrap-login100">
                 <form class="login100-form validate-form" action="index.php?action=login" method="post" >
 					<span class="login100-form-title">
-						Member Login
+						Se connecter
 					</span>
 
                     <div class="wrap-input100 validate-input" data-validate = "une adresse E-mail est obligatoire: ex@abc.xyz">

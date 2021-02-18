@@ -38,7 +38,11 @@ ob_start();
                             </div class="md-12">
                             <br>
                             <div class="bo4 of-hidden size15 m-b-20" >
+
+                                <input class="sizefull s-text7 p-l-22 p-r-22" id="prix" type="number" name="prixduproduit" placeholder="Prix du produit en CHF" required>
+<br>
                                 <br> <input class="sizefull s-text7 p-l-22 p-r-22" id="prix" type="number" name="price" placeholder="Prix du produit" required>
+
                             </div>
                             <br>
                             <input type="submit" value="Valider mon annonces" class="flex-c-m size10 bg4 bo-rad-23 hov1 m-text3 trans-0-4" id="boutoncgu"/>

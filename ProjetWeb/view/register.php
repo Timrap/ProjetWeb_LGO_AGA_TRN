@@ -38,7 +38,7 @@ ob_start();
         <div class="wrap-login100">
             <form class="login100-form validate-form" action="index.php?action=register" method="post" >
 					<span class="login100-form-title">
-						Member Login
+						S'inscrire
 					</span>
 
                 <div class="wrap-input100 validate-input" data-validate = "vous devez ajouter votre nom">
@@ -82,9 +82,11 @@ ob_start();
                 </div>
                 <div class="col-md-12 form-group">
                     <div class="creat_account d-flex align-items-center" id="condition">
+                        <div>
                         <input type="checkbox" name="CGU" required>
-                        J'ai lu et j'accepte<a class="conditiongeneral" href="index.php?action=CGU"> les conditions générales d'utilisation</a>.
+                        J'ai lu et j'accepte <br><a class="conditiongeneral" href="index.php?action=CGU">Les conditions générales d'utilisation</a>.
                         </input>
+                        </div>
                     </div>
 
 
