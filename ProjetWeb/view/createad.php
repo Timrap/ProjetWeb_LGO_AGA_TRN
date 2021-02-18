@@ -44,8 +44,22 @@ ob_start();
                                 <br> <input class="sizefull s-text7 p-l-22 p-r-22" id="prix" type="number" name="price" placeholder="Prix du produit" required>
 
                             </div>
+
+                            <link href="view/contents/css/main.css" rel="stylesheet">
+                            <div id="drop-area">
+                                <form class="my-form">
+                                    <p>Upload multiple files with the file dialog or by dragging and dropping images onto the dashed region</p>
+                                    <input type="file" id="fileElem" multiple accept="image/*" onchange="handleFiles(this.files)">
+                                    <label class="button" for="fileElem">Select some files</label>
+                                </form>
+                                <div id="gallery"></div>
+                            </div>
+                            <progress id="progress-bar" max=100 value=0></progress>
+
+                            <script src="view/contents/js/draganddrop.js"></script>
+
                             <br>
-                            <input type="submit" value="Valider mon annonces" class="flex-c-m size10 bg4 bo-rad-23 hov1 m-text3 trans-0-4" id="boutoncgu"/>
+                            <input href="index.php?action=validationad" type="submit" value="Valider mon annonces" class="flex-c-m size10 bg4 bo-rad-23 hov1 m-text3 trans-0-4" id="boutoncgu"/>
                             <br>
                     </div>
                     </form>
