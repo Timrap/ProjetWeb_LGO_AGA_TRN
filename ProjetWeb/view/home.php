@@ -17,7 +17,7 @@ ob_start();
 	</div>
 
 	<div class="boxA" >
-		<div class="box">
+		<div class="box" id="boxArticle1">
 			<img src="view/contents/annonce1-passat/1.jpg" width="320" height="180" alt="" />
 			<h3>Voitures</h3>
 			<p>Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna congue rutrum.</p>
