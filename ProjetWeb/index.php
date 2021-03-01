@@ -33,6 +33,9 @@ if (isset($_GET['action'])) {
         case "validationAd" :
             validationAd($_POST);
             break;
+        case "articles" :
+            articles($_POST);
+            break;
         default :
             lost();
     }
