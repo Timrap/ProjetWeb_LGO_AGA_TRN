@@ -41,13 +41,13 @@ ob_start();
 
                             <!-- liste deroulante -->
                             <h4>
-                                <select name="menu_destination">
+                                <select name="categorie">
                                     <option>Choisir une catégorie</option>
-                                    <option>Véhicule Motorisé</option>
-                                    <option>Appareil éléctronique</option>
-                                    <option>Mobilier</option>
-                                    <option>Bijou</option>
-                                    <option>Immobilier</option>
+                                    <option value="1">Véhicule Motorisé</option>
+                                    <option value="2">Appareil éléctronique</option>
+                                    <option value="3">Mobilier</option>
+                                    <option value="4">Bijou</option>
+                                    <option value="5">Immobilier</option>
                                 </select>
                             </h4>
 

@@ -5,13 +5,13 @@
  * @param $adContent
  * @return bool
  */
-function registerNewAd($adTitle, $adDescription, $adPrice, $street, $city, $userEmail)
+function registerNewAd($adCategorie, $adTitle, $adDescription, $adPrice, $street, $city, $userEmail)
 {
     $result = false;
 
 //  Create an array to add in JSON file
 
-    $data2add = array('title' => $adTitle, 'description' => $adDescription, 'price' => $adPrice, 'street' => $street, 'city' => $city, 'userEmail' => $userEmail, 'adType' =>'1');
+    $data2add = array('categorie' => $adCategorie, 'title' => $adTitle, 'description' => $adDescription, 'price' => $adPrice, 'street' => $street, 'city' => $city, 'userEmail' => $userEmail, 'adType' =>'1');
 
     $file = "model/data/ad.json";
 
