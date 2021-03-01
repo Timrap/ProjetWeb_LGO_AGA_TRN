@@ -37,7 +37,7 @@ ob_start();
                             </div>
 <br>
                             <div class="bo4 of-hidden size15 m-b-20">
-                              <textarea id="description" name="Description" cols="50" rows="10" placeholder="Description" required></textarea>
+                              <textarea id="description" name="description" cols="50" rows="10" placeholder="Description" required></textarea>
                             </div class="md-12">
 
                             <br>
@@ -46,7 +46,7 @@ ob_start();
                                 <input class="sizefull s-text7 p-l-22 p-r-22" id="prix" type="number" name="price" placeholder="Prix du produit en CHF" required>
                             </div>
                             <br>
-
+<!--
                             <h4>
                                 Insertion Images
                             </h4>
@@ -59,17 +59,17 @@ ob_start();
                                 <div id="gallery"></div>
                                 <progress id="progress-bar" max=100 value=0></progress>
                             </div>
-                            <script src="view/contents/js/draganddrop.js"></script>
+                            <script src="view/contents/js/draganddrop.js"></script>-->
                             <h4>
                                 Adresse
                             </h4>
 
                             <div class="bo4 of-hidden size15 m-b-20">
-                                <br> <input class="sizefull s-text7 p-l-22 p-r-22" id="description" type="text" name="Rue" placeholder="Rue" required>
+                                <br> <input class="sizefull s-text7 p-l-22 p-r-22" id="description" type="text" name="street" placeholder="Rue" required>
                             </div>
 
                             <div class="bo4 of-hidden size15 m-b-20" >
-                                <br> <input class="sizefull s-text7 p-l-22 p-r-22" id="description" type="text" name="Ville, NPA" placeholder="Ville, NPA" required>
+                                <br> <input class="sizefull s-text7 p-l-22 p-r-22" id="description" type="text" name="city" placeholder="Ville, NPA" required>
                             </div>
                             <br>
                             <div class="boutonmenuad">
