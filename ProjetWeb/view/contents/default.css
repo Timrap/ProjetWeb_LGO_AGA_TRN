@@ -190,6 +190,7 @@
 /* 4-column                                                                      */
 /*********************************************************************************/
 
+
 	.box1,
 	.box2,
 	.box3,
@@ -219,7 +220,7 @@
 	.boxB,
 	.boxC
 	{
-		width: 320px;
+		width: 400px;
 	}
 
 	.boxA
@@ -228,7 +229,7 @@
 	}
 	.boxB
 	{
-		margin-left: 100px;
+
 		float: left;
 		text-align: center;
 
@@ -236,7 +237,7 @@
 	
 	.boxC
 	{
-		float: right;
+
 	}
 
 
