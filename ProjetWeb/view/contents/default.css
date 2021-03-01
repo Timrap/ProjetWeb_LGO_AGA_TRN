@@ -451,11 +451,17 @@
 	.buttondrop {
 		display: inline-block;
 		padding: 10px;
-		background: #ccc;
+		background: #000000;
 		cursor: pointer;
 		border-radius: 5px;
 		border: 1px solid #ccc;
+		color: #FFF;
 	}
+
+	.buttondrop:hover{
+		color: rgb(80, 140, 250);
+	}
+
 	.button:hover {
 		color: rgb(80, 140, 250);
 	}
