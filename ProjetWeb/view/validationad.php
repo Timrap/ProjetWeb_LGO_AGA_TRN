@@ -30,8 +30,9 @@ ob_start();
                             <h2 class="m-text26 p-b-36 p-t-15">
                                 Bravo, votre annonce a bien été publiée.
                             </h2>
-                            <a href="index.php?action=home"><input type="submit" value="Retourner à la page principale" class="flex-c-m size10 bg4 bo-rad-23 hov1 m-text3 trans-0-4" id="boutonlogin" </a>
-
+                            <div class="boutonmenuad">
+                                <a href="index.php?action=home" class="button">Retourner à la page principale</a>
+                            </div>
                     </div>
                     </form>
                 </div>

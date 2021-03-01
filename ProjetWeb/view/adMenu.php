@@ -31,10 +31,19 @@ ob_start();
                         <h2 class="m-text26 p-b-36 p-t-15">
                             Menu annonces
                         </h2>
+
 <center>
-                    <a href="index.php?action=home"><input type="submit" value="Visionner mes annonces" class="flex-c-m size10 bg4 bo-rad-23 hov1 m-text3 trans-0-4" id="boutonmenuad"</a></a>
-                    <br><br>
-                    <a href="index.php?action=createAd"><input type="submit" value="Insérer une annonce" class="flex-c-m size10 bg4 bo-rad-23 hov1 m-text3 trans-0-4" id="boutonmenuad" </a></a>
+
+
+    <div class="boutonmenuad">
+        <a href="index.php?action=home" class="button">Visionner mes annonces</a>
+    </div>
+    <br>
+
+        <div class="boutonmenuad">
+            <a href="index.php?action=createAd" class="button">Insérer une annonce</a>
+        </div>
+
 </center>
 
 

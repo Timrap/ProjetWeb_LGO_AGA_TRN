@@ -457,7 +457,7 @@
 		border: 1px solid #ccc;
 	}
 	.button:hover {
-		background: #ddd;
+		color: rgb(80, 140, 250);
 	}
 	#fileElem {
 		display: none;

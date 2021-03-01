@@ -30,7 +30,7 @@ if (isset($_GET['action'])) {
         case "adMenu" :
             adMenu ();
             break;
-        case "validationAd" :
+        case "validationad" :
             validationAd($_POST);
             break;
         default :
