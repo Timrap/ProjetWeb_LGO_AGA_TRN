@@ -36,3 +36,13 @@ function validationAd ($validationAd)
 function articles($article){
     require_once "view/articles.php";
 }
+
+function admodify()
+{
+    require_once "view/admodify.php";
+}
+
+function confirmationmodif()
+{
+    require_once "view/confirmationmodif.php";
+}

@@ -39,6 +39,12 @@ ob_start();
         <a href="index.php?action=home" class="button">Visionner mes annonces</a>
     </div>
     <br>
+    <div class="boutonmenuad">
+        <a href="index.php?action=admodify" class="button">Modifier mes annonces</a>
+    </div>
+
+
+    <br>
 
         <div class="boutonmenuad">
             <a href="index.php?action=createAd" class="button">Insérer une annonce</a>

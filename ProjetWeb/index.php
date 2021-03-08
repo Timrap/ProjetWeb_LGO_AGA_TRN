@@ -36,6 +36,12 @@ if (isset($_GET['action'])) {
         case "articles" :
             articles($_POST);
             break;
+        case "admodify" :
+            admodify();
+            break;
+        case "confirmationmodif" :
+            confirmationmodif();
+            break;
         default :
             lost();
     }
