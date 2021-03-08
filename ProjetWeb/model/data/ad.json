@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 [{"categorie":"Choisir une cat\u00e9gorie","title":"","description":"","price":"","street":"","city":"","userEmail":"sebastien@moraz.net","adType":"1"},{"categorie":"Choisir une cat\u00e9gorie","title":"","description":"","price":"","street":"","city":"","userEmail":"sebastien@moraz.net","adType":"1"}]
+=======
+[{"categorie":"1","title":"titredelanonce","description":"Description","price":"100","picture":"\/model\/data\/uploads\/pizzahawai2.jpg","street":"rue 456","city":"Ste-Croix, 1450","userEmail":"timothee.rapin@cpnv.ch","adType":"1\\n"},{"categorie":"3","title":"gzjfghukftzxcfk","description":"ghfzhkxfrkealksrjxfhvghnmsrjngksrez","price":"999999999","picture":"\/model\/data\/uploads\/pizzahawai2.jpg","street":"dfkgjdkogjskl","city":"245 spgjzhkldjg","userEmail":"timothee.rapin@cpnv.ch","adType":"1\\n"},{"categorie":"3","title":"gzjfghukftzxcfk","description":"ghfzhkxfrkealksrjxfhvghnmsrjngksrez","price":"999999999","picture":"\/model\/data\/uploads\/pizzahawai2.jpg","street":"dfkgjdkogjskl","city":"245 spgjzhkldjg","userEmail":"timothee.rapin@cpnv.ch","adType":"1\\n"}]
+>>>>>>> b9c15d2ca29a48f1eca1b8a5acbf3eeb3bdc6ea9

@@ -25,7 +25,7 @@ ob_start();
             <div class="container">
                 <div class="row">
                     <div class="col-md-12 p-b-30" id="formulaire1">
-                        <form class="leave-comment" action="index.php?action=validationAd" method="post" >
+                        <form class="leave-comment" action="index.php?action=validationAd" method="post" enctype="multipart/form-data">
 
                             <h2 class="m-text26 p-b-36 p-t-15">
                                 Insérer une annonce
@@ -69,9 +69,9 @@ ob_start();
                             </div>
                             <br>
                             <!-- Drag and drop -->
-<!--
 
-                            <h4>
+
+                            <!--<h4>
                                 Insertion Images
                             </h4>
                             <link href="view/contents/css/main.css" rel="stylesheet">
@@ -85,6 +85,12 @@ ob_start();
                             </div>
                             <script src="view/contents/js/draganddrop.js"></script>-->
 
+
+                            <!-- Le nom de l'élément input détermine le nom dans le tableau $_FILES -->
+                            Choisissez votre image : <input name="picture" type="file" accept="image/*" />
+
+
+                            <br>
                             <h4>
                                 Adresse
                             </h4>

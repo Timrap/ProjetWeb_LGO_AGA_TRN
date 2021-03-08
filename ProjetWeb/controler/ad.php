@@ -18,18 +18,20 @@ function adMenu()
 /**
  * @param $validationAd
  */
-function validationAd ($validationAd)
+function validationAd ($validationAd, $picture)
 {
     require_once "model/adManager.php";
+
     $adCategorie = $validationAd['categorie'];
     $adTitle = $validationAd['title'];
     $adDescription = $validationAd['description'];
     $adPrice = $validationAd['price'];
-    //$adPicture = $validationAd['picture'];
+    $adPicture = uploadPicture($picture);
     $street = $validationAd['street'];
     $city = $validationAd['city'];
     $userEmail = $_SESSION['userEmailAddress'];
-    registerNewAd($adCategorie, $adTitle, $adDescription, $adPrice, $street, $city, $userEmail);
+
+    registerNewAd($adCategorie, $adTitle, $adDescription, $adPrice, $adPicture, $street, $city, $userEmail);
     require "view/validationAd.php";
 }
 
