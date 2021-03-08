@@ -31,7 +31,7 @@ if (isset($_GET['action'])) {
             adMenu ();
             break;
         case "validationAd" :
-            validationAd($_POST);
+            validationAd($_POST, $_FILES);
             break;
         case "articles" :
             articles($_POST);
