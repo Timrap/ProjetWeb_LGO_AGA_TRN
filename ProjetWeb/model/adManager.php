@@ -51,7 +51,7 @@ function uploadPicture($picture){
     }*/
 
     if(isset($picture['picture'])){
-        $uploaddir = '/model/data/uploads/';
+        $uploaddir = './model/data/uploads/';
         $uploadfile = $uploaddir . basename($picture['picture']['name']);
         $errors= array();
         $file_name = $picture['picture']['name'];
@@ -60,10 +60,10 @@ function uploadPicture($picture){
         $file_type = $picture['picture']['type'];
         $file_ext=strtolower(end(explode('.',$file_name)));
 
-        $extensions= array("jpeg","jpg","png","csv", "gif");
+        $extensions= array("jpeg","jpg","png","svg", "gif");
 
         if(in_array($file_ext,$extensions)=== false){
-            $errors[]="extension not allowed, please choose a JPEG, PNG, GIF or CSV file.";
+            $errors[]="extension not allowed, please choose a JPEG, PNG, GIF or SVG file.";
         }
 
         if($file_size > 2097152) {
