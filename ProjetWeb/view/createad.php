@@ -86,8 +86,6 @@ ob_start();
                             <script src="view/contents/js/draganddrop.js"></script>-->
 
 
-                            <!-- MAX_FILE_SIZE doit précéder le champ input de type file -->
-                            <input type="hidden" name="MAX_FILE_SIZE" value="30000" />
                             <!-- Le nom de l'élément input détermine le nom dans le tableau $_FILES -->
                             Choisissez votre image : <input name="picture" type="file" accept="image/*" />
 
