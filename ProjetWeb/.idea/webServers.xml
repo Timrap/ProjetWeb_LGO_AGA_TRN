@@ -5,9 +5,6 @@
       <webServer id="512cd93f-8d53-4aad-b025-6ac9316f39a8" name="in place" url="http://localhost:8081">
         <fileTransfer accessType="LOCAL" port="0" />
       </webServer>
-      <webServer id="0519abcb-5bca-4de3-90c7-ad74fdccb3d4" name="local" url="http://localhost:888">
-        <fileTransfer accessType="LOCAL" port="0" />
-      </webServer>
     </option>
   </component>
 </project>
