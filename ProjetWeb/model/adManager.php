@@ -34,6 +34,10 @@ function getData()
     return json_decode('',true);
 }
 
+/**
+ * @param $picture
+ * @return string
+ */
 function uploadPicture($picture){
     /*
     $uploaddir = '/model/data/uploads/';
@@ -67,7 +71,7 @@ function uploadPicture($picture){
         }
 
         if(empty($errors)==true) {
-            move_uploaded_file($picture['picture']['tmp_name'],$uploadfile);
+            move_uploaded_file($file_tmp,$uploadfile);
         }else{
             print_r($errors);
         }
