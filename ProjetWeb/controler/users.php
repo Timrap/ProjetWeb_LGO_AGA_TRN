@@ -116,3 +116,9 @@ function userName($userEmail){
     require_once "model/usersManager.php";
     return firstNameLastName($userEmail);
 }
+
+
+function accountModify()
+{
+    require_once "view/accountmodify.php";
+}

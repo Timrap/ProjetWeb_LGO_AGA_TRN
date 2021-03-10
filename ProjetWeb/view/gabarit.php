@@ -46,7 +46,7 @@ Released   : 20130902
                 <?php if (isset($_SESSION['userEmailAddress'])) : ?>
                     <li><a href="index.php?action=adMenu">Annonces</a></li>
                     <li><a href="index.php?action=logout">Se déconnecter</a></li>
-                    <li><a href="index.php?action=adMenu">
+                    <li><a href="index.php?action=accountmodify">
                             <img src="view/contents/images/icon-header-01-log.png" alt="connecté"/>
                             <?=userName($_SESSION['userEmailAddress']); ?>
                         </a></li>

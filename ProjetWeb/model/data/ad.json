@@ -1,5 +1,1 @@
-<<<<<<< HEAD
-[{"categorie":"1","title":"111","description":"1111","price":"2111","picture":null,"street":"oui","city":"iui","userEmail":"sebastien@moraz.net","adType":"1\\n"}]
-=======
-[{"categorie":"1","title":"titredelanonce","description":"Description","price":"100","picture":".\/model\/data\/uploads\/pizzahawai2.jpg","street":"rue 456","city":"Ste-Croix, 1450","userEmail":"timothee.rapin@cpnv.ch","adType":"1\\n"},{"categorie":"1","title":"titredelanonce","description":"Description","price":"100","picture":".\/model\/data\/uploads\/Pizananas.svg","street":"rue 456","city":"Ste-Croix, 1450","userEmail":"timothee.rapin@cpnv.ch","adType":"1\\n"},{"categorie":"1","title":"titredelanonce","description":"Description","price":"100","picture":".\/model\/data\/uploads\/Pizananas.svg","street":"rue 456","city":"Ste-Croix, 1450","userEmail":"timothee.rapin@cpnv.ch","adType":"1\\n"}]
->>>>>>> 939ef2efe40c69f504287bd625582e4cf2132cb4
+[{"categorie":"5","title":"N'arrive pas a associer mon compte steam sur le site","description":"aaaaaaaaaaaaaaaaaaaaaa","price":"123","picture":".\/model\/data\/uploads\/Porsche RWB rose.jpg","street":"1111111111111","city":"123","userEmail":"sebastien@moraz.net","adType":"1\\n"}]

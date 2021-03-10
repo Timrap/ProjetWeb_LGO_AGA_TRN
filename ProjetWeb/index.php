@@ -42,6 +42,9 @@ if (isset($_GET['action'])) {
         case "confirmationmodif" :
             confirmationmodif();
             break;
+        case "accountmodify" :
+            accountModify();
+            break;
         default :
             lost();
     }
