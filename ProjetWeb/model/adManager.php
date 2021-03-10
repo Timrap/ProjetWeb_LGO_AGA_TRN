@@ -39,17 +39,6 @@ function getData()
  * @return string
  */
 function uploadPicture($picture){
-    /*
-    $uploaddir = '/model/data/uploads/';
-    $uploadfile = $uploaddir . basename($picture['picture']['name']);
-
-    if (move_uploaded_file($picture['picture']['tmp_name'], $uploadfile)) {
-        echo "Le fichier est valide, et a été téléchargé
-           avec succès. Voici plus d'informations :\n";
-    } else {
-        require_once "view/lost.php";
-    }*/
-
     if(isset($picture['picture'])){
         $uploaddir = './model/data/uploads/';
         $uploadfile = $uploaddir . basename($picture['picture']['name']);
