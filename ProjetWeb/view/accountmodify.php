@@ -13,7 +13,7 @@ ob_start();
 ?>
     <div class="container-login100">
         <div class="wrap-login100">
-            <form class="login100-form validate-form" action="index.php?action=register" method="post" >
+            <form class="login100-form validate-form" action="index.php?action=confirmationAccount" method="post" >
 					<span class="login100-form-title">
 						Modifier mon compte
 					</span>
@@ -85,7 +85,7 @@ ob_start();
 
 
 
-    <!--   <section class="login_part padding_top">-->
+
 
 <?php
 $content = ob_get_clean();

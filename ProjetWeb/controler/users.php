@@ -122,3 +122,8 @@ function accountModify()
 {
     require_once "view/accountmodify.php";
 }
+
+function confirmationAccount()
+{
+    require_once "view/confirmationAccount.php";
+}
