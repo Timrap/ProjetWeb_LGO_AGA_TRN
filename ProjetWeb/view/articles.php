@@ -22,7 +22,7 @@ ob_start();
 
     <!-- Product -->
     <div class="row">
-<?php foreach ($articles as $article) :?>
+<?php //foreach ($articles as $article) :?>
     <div class="col-sm-12 col-md-6 col-lg-4 p-b-50">
 
         <!-- Block2 -->
