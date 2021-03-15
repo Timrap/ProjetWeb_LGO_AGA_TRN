@@ -48,6 +48,9 @@ if (isset($_GET['action'])) {
         case "confirmationAccount" :
             confirmationAccount();
             break;
+        case "mesAnnonces" :
+            mesAnnonces();
+            break;
         default :
             lost();
     }

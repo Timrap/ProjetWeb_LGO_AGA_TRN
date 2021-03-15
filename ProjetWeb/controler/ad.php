@@ -50,3 +50,9 @@ function confirmationmodif()
 {
     require_once "view/confirmationmodif.php";
 }
+
+function mesAnnonces(){
+    require_once "model/adManager.php";
+    $articles = viewArticles();
+    require_once "view/mesannonces.php";
+}

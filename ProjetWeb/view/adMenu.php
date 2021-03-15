@@ -36,7 +36,7 @@ ob_start();
 
 
     <div class="boutonmenuad">
-        <a href="index.php?action=home" class="button">Visionner mes annonces</a>
+        <a href="index.php?action=mesAnnonces" class="button">Visionner mes annonces</a>
     </div>
     <br>
     <div class="boutonmenuad">
