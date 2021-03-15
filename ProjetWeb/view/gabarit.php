@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <!--
 Design by TEMPLATED
 http://templated.co
@@ -21,17 +21,18 @@ Released   : 20130902
 <link href="view/contents/fonts.css" rel="stylesheet" type="text/css" media="all" />
 
 <!--[if IE 6]><link href="default_ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
-    <link rel="stylesheet" type="text/css" href="view/contents/vendor/bootstrap/css/bootstrap.min.css">
+    <!--<link rel="stylesheet" type="text/css" href="view/contents/vendor/bootstrap/css/bootstrap.min.css">-->
     <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="view/contents/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
     <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="view/contents/vendor/animate/animate.css">
+    <!--<link rel="stylesheet" type="text/css" href="view/contents/vendor/animate/animate.css">-->
     <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="view/contents/vendor/css-hamburgers/hamburgers.min.css">
     <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="view/contents/vendor/select2/select2.min.css">
     <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="view/contents/css/util.css">
+    <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="view/contents/css/main.css">
 </head>
 <body>
@@ -62,8 +63,9 @@ Released   : 20130902
 </div>
 
 <?=$content; ?>
+
 <div id="copyright" class="container">
-    <p>&copy; Tout droits résérvés. | Par Luca GATTO, Andreas GRANADA et Timothée RAPIN.</p>
+    <p>&copy; Untitled. All rights reserved. | Photos by <a href="http://fotogrph.com/">Fotogrph</a> | Design by <a href="http://templated.co" rel="nofollow">TEMPLATED</a>.</p>
 </div>
 </body>
 </html>
