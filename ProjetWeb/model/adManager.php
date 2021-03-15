@@ -29,11 +29,6 @@ function registerNewAd($adCategorie, $adTitle, $adDescription, $adPrice, $adPict
     return true;
 }
 
-function getData()
-{
-    return json_decode('',true);
-}
-
 /**
  * @param $picture
  * @return string
@@ -67,4 +62,13 @@ function uploadPicture($picture){
     }
 
     return $uploadfile;
+}
+
+
+function viewArticles(){
+$file = "model/data/ad.json";
+
+//open or read json data
+
+return json_decode(file_get_contents($file));
 }

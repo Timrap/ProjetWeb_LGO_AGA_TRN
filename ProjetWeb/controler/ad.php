@@ -35,7 +35,9 @@ function validationAd ($validationAd, $picture)
     require "view/validationAd.php";
 }
 
-function articles($article){
+function articles($categorie){
+    require_once "model/adManager.php";
+    $articles = viewArticles();
     require_once "view/articles.php";
 }
 

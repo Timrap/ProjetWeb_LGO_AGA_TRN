@@ -48,6 +48,7 @@ ob_start();
                                     <option value="3">Mobilier</option>
                                     <option value="4">Bijou</option>
                                     <option value="5">Immobilier</option>
+                                    <option value="6">Décoration</option>
                                 </select>
                             </h4>
 

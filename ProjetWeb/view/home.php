@@ -80,6 +80,7 @@ $title = 'annoncesfaciles - home';
     </div>
 -->
 <div id="page" class="container">
+    <form action="index.php?action=articles" method="post">
     <div class="title">
         <h2>Catégories</h2>
     </div>
@@ -88,13 +89,17 @@ $title = 'annoncesfaciles - home';
             <img src="view/contents/annonce1-passat/1.jpg" width="320" height="180" alt="" />
             <h3>Véhicule motorisé</h3>
             <p>Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna congue rutrum.</p>
-            <a href="#" class="button">Read More</a>
+            <button type="submit" class="button" name="categorie" value="1">
+                Read More
+            </button>
         </div>
         <div class="box">
             <img src="view/contents/annonce2-iphone/iphone1.jpg" width="320" height="180" alt="" />
             <h3>Appreil électronique</h3>
             <p>Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna congue rutrum.</p>
-            <a href="#" class="button">Read More</a>
+            <button type="submit" class="button" name="categorie" value="2">
+                Read More
+            </button>
         </div>
     </div>
     <div class="boxB">
@@ -102,13 +107,17 @@ $title = 'annoncesfaciles - home';
             <img src="view/contents/annonce4-table/table.jpg" width="320" height="180" alt="" />
             <h3>Mobilier</h3>
             <p>Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna congue rutrum.</p>
-            <a href="#" class="button">Read More</a>
+            <button type="submit" class="button" name="categorie" value="3">
+                Read More
+            </button>
         </div>
         <div class="box">
             <img src="view/contents/annonce3-montre/montre1.jpg" width="320" height="180" alt="" />
             <h3>Bijou</h3>
             <p>Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna congue rutrum.</p>
-            <a href="#" class="button">Read More</a>
+            <button type="submit" class="button" name="categorie" value="4">
+                Read More
+            </button>
         </div>
     </div>
     <div class="boxC">
@@ -116,15 +125,20 @@ $title = 'annoncesfaciles - home';
             <img src="view/contents/annonce2-iphone/iphone1.jpg" width="320" height="180" alt="" />
             <h3>Immobilier</h3>
             <p>Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna congue rutrum.</p>
-            <a href="#" class="button">Read More</a>
+            <button type="submit" class="button" name="categorie" value="5">
+                Read More
+            </button>
         </div>
         <div class="box">
             <img src="view/contents/annonce6-playstation/playstation1.jpg" width="320" height="180" alt="" />
             <h3>Décoration</h3>
             <p>Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna congue rutrum.</p>
-            <a href="#" class="button">Read More</a>
+            <button type="submit" class="button" name="categorie" value="6">
+                Read More
+            </button>
         </div>
     </div>
+    </form>
 </div>
 
 <?php
