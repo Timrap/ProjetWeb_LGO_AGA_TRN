@@ -488,11 +488,47 @@
 		border-color: #000000;
 	}
 
+	#titre
+	{
+		border: solid;
+		border-color: #000000;
+		height: 50px;
+		width: 1000px;
+	}
+
+	#choice
+	{
+		border: solid;
+		border-color: #000000;
+		height: 50px;
+		width: 1000px;
+	}
+
+
+
 	#prix
 	{
 		border: solid;
 		border-color: #000000;
+		height: 50px;
+		width: 1000px;
 	
+	}
+
+	#Rue
+	{
+		border: solid;
+		border-color: #000000;
+		height: 50px;
+		width: 1000px;
+	}
+
+	#Npa
+	{
+		border: solid;
+		border-color: #000000;
+		height: 50px;
+		width: 1000px;
 	}
 
 	#page .boxA,

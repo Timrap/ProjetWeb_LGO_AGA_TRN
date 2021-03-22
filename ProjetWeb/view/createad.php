@@ -34,14 +34,20 @@ ob_start();
                             <br>
 
                             <h4>
-                                Informations du produit
+                                Titre
                             </h4>
-
-                            <br>
-
+                            <!-- champs titre -->
+                            <div class="bo4 of-hidden size15 m-b-20">
+                                <br> <input class="sizefull s-text7 p-l-22 p-r-22" id="titre" type="text" name="title" placeholder=" Titre du produit" required>
+                            </div>
+<br>
+                            <h4>
+                                Catégorie
+                            </h4>
+<br>
                             <!-- liste deroulante -->
                             <h4>
-                                <select name="categorie">
+                                <select name="categorie" id="choice">
                                     <option>Choisir une catégorie</option>
                                     <option value="1">Véhicule Motorisé</option>
                                     <option value="2">Appareil éléctronique</option>
@@ -51,19 +57,22 @@ ob_start();
                                     <option value="6">Décoration</option>
                                 </select>
                             </h4>
-
-                            <!-- champs titre -->
-                            <div class="bo4 of-hidden size15 m-b-20" >
-                                <br> <input class="sizefull s-text7 p-l-22 p-r-22" id="description" type="text" name="title" placeholder="Titre du produit" required>
-                            </div>
+                            <br>
+                            <h4>
+                                Description
+                            </h4>
                             <br>
                             <!-- champs description -->
                             <div class="bo4 of-hidden size15 m-b-20">
-                                <textarea id="description" name="description" cols="50" rows="10" placeholder="Description" required></textarea>
+                                <textarea id="description" name="description" cols="125" rows="20" placeholder=" Description" required></textarea>
                             </div class="md-12">
 
-                            <br>
 
+                            <br>
+                            <h4>
+                                Prix
+                            </h4>
+                            <br>
                             <!-- champs prix -->
                             <div class="bo4 of-hidden size15 m-b-20">
                                 <input class="sizefull s-text7 p-l-22 p-r-22" id="prix" type="number" name="price" placeholder="Prix du produit en CHF" required>
@@ -85,25 +94,27 @@ ob_start();
                                 <progress id="progress-bar" max=100 value=0></progress>
                             </div>
                             <script src="view/contents/js/draganddrop.js"></script>-->
-
-
+                            <h4>
+                                Images
+                            </h4>
+<br>
                             <!-- Le nom de l'élément input détermine le nom dans le tableau $_FILES -->
                             Choisissez votre image : <input name="picture" type="file" accept="image/*" />
 
-
-                            <br>
+<br>
+<br>
                             <h4>
                                 Adresse
                             </h4>
 
                             <!-- champs rue -->
                             <div class="bo4 of-hidden size15 m-b-20">
-                                <br> <input class="sizefull s-text7 p-l-22 p-r-22" id="description" type="text" name="street" placeholder="Rue" required>
+                                <br> <input class="sizefull s-text7 p-l-22 p-r-22" id="Rue" type="text" name="street" placeholder="Rue" required>
                             </div>
 
                             <!-- champs ville, npa -->
                             <div class="bo4 of-hidden size15 m-b-20" >
-                                <br> <input class="sizefull s-text7 p-l-22 p-r-22" id="description" type="text" name="city" placeholder="Ville, NPA" required>
+                                <br> <input class="sizefull s-text7 p-l-22 p-r-22" id="Npa" type="text" name="city" placeholder="Ville, NPA" required>
                             </div>
 
                             <br>
