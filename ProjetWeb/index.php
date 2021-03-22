@@ -34,7 +34,7 @@ if (isset($_GET['action'])) {
             articles($_POST);
             break;
         case "articleModify" :
-            admodify();
+            articleModify($_GET['articleId']);
             break;
         case "confirmationmodif" :
             confirmationmodif();

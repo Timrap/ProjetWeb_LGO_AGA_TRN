@@ -35,9 +35,16 @@ function articles($categorie){
     require_once "view/articles.php";
 }
 
-function admodify()
+function articleModify($id)
 {
-    require_once "view/admodify.php";
+    require_once "model/adManager.php";
+    $articles = viewArticles();
+
+    foreach ($articles as $article){
+        if ($article->id == $id){
+            require_once "view/admodify.php";
+        }
+    }
 }
 
 function confirmationmodif()

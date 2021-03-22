@@ -43,29 +43,41 @@ ob_start();
                         <h4>
                             <select name="categorie">
                                 <option>Choisir une catégorie</option>
-                                <option value="1">Véhicule Motorisé</option>
-                                <option value="2">Appareil éléctronique</option>
-                                <option value="3">Mobilier</option>
-                                <option value="4">Bijou</option>
-                                <option value="5">Immobilier</option>
+                                <option value="1" <?php if ($article->categorie == 1): ?> selected<?php endif;?>>Véhicule Motorisé</option>
+                                <option value="2" <?php if ($article->categorie == 2): ?> selected<?php endif;?>>Appareil éléctronique</option>
+                                <option value="3" <?php if ($article->categorie == 3): ?> selected<?php endif;?>>Mobilier</option>
+                                <option value="4" <?php if ($article->categorie == 4): ?> selected<?php endif;?>>Bijou</option>
+                                <option value="5" <?php if ($article->categorie == 5): ?> selected<?php endif;?>>Immobilier</option>
                             </select>
                         </h4>
 
                         <!-- champs titre -->
+                        <h4>
+                            Titre
+                        </h4>
                         <div class="bo4 of-hidden size15 m-b-20" >
-                            <br> <input class="sizefull s-text7 p-l-22 p-r-22" id="description" type="text" name="title" placeholder="Titre du produit" >
+                            <br> <input class="sizefull s-text7 p-l-22 p-r-22" id="description" type="text" name="title" value="<?=$article->title ?>" placeholder="Titre" >
                         </div>
                         <br>
+
                         <!-- champs description -->
+                        <h4>
+                            Description
+                        </h4>
+                        <br>
                         <div class="bo4 of-hidden size15 m-b-20">
-                            <textarea id="description" name="description" cols="50" rows="10" placeholder="Description" ></textarea>
+                            <textarea id="description" name="description" cols="125" rows="20" placeholder="Description" required><?=$article->description ?></textarea>
                         </div class="md-12">
 
                         <br>
 
                         <!-- champs prix -->
+                        <h4>
+                            Prix (CHF)
+                        </h4>
+                        <br>
                         <div class="bo4 of-hidden size15 m-b-20">
-                            <input class="sizefull s-text7 p-l-22 p-r-22" id="prix" type="number" name="price" placeholder="Prix du produit en CHF" >
+                            <input class="sizefull s-text7 p-l-22 p-r-22" id="prix" type="number" name="price" value="<?=$article->price ?>" placeholder="Prix du produit en CHF" >
                         </div>
                         <br>
                         <!-- Drag and drop -->
@@ -85,18 +97,22 @@ ob_start();
                                                     </div>
                                                     <script src="view/contents/js/draganddrop.js"></script>-->
 
-                        <h4>
-                            Adresse
-                        </h4>
+
 
                         <!-- champs rue -->
+                        <h4>
+                            Rue
+                        </h4>
                         <div class="bo4 of-hidden size15 m-b-20">
-                            <br> <input class="sizefull s-text7 p-l-22 p-r-22" id="description" type="text" name="street" placeholder="Rue" >
+                            <br> <input class="sizefull s-text7 p-l-22 p-r-22" id="description" type="text" name="street" value="<?=$article->street ?>" placeholder="Rue" >
                         </div>
 
                         <!-- champs ville, npa -->
+                        <h4>
+                            ville, npa
+                        </h4>
                         <div class="bo4 of-hidden size15 m-b-20" >
-                            <br> <input class="sizefull s-text7 p-l-22 p-r-22" id="description" type="text" name="city" placeholder="Ville, NPA" >
+                            <br> <input class="sizefull s-text7 p-l-22 p-r-22" id="description" type="text" name="city" value="<?=$article->city ?>" placeholder="Ville, NPA" >
                         </div>
 
                         <br>

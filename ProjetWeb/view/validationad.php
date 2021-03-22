@@ -31,7 +31,7 @@ ob_start();
                                 Bravo, votre annonce a bien été publiée.
                             </h2>
                             <div class="boutonmenuad">
-                                <a href="index.php?action=home" class="button">Retourner à la page principale</a>
+                                <a href="index.php?action=mesAnnonces" class="button">Retour</a>
                             </div>
                     </div>
                     </form>

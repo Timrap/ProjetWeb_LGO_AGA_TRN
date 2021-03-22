@@ -69,7 +69,7 @@ ob_start();
                                     <td><?=$article->description; ?></td>
                                     <td><?=$article->price; ?></td>
                                     <td>
-                                        <a href="index.php?action=articleModify">Modifier</a>
+                                        <a href="index.php?action=articleModify&articleId=<?=$article->id ?>">Modifier</a>
                                         <a href="index.php?action=articleDelete">Supprimer</a>
                                     </td>
                                 </tr>
