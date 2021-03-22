@@ -40,7 +40,7 @@ ob_start();
     </div>
     <br>
     <div class="boutonmenuad">
-        <a href="index.php?action=admodify" class="button">Modifier mes annonces</a>
+        <a href="index.php?action=articleModify" class="button">Modifier mes annonces</a>
     </div>
 
 

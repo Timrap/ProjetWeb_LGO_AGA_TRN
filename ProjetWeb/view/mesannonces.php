@@ -24,16 +24,60 @@ ob_start();
     <!-- Product -->
     <div id="page" class="container">
         <div class="boxA" >
-            <?php foreach ($articles as $article): ?>
-                <?php if ($article->userEmail == $_SESSION['userEmailAddress']): ?>
-                    <div class="box" id="boxArticle1">
-                        <img src="<?=$article->picture; ?>" width="320" height="180" alt="" />
-                        <h3><?=$article->title; ?></h3>
-                        <p><?=$article->description; ?></p>
-                        <p>CHF <?=$article->price; ?> .-</p>
-                    </div>
-                <?php endif; ?>
-            <?php endforeach; ?>
+            <div class="box" id="boxArticle1">
+                <table>
+                    <thead>
+                        <tr>
+                            <td>Catégorie</td>
+                            <td>Image</td>
+                            <td>Titre</td>
+                            <td>Description</td>
+                            <td>Prix (CHF)</td>
+                            <td><a href="index.php?action=createAd">Ajouter</a></td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach ($articles as $article): ?>
+                            <?php if ($article->userEmail == $_SESSION['userEmailAddress']): ?>
+                                <tr>
+                                    <td>
+                                        <?php
+                                            switch ($article->categorie){
+                                                case 1:
+                                                    echo "Véhicule motorisé";
+                                                    break;
+                                                case 2:
+                                                    echo "Appreil électronique";
+                                                    break;
+                                                case 3:
+                                                    echo "Mobilier";
+                                                    break;
+                                                case 4:
+                                                    echo "Bijou";
+                                                    break;
+                                                case 5:
+                                                    echo "Immobilier";
+                                                    break;
+                                                case 6:
+                                                    echo "Décoration";
+                                                    break;
+                                            }
+                                        ?>
+                                    <td><img src="<?=$article->picture; ?>" width="100" alt="" /></td>
+                                    <td><?=$article->title; ?></td>
+                                    <td><?=$article->description; ?></td>
+                                    <td><?=$article->price; ?></td>
+                                    <td>
+                                        <a href="index.php?action=articleModify">Modifier</a>
+                                        <a href="index.php?action=articleDelete">Supprimer</a>
+                                    </td>
+                                </tr>
+                            <?php endif; ?>
+                        <?php endforeach; ?>
+                    </tbody>
+                </table>
+            </div>
+
         </div>
     </div>
 

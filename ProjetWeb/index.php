@@ -27,16 +27,13 @@ if (isset($_GET['action'])) {
         case 'createAd' :
             createAd();
             break;
-        case "adMenu" :
-            adMenu ();
-            break;
         case "validationAd" :
             validationAd($_POST, $_FILES);
             break;
         case "articles" :
             articles($_POST);
             break;
-        case "admodify" :
+        case "articleModify" :
             admodify();
             break;
         case "confirmationmodif" :

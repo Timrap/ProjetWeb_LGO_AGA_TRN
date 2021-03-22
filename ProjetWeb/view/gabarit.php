@@ -45,7 +45,7 @@ Released   : 20130902
 			<ul>
 				<li><a href="index.php?action=home">Accueil</a></li>
                 <?php if (isset($_SESSION['userEmailAddress'])) : ?>
-                    <li><a href="index.php?action=adMenu">Annonces</a></li>
+                    <li><a href="index.php?action=mesAnnonces">Mes annonces</a></li>
                     <li><a href="index.php?action=logout">Se déconnecter</a></li>
                     <li><a href="index.php?action=accountmodify">
                             <img src="view/contents/images/icon-header-01-log.png" alt="connecté"/>
