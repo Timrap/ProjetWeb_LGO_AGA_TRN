@@ -14,6 +14,8 @@ function validationAd ($validationAd, $picture)
 {
     require_once "model/adManager.php";
 
+    $articles = viewArticles();
+
     $adCategorie = $validationAd['categorie'];
     $adTitle = $validationAd['title'];
     $adDescription = $validationAd['description'];
@@ -23,7 +25,7 @@ function validationAd ($validationAd, $picture)
     $city = $validationAd['city'];
     $userEmail = $_SESSION['userEmailAddress'];
 
-    registerNewAd($adCategorie, $adTitle, $adDescription, $adPrice, $adPicture, $street, $city, $userEmail);
+    registerNewAd($articles, $adCategorie, $adTitle, $adDescription, $adPrice, $adPicture, $street, $city, $userEmail);
     require "view/validationAd.php";
 }
 
