@@ -37,6 +37,7 @@ ob_start();
                         </tr>
                     </thead>
                     <tbody>
+                    <?php if(isset($articles)): ?>
                         <?php foreach ($articles as $article): ?>
                             <?php if ($article->userEmail == $_SESSION['userEmailAddress']): ?>
                                 <tr>
@@ -74,6 +75,7 @@ ob_start();
                                 </tr>
                             <?php endif; ?>
                         <?php endforeach; ?>
+                    <?php endif; ?>
                     </tbody>
                 </table>
             </div>

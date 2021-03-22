@@ -48,6 +48,9 @@ if (isset($_GET['action'])) {
         case "mesAnnonces" :
             mesAnnonces();
             break;
+        case "articleDelete" :
+            articleDelete();
+            break;
         default :
             lost();
     }
