@@ -54,12 +54,12 @@ ob_start();
 
                             <!-- champs titre -->
                             <div class="bo4 of-hidden size15 m-b-20" >
-                          <br> <input class="sizefull s-text7 p-l-22 p-r-22" id="description" type="text" name="title" placeholder="Titre du produit" required>
+                                <br> <input class="sizefull s-text7 p-l-22 p-r-22" id="description" type="text" name="title" placeholder="Titre du produit" required>
                             </div>
-<br>
+                            <br>
                             <!-- champs description -->
                             <div class="bo4 of-hidden size15 m-b-20">
-                              <textarea id="description" name="description" cols="50" rows="10" placeholder="Description" required></textarea>
+                                <textarea id="description" name="description" cols="50" rows="10" placeholder="Description" required></textarea>
                             </div class="md-12">
 
                             <br>
@@ -113,11 +113,11 @@ ob_start();
                                     Valider mon annonce
                                 </button>
                             </div>
-                    </form>
+                        </form>
+                    </div>
                 </div>
             </div>
-    </div>
-    </section>
+        </section>
     </div>
 <?php
 $content = ob_get_clean();
