@@ -486,6 +486,8 @@
 	{
 		border: solid;
 		border-color: #000000;
+		height: 300px;
+		width: 1000px;
 	}
 
 	#titre
@@ -552,7 +554,6 @@
 	#page .box
 	{
 		margin-bottom: 4em;
-
 	}
 	
 	#page img

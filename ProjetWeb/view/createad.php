@@ -64,7 +64,7 @@ ob_start();
                             <br>
                             <!-- champs description -->
                             <div class="bo4 of-hidden size15 m-b-20">
-                                <textarea id="description" name="description" cols="125" rows="20" placeholder=" Description" required></textarea>
+                                <textarea id="description" name="description" placeholder=" Description" required></textarea>
                             </div class="md-12">
 
 
