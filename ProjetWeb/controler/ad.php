@@ -8,14 +8,6 @@ function createAd()
 }
 
 /**
- *
- */
-function adMenu()
-{
-    require "view/adMenu.php";
-}
-
-/**
  * @param $validationAd
  */
 function validationAd ($validationAd, $picture)
