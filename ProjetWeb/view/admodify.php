@@ -30,18 +30,22 @@ ob_start();
                         <h2 class="m-text26 p-b-36 p-t-15">
                             Modifier mon annonce
                         </h2>
-
-                        <br>
-
+<br>
+                        <!-- champs titre -->
                         <h4>
-                            Informations du produit
+                            Titre
                         </h4>
-
-                        <br>
-
+                        <div class="bo4 of-hidden size15 m-b-20" >
+                            <br> <input class="sizefull s-text7 p-l-22 p-r-22" id="titre" type="text" name="title" value="<?=$article->title ?>" placeholder="Titre" >
+                        </div>
+<br>
+                        <h4>
+                            Catégorie
+                        </h4>
+<br>
                         <!-- liste deroulante -->
                         <h4>
-                            <select name="categorie">
+                            <select name="categorie" id="choice">
                                 <option>Choisir une catégorie</option>
                                 <option value="1" <?php if ($article->categorie == 1): ?> selected<?php endif;?>>Véhicule Motorisé</option>
                                 <option value="2" <?php if ($article->categorie == 2): ?> selected<?php endif;?>>Appareil éléctronique</option>
@@ -50,32 +54,22 @@ ob_start();
                                 <option value="5" <?php if ($article->categorie == 5): ?> selected<?php endif;?>>Immobilier</option>
                             </select>
                         </h4>
-
-                        <!-- champs titre -->
-                        <h4>
-                            Titre
-                        </h4>
-                        <div class="bo4 of-hidden size15 m-b-20" >
-                            <br> <input class="sizefull s-text7 p-l-22 p-r-22" id="description" type="text" name="title" value="<?=$article->title ?>" placeholder="Titre" >
-                        </div>
-                        <br>
-
-                        <!-- champs description -->
+<br>
                         <h4>
                             Description
                         </h4>
-                        <br>
+<br>
+                        <!-- champs description -->
                         <div class="bo4 of-hidden size15 m-b-20">
-                            <textarea id="description" name="description" cols="125" rows="20" placeholder="Description" required><?=$article->description ?></textarea>
+                            <textarea id="description" name="description" placeholder="Description" required><?=$article->description ?></textarea>
                         </div class="md-12">
+<br>
 
-                        <br>
-
-                        <!-- champs prix -->
                         <h4>
                             Prix (CHF)
                         </h4>
                         <br>
+                        <!-- champs prix -->
                         <div class="bo4 of-hidden size15 m-b-20">
                             <input class="sizefull s-text7 p-l-22 p-r-22" id="prix" type="number" name="price" value="<?=$article->price ?>" placeholder="Prix du produit en CHF" >
                         </div>
@@ -96,23 +90,26 @@ ob_start();
                                                         <progress id="progress-bar" max=100 value=0></progress>
                                                     </div>
                                                     <script src="view/contents/js/draganddrop.js"></script>-->
-
-
-
-                        <!-- champs rue -->
                         <h4>
-                            Rue
+                            Images
                         </h4>
+                        <br>
+                        <div id="picture">
+                        <!-- Le nom de l'élément input détermine le nom dans le tableau $_FILES -->
+                        Choisissez votre image : <input name="picture" type="file" accept=<?=$article->picture?>> <img src="<?=$article->picture?>">
+                        </div>
+<br><br>
+                        <h4>
+                            Adresse
+                        </h4>
+                        <!-- champs rue -->
                         <div class="bo4 of-hidden size15 m-b-20">
-                            <br> <input class="sizefull s-text7 p-l-22 p-r-22" id="description" type="text" name="street" value="<?=$article->street ?>" placeholder="Rue" >
+                            <br> <input class="sizefull s-text7 p-l-22 p-r-22" id="Rue" type="text" name="street" value="<?=$article->street ?>" placeholder="Rue" >
                         </div>
 
                         <!-- champs ville, npa -->
-                        <h4>
-                            ville, npa
-                        </h4>
                         <div class="bo4 of-hidden size15 m-b-20" >
-                            <br> <input class="sizefull s-text7 p-l-22 p-r-22" id="description" type="text" name="city" value="<?=$article->city ?>" placeholder="Ville, NPA" >
+                            <br> <input class="sizefull s-text7 p-l-22 p-r-22" id="Npa" type="text" name="city" value="<?=$article->city ?>" placeholder="Ville, NPA" >
                         </div>
 
                         <br>

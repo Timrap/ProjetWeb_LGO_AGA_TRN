@@ -70,7 +70,7 @@ ob_start();
 
                             <br>
                             <h4>
-                                Prix
+                                Prix (CHF)
                             </h4>
                             <br>
                             <!-- champs prix -->
