@@ -39,7 +39,7 @@ ob_start();
                     <tbody>
                     <?php if(isset($articles)): ?>
                         <?php foreach ($articles as $article): ?>
-                            <?php if ($article->userEmail == $_SESSION['userEmailAddress']): ?>
+                            <?php if (isset($article->userEmail) && $article->userEmail == $_SESSION['userEmailAddress']): ?>
                                 <tr>
                                     <td>
                                         <?php
@@ -70,7 +70,7 @@ ob_start();
                                     <td><?=$article->price; ?></td>
                                     <td>
                                         <a href="index.php?action=articleModify&articleId=<?=$article->id ?>">Modifier</a>
-                                        <a href="index.php?action=articleDelete">Supprimer</a>
+                                        <a href="index.php?action=articleDelete&articleId=<?=$article->id ?>">Supprimer</a>
                                     </td>
                                 </tr>
                             <?php endif; ?>

@@ -26,7 +26,7 @@ function validationAd ($validationAd, $picture)
     $userEmail = $_SESSION['userEmailAddress'];
 
     registerNewAd($articles, $adCategorie, $adTitle, $adDescription, $adPrice, $adPicture, $street, $city, $userEmail);
-    require "view/validationAd.php";
+    mesAnnonces();
 }
 
 function articles($categorie){
@@ -47,9 +47,17 @@ function articleModify($id)
     }
 }
 
-function confirmationmodif()
+function confirmationmodif($id, $data)
 {
-    require_once "view/confirmationmodif.php";
+    require_once "model/adManager.php";
+    modifAd($id, $data);
+    mesAnnonces();
+}
+
+function articleDelete($id){
+    require_once "model/adManager.php";
+    deleteAd($id, $data);
+    mesAnnonces();
 }
 
 function mesAnnonces(){

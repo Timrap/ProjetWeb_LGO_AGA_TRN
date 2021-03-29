@@ -37,7 +37,7 @@ if (isset($_GET['action'])) {
             articleModify($_GET['articleId']);
             break;
         case "confirmationmodif" :
-            confirmationmodif();
+            confirmationmodif($_GET['articleId'], $_POST);
             break;
         case "accountmodify" :
             accountModify();
@@ -49,7 +49,7 @@ if (isset($_GET['action'])) {
             mesAnnonces();
             break;
         case "articleDelete" :
-            articleDelete();
+            articleDelete($_GET['articleId']);
             break;
         default :
             lost();

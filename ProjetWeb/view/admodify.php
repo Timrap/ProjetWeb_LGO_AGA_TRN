@@ -25,7 +25,7 @@ ob_start();
         <div class="container">
             <div class="row">
                 <div class="col-md-12 p-b-30" id="formulaire1">
-                    <form class="leave-comment" action="index.php?action=confirmationmodif" method="post" >
+                    <form class="leave-comment" action="index.php?action=confirmationmodif&articleId=<?=$article->id ?>" method="post" >
 
                         <h2 class="m-text26 p-b-36 p-t-15">
                             Modifier mon annonce
