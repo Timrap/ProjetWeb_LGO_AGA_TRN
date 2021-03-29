@@ -112,6 +112,13 @@
 /* Social Icon Styles                                                            */
 /*********************************************************************************/
 
+	#faficon
+	{
+		text-decoration: none;
+		size: 30px;
+	}
+
+
 	ul.contact
 	{
 		margin: 0;
@@ -389,7 +396,7 @@
 
 	.productdetail
 	{
-		padding-right: 200px;
+		padding-right: 150px;
 
 	}
 

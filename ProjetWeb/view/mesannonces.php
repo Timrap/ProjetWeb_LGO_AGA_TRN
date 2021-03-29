@@ -71,8 +71,10 @@ ob_start();
                                     <td class="product"><?=$article->description; ?></td>
                                     <td class="product"><?=$article->price; ?> CHF</td>
                                     <td class="product">
-                                        <a href="index.php?action=articleModify&articleId=<?=$article->id ?>">Modifier</a>
-                                        <a href="index.php?action=articleDelete&articleId=<?=$article->id ?>">Supprimer</a>
+                                        <a id="faficon" href="index.php?action=articleModify&articleId=<?=$article->id?>" class=" fa fa-cogs fa-2x"></a>
+                                        <br>
+                                        <br>
+                                        <a id="faficon" href="index.php?action=articleDelete&articleId=<?=$article->id?>" class=" fa fa-trash fa-2x"></a>
                                     </td>
                                 </tr>
                             <?php endif; ?>
