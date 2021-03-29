@@ -1,4 +1,4 @@
-<?php
+    <?php
 /**
  * Projet                      Project name
  * @file                       mesannonces.php
@@ -22,18 +22,20 @@ ob_start();
     </div>
 
     <!-- Product -->
-    <div id="page" class="container">
+    <div id="contentpagecreat" class="container">
         <div class="boxA" >
             <div class="box" id="boxArticle1">
                 <table>
                     <thead>
                         <tr>
-                            <td>Catégorie</td>
-                            <td>Image</td>
-                            <td>Titre</td>
-                            <td>Description</td>
-                            <td>Prix (CHF)</td>
-                            <td><a href="index.php?action=createAd">Ajouter</a></td>
+                            <td class="productdetail">Catégorie</td>
+                            <td class="productdetail">Image</td>
+                            <td class="productdetail">Titre</td>
+                            <td class="productdetail">Description</td>
+                            <td class="productdetail">Prix</td>
+                            <td class="productdetail"><a  href="index.php?action=createAd"> <button class="button"> Ajouter</button></a>
+                            </td>
+
                         </tr>
                     </thead>
                     <tbody>
@@ -41,7 +43,7 @@ ob_start();
                         <?php foreach ($articles as $article): ?>
                             <?php if (isset($article->userEmail) && $article->userEmail == $_SESSION['userEmailAddress']): ?>
                                 <tr>
-                                    <td>
+                                    <td class="product">
                                         <?php
                                             switch ($article->categorie){
                                                 case 1:
@@ -64,11 +66,11 @@ ob_start();
                                                     break;
                                             }
                                         ?>
-                                    <td><img src="<?=$article->picture; ?>" width="100" alt="" /></td>
-                                    <td><?=$article->title; ?></td>
-                                    <td><?=$article->description; ?></td>
-                                    <td><?=$article->price; ?></td>
-                                    <td>
+                                    <td class="product"><img src="<?=$article->picture; ?>" width="100" alt="" /></td>
+                                    <td class="product"><?=$article->title; ?></td>
+                                    <td class="product"><?=$article->description; ?></td>
+                                    <td class="product"><?=$article->price; ?> CHF</td>
+                                    <td class="product">
                                         <a href="index.php?action=articleModify&articleId=<?=$article->id ?>">Modifier</a>
                                         <a href="index.php?action=articleDelete&articleId=<?=$article->id ?>">Supprimer</a>
                                     </td>

@@ -278,12 +278,14 @@
 
 	#logo
 	{
+		padding-top: 15px;
 		position: absolute;
 		top: 1.5em;
 		left: 2em;
 
 	}
-	
+
+
 	#logo h1
 	{
 
@@ -377,6 +379,24 @@
 		background-color: rgba(255, 255, 255, 0.9);
 	}
 
+	#contentpagecreat
+	{
+		overflow: hidden;
+		width: 100%;
+		padding: 7em 100px 12em 100px;
+		background-color: rgba(255, 255, 255, 0.9);
+	}
+
+	.productdetail
+	{
+		padding-right: 200px;
+
+	}
+
+	.product
+	{
+		padding-top: 40px;
+	}
 
 	#formulaire1
 	{
