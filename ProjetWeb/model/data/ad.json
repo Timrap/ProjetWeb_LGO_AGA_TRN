@@ -1,5 +1,1 @@
-<<<<<<< Updated upstream
-[{"id":"1"},{"id":"2"}]
-=======
-[{"id":1,"categorie":"2","title":"seb","description":"aaaaaaaaaaaa","price":"1234","picture":".\/model\/data\/uploads\/pigeon-frank-cornelissen-edit.jpg","street":"111","city":"111","userEmail":"lg@cpnv.ch","adType":"1\\n"},{"id":2,"categorie":"4","title":"asdag","description":"ahn","price":"1134","picture":".\/model\/data\/uploads\/Capture.PNG","street":"dfcsb32","city":"2bvba","userEmail":"andreas@gmail.com","adType":"1\\n"},{"id":3,"categorie":"6","title":"andfa","description":"124tvgb","price":"532","picture":".\/model\/data\/uploads\/php recup form.PNG","street":"AG1","city":" e e e we  se wae<","userEmail":"andreas@gmail.com","adType":"1\\n"}]
->>>>>>> Stashed changes
+[{"id":"1"},{"id":"2"},{"id":"3"},{"id":"4"},{"id":5,"categorie":"1","title":"titredelanonce","description":"desc","price":"123","picture":".\/model\/data\/uploads\/Pizananas.svg","street":"rue 456","city":"Ste-Croix, 1450","userEmail":"timothee.rapin@cpnv.ch"}]

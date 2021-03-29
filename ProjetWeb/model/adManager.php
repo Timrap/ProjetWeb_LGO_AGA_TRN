@@ -87,13 +87,18 @@ function modifAd($id, $article)
 
 //  Create an array to add in JSON file
 
-    $data2add = array('id' => $id, 'categorie' => $article["categorie"], 'title' => $article["title"], 'description' => $article["description"], 'price' => $article["price"], 'picture' => $article["picture"], 'street' => $article["street"], 'city' => $article["city"], 'userEmail' => $_SESSION["userEmailAddress"]);
-
     $file = "model/data/ad.json";
 
 //open or read json data
     $data_results = file_get_contents($file);
     $tempArray = json_decode($data_results);
+
+//
+    if ($article["picture"] == NULL || $article["picture"] == ""){
+        $article["picture"] = $tempArray[$id-1]["picture"];
+    }
+
+    $data2add = array('id' => $id, 'categorie' => $article["categorie"], 'title' => $article["title"], 'description' => $article["description"], 'price' => $article["price"], 'picture' => $article["picture"], 'street' => $article["street"], 'city' => $article["city"], 'userEmail' => $_SESSION["userEmailAddress"]);
 
 //append additional json to json file
     foreach ($tempArray as $data) {
