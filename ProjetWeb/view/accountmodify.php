@@ -13,7 +13,7 @@ ob_start();
 ?>
     <div class="container-login100">3
         <div class="wrap-login100">
-            <form class="login100-form validate-form" action="index.php?action=confirmationAccount" method="post" >
+            <form class="login100-form validate-form" action="index.php?action=confirmationAccount&userId=<?php if (isset($user))echo $user->id; ?>" method="post" >
 					<span class="login100-form-title">
 						Modifier mon compte
 					</span>

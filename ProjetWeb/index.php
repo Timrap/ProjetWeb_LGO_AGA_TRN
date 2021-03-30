@@ -40,6 +40,13 @@ if (isset($_GET['action'])) {
             articleDelete($_GET['articleId']);
             break;
 
+
+        case 'accountManage' :
+            accountManage();
+            break;
+        case 'accountValidation' :
+            accountValidation($_POST);
+            break;
         case "adManage" :
             adManage($_GET['articleId']);
             break;

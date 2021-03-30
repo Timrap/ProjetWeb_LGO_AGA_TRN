@@ -65,51 +65,10 @@ function logout()
  * @brief This function is designed manage the register request
  * @param $register : contains all fields mandatory and optional to register a new user (coming from a form)
  */
-function register($register)
+function register($data)
 {
-    try {
-        //variable set
-        if (isset($register['inputUserEmailAddress']) && isset($register['inputUserPsw']) && isset($register['inputUserPswRepeat'])) {
-
-            //extract register parameters
-            $userFirstName = $register['inputUserFirstName'];
-            $userLastName = $register['inputUserLastName'];
-            $userEmailAddress = $register['inputUserEmailAddress'];
-            $userPsw = $register['inputUserPsw'];
-            $userPswRepeat = $register['inputUserPswRepeat'];
-
-            if ($userPsw == $userPswRepeat) {
-                require_once "model/usersManager.php";
-                if (registerNewAccount($userFirstName, $userLastName, $userEmailAddress, $userPsw))
-                {
-                    createSession($userEmailAddress);
-                    $registerErrorMessage = null;
-                    require "view/home.php";
-                }
-                else
-                {
-                    $registerErrorMessage = "L'inscription n'est pas possible avec les valeurs saisies !";
-                    require "view/register.php";
-                }
-
-            }
-        else
-        {
-            $registerErrorMessage = "Les mots de passe ne sont pas similaires !";
-            require "view/register.php";
-        }
-
-        }
-        else
-            {
-            $registerErrorMessage = null;
-            require "view/register.php";
-        }
-
-    } catch (ModelDataBaseException $ex) {
-        $registerErrorMessage = "Nous rencontrons actuellement un problème technique. Il est temporairement impossible de s'enregistrer. Désolé du dérangement !";
-        require "view/register.php";
-    }
+    require_once 'model/usersManager.php';
+    userManage($data);
 }
 
 function userName($userEmail){
@@ -126,4 +85,50 @@ function accountModify()
 function confirmationAccount()
 {
     require_once "view/confirmationAccount.php";
+}
+
+
+
+function accountManage()
+{
+    require_once "model/adManager.php";
+    $users = viewUsers();
+
+    if (isset($_SESSION['userEmailAddress'])){
+        $id = $_SESSION['userEmailAddress'];
+        foreach ($users as $user){
+            if ($user->id == $id){
+                require_once "view/accountmodify.php";
+            }
+        }
+    }
+    else{
+        require_once "view/register.php";
+    }
+
+
+    /*
+    $id = accountId();
+
+
+    $users = viewUsers();
+
+    if (isset($_SESSION['userEmailAddress']) && $id != ""){
+        foreach ($users as $user){
+            if ($user->id == $id){
+                require_once "view/accountmodify.php";
+            }
+        }
+    }
+    else{
+        require_once "view/register.php";
+    }
+
+
+    userManage($data);*/
+}
+
+function accountValidation($data){
+    require_once 'model/usersManager.php';
+    userValidation($data);
 }
