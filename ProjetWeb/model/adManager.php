@@ -1,51 +1,6 @@
 <?php
 
 /**
- * @param $articles
- * @param $adCategorie
- * @param $adTitle
- * @param $adDescription
- * @param $adPrice
- * @param $adPicture
- * @param $street
- * @param $city
- * @param $userEmail
- * @return bool
- */
-function registerNewAd($articles, $adCategorie, $adTitle, $adDescription, $adPrice, $adPicture, $street, $city, $userEmail)
-{
-    $result = false;
-
-    if (isset($articles)){
-        foreach ($articles as $article) {
-            $id = $article->id;
-        }
-        $id++;
-    }
-    else $id = 1;
-
-
-//  Create an array to add in JSON file
-
-    $data2add = array('id' => $id, 'categorie' => $adCategorie, 'title' => $adTitle, 'description' => $adDescription, 'price' => $adPrice, 'picture' => $adPicture, 'street' => $street, 'city' => $city, 'userEmail' => $userEmail);
-
-    $file = "model/data/ad.json";
-
-//open or read json data
-    $data_results = file_get_contents($file);
-    $tempArray = json_decode($data_results);
-
-//append additional json to json file
-    $tempArray[] = $data2add;
-    $jsonData = json_encode($tempArray) . "\n";
-
-    file_put_contents($file, $jsonData,);
-
-//    json_encode($data);
-    return true;
-}
-
-/**
  * @param $picture
  * @return string
  */
@@ -88,51 +43,9 @@ function viewArticles()
 {
     $file = "model/data/ad.json";
 
-//open or read json data
+    //open or read json data
 
     return json_decode(file_get_contents($file));
-}
-
-/**
- * @param $id
- * @param $article
- * @param $picture
- * @return bool
- */
-function modifAd($id, $article, $picture)
-{
-    $result = false;
-
-//  Create an array to add in JSON file
-
-    $file = "model/data/ad.json";
-
-//open or read json data
-    $data_results = file_get_contents($file);
-    $tempArray = json_decode($data_results);
-
-//
-    if (isset($picture["picture"]) && $picture["picture"]["size"] > 0){
-        $article["picture"] = uploadPicture($picture);
-    }
-    else{
-        $article["picture"] = $tempArray[$id-1]->picture;
-    }
-
-    $data2add = array('id' => $id, 'categorie' => $article["categorie"], 'title' => $article["title"], 'description' => $article["description"], 'price' => $article["price"], 'picture' => $article["picture"], 'street' => $article["street"], 'city' => $article["city"], 'userEmail' => $_SESSION["userEmailAddress"]);
-
-//append additional json to json file
-    foreach ($tempArray as $data) {
-        if ($data->id == $data2add["id"]) {
-            $tempArray[$id-1] = $data2add;
-        }
-    }
-    $jsonData = json_encode($tempArray) . "\n";
-
-    file_put_contents($file, $jsonData,);
-
-//    json_encode($data);
-    return true;
 }
 
 /**
@@ -150,20 +63,81 @@ function deleteAd($id)
 
 //open or read json data
     $data_results = file_get_contents($file);
-    $tempArray = json_decode($data_results);
+    $articles = json_decode($data_results);
 
 
 //append additional json to json file
-    foreach ($tempArray as $data) {
+    foreach ($articles as $data) {
         if ($data->id == $id) {
-            $tempArray[$id-1] = $data2add;
+            $articles[$id-1] = $data2add;
         }
     }
     //$tempArray[$id] = $data2add;
-    $jsonData = json_encode($tempArray) . "\n";
+    $jsonData = json_encode($articles) . "\n";
 
     file_put_contents($file, $jsonData,);
 
 //    json_encode($data);
+    return true;
+}
+
+/**
+ * @param $id
+ * @param $data
+ * @param $picture
+ * @return bool
+ */
+function adUpdate($id, $data, $picture){
+    $result = false;
+
+    $file = "model/data/ad.json";
+
+    //open or read json data
+    $articles = json_decode(file_get_contents($file));
+
+    //
+    if (isset($id) && $id != ""){
+        $create = false;
+    }
+    else{
+        $create = true;
+
+        if (isset($articles)){
+            foreach ($articles as $article) {
+                $id = $article->id;
+            }
+            $id++;
+        }
+        else $id = 1;
+    }
+
+    //
+    if (isset($picture["picture"]) && $picture["picture"]["size"] > 0){
+        $data["picture"] = uploadPicture($picture);
+    }
+    else{
+        $data["picture"] = $articles[$id-1]->picture;
+    }
+
+    $data2add = array('id' => $id, 'categorie' => $data['categorie'], 'title' => $data['title'], 'description' => $data['description'], 'price' => $data['price'], 'picture' => $data["picture"], 'street' => $data['street'], 'city' => $data['city'], 'userEmail' => $_SESSION['userEmailAddress']);
+
+    //append additional json to json file
+    if ($create == false){
+        foreach ($articles as $data) {
+            if ($data->id == $data2add["id"]) {
+                $articles[$id-1] = $data2add;
+            }
+        }
+    }
+    else{
+        $articles[] = $data2add;
+    }
+
+    $jsonData = json_encode($articles) . "\n";
+
+    file_put_contents($file, $jsonData,);
+
+
+    //  json_encode($data);
     return true;
 }

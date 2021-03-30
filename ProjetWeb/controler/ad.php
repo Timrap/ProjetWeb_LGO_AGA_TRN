@@ -51,27 +51,7 @@ function adManage($id){
  * @param $picture
  */
 function adValidation($id, $data, $picture){
-    if ($id != ""){
         require_once "model/adManager.php";
-        modifAd($id, $data, $picture);
+        adUpdate($id, $data, $picture);
         mesAnnonces();
-    }
-    else{
-        require_once "model/adManager.php";
-
-        $articles = viewArticles();
-
-        $adCategorie = $data['categorie'];
-        $adTitle = $data['title'];
-        $adDescription = $data['description'];
-        $adPrice = $data['price'];
-        $adPicture = uploadPicture($picture);
-        $street = $data['street'];
-        $city = $data['city'];
-        $userEmail = $_SESSION['userEmailAddress'];
-
-        registerNewAd($articles, $adCategorie, $adTitle, $adDescription, $adPrice, $adPicture, $street, $city, $userEmail);
-
-        mesAnnonces();
-    }
 }

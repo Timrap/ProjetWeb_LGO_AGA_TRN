@@ -33,7 +33,12 @@ ob_start();
                     <form class="leave-comment" action="index.php?action=adValidation&articleId=<?php if (isset($article))echo $article->id; ?>" method="post" enctype="multipart/form-data">
 
                         <h2 class="m-text26 p-b-36 p-t-15">
-                            Modifier mon annonce
+                            <?php if (isset($article)){
+                            echo "Modifier mon annonce";
+                            }
+                            else{
+                            echo "Créer une annonce";
+                            } ?>
                         </h2>
                         <br>
                         <!-- champs titre -->
