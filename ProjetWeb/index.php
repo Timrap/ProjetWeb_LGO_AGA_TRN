@@ -40,14 +40,12 @@ if (isset($_GET['action'])) {
             articleDelete($_GET['articleId']);
             break;
 
-
         case "adManage" :
             adManage($_GET['articleId']);
             break;
         case "adValidation" :
-                adValidation($_GET['articleId'], $_POST, $_FILES);
-            break;
-
+            adValidation($_GET['articleId'], $_POST, $_FILES);
+        break;
 
         default :
             lost();

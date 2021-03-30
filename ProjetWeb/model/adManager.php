@@ -16,10 +16,14 @@ function registerNewAd($articles, $adCategorie, $adTitle, $adDescription, $adPri
 {
     $result = false;
 
-    foreach ($articles as $article) {
-        $id = $article->id;
+    if (isset($articles)){
+        foreach ($articles as $article) {
+            $id = $article->id;
+        }
+        $id++;
     }
-    $id++;
+    else $id = 1;
+
 
 //  Create an array to add in JSON file
 
