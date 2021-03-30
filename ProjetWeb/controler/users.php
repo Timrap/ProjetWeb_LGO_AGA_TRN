@@ -89,10 +89,18 @@ function confirmationAccount()
 
 
 
-function accountManage()
+function accountManage($data)
 {
+    require_once 'model/usersManager.php';
+    userManage($data);
+
+    /*
+
     require_once "model/adManager.php";
-    $users = viewUsers();
+    $file = "model/data/users.json";
+
+    //open or read json data
+    $users = json_decode(file_get_contents($file));
 
     if (isset($_SESSION['userEmailAddress'])){
         $id = $_SESSION['userEmailAddress'];
@@ -127,8 +135,8 @@ function accountManage()
 
     userManage($data);*/
 }
-
+/*
 function accountValidation($data){
     require_once 'model/usersManager.php';
     userValidation($data);
-}
+}*/

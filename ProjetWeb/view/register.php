@@ -38,11 +38,14 @@ ob_start();
         <div class="wrap-login100">
             <form class="login100-form validate-form" action="index.php?action=register" method="post" >
 					<span class="login100-form-title">
-						S'inscrire
+
+						<?php if(isset($_SESSION['userEmailAddress'])) echo "Modifier mes informations";
+                        else echo "S'inscrire";
+                        ?>
 					</span>
 
                 <div class="wrap-input100 validate-input" data-validate = "vous devez ajouter votre nom">
-                    <input class="input100" type="text" name="inputUserLastName" placeholder="Nom">
+                    <input class="input100" type="text" name="inputUserLastName" placeholder="Nom" value="<?php if(isset($dataUser['lastName'])) echo $dataUser['lastName']; ?>">
                     <span class="focus-input100"></span>
                     <span class="symbol-input100">
 							<i class="fa fa-user-circle-o" aria-hidden="true"></i>
@@ -50,7 +53,7 @@ ob_start();
                 </div>
 
                 <div class="wrap-input100 validate-input" data-validate = "vous devez ajouter votre prénom">
-                    <input class="input100" type="text" name="inputUserFirstName" placeholder="Prénom">
+                    <input class="input100" type="text" name="inputUserFirstName" placeholder="Prénom" value="<?php if(isset($dataUser['firstName'])) echo $dataUser['firstName']; ?>">
                     <span class="focus-input100"></span>
                     <span class="symbol-input100">
 							<i class="fa fa-user-circle-o" aria-hidden="true"></i>
@@ -58,7 +61,7 @@ ob_start();
                 </div>
 
                 <div class="wrap-input100 validate-input" data-validate = "une adresse E-mail est obligatoire: ex@abc.xyz">
-                    <input class="input100" type="email" name="inputUserEmailAddress" placeholder="Adresse email">
+                    <input class="input100" type="email" name="inputUserEmailAddress" placeholder="Adresse email" value="<?php if(isset($dataUser['email'])) echo $dataUser['email']; ?>">
                     <span class="focus-input100"></span>
                     <span class="symbol-input100">
 							<i class="fa fa-envelope" aria-hidden="true"></i>
@@ -80,6 +83,7 @@ ob_start();
 							<i class="fa fa-lock" aria-hidden="true"></i>
 						</span>
                 </div>
+                <?php if(!isset($_SESSION['userEmailAddress'])) : ?>
                 <div class="col-md-12 form-group">
                     <div class="creat_account d-flex align-items-center" id="condition">
                         <div>
@@ -88,11 +92,13 @@ ob_start();
                         </input>
                         </div>
                     </div>
-
+                    <?php endif; ?>
 
                 <div class="container-login100-form-btn">
                     <button type="submit" class="login100-form-btn">
-                        S'inscrire
+                        <?php if(isset($_SESSION['userEmailAddress'])) echo "Modifier";
+                        else echo "S'inscrire";
+                        ?>
                     </button>
                 </div>
             </form>

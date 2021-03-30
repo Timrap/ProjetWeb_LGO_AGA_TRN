@@ -42,11 +42,11 @@ if (isset($_GET['action'])) {
 
 
         case 'accountManage' :
-            accountManage();
+            accountManage($_POST);
             break;
-        case 'accountValidation' :
+        /*case 'accountValidation' :
             accountValidation($_POST);
-            break;
+            break;*/
         case "adManage" :
             adManage($_GET['articleId']);
             break;

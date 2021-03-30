@@ -47,13 +47,13 @@ Released   : 20130902
                 <?php if (isset($_SESSION['userEmailAddress'])) : ?>
                     <li><a href="index.php?action=mesAnnonces">Mes annonces</a></li>
                     <li><a href="index.php?action=logout">Se déconnecter</a></li>
-                    <li><a href="index.php?action=accountmodify">
+                    <li><a href="index.php?action=accountManage">
                             <img src="view/contents/images/icon-header-01-log.png" alt="connecté"/>
                             <?=userName($_SESSION['userEmailAddress']); ?>
                         </a></li>
                 <?php else: ?>
                     <li><a href="index.php?action=login">Se connecter</a></li>
-                    <li><a href="index.php?action=register">S'inscrire</a></li>
+                    <li><a href="index.php?action=accountManage">S'inscrire</a></li>
                     <img src="view/contents/images/icon-header-01.png" alt="déconnecté"/>
                 <?php endif;?>
 			</ul>

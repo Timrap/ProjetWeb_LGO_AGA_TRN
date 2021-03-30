@@ -62,40 +62,37 @@ function firstNameLastName($userEmailAddress){
  * @return bool : "true" only if the user doesn't already exist. In all other cases will be "false".
  * @throws ModelDataBaseException : will be throw if something goes wrong with the database opening process
  */
-function registerNewAccount($id, $userFirstName, $userLastName, $userEmailAddress, $userPsw)
+function registerAccount($id, $userFirstName, $userLastName, $userEmailAddress, $userPsw)
 {
     $result = false;
+
+    $file = "model/data/users.json";
+
+    //open or read json data
+    $users = json_decode(file_get_contents($file));
 
 //  hash password and create an array to add in JSON file
     $userHashPsw = password_hash($userPsw, PASSWORD_DEFAULT);
     $data2add = array('id' => $id, 'firstName' => $userFirstName, 'lastName' => $userLastName, 'email' =>$userEmailAddress, 'hashPwd' => $userHashPsw, 'userType' =>'1');
 
-    $file = "model/data/users.json";
-
-//open or read json data
-    $data_results = file_get_contents($file);
-    $tempArray = json_decode($data_results);
-
 //append additional json to json file
-    $tempArray[] = $data2add ;
-    $jsonData = json_encode($tempArray);
+    if (isset($_SESSION['userEmailAddress']) && $_SESSION['userEmailAddress']!="" && isset($users)){
+        foreach ($users as $user) {
+            if ($user->id == $data2add["id"]) {
+                $users[$id-1] = $data2add;
+            }
+        }
+    }
+    else{
+        $users[] = $data2add;
+    }
+    $jsonData = json_encode($users);
 
     file_put_contents($file, $jsonData);
 
 //    json_encode($data);
     return true;
 }
-
-
-function viewUsers()
-{
-    $file = "model/data/users.json";
-
-    //open or read json data
-
-    return json_decode(file_get_contents($file));
-}
-
 
 
 
@@ -111,19 +108,16 @@ function userManage($data){
 
 
             if (isset($_SESSION['userEmailAddress'])){
-                $create = false;
-
                 foreach ($users as $user) {
-
                     if ($_SESSION['userEmailAddress'] == $user['email']) {
+                        $dataUser = $user;
                         $id = $user['id'];
                     }
                 }
             }
             else{
-                $create = true;
-
                 if (isset($users)){
+                    $dataUser = $data;
                     foreach ($users as $user) {
                         $id = $user["id"];
                     }
@@ -133,7 +127,7 @@ function userManage($data){
             }
 
             $existAccount = false;
-            if (isset($users)){
+            if (isset($users) && $_SESSION['userEmailAddress'] != $data['inputUserEmailAddress']){
                 foreach ($users as $user){
                     if ($data['inputUserEmailAddress'] == $user['email']){
                         $existAccount = true;
@@ -143,9 +137,11 @@ function userManage($data){
             if ($existAccount == false){
                 if ($data['inputUserPsw'] == $data['inputUserPswRepeat']) {
                     require_once "model/usersManager.php";
-                    if (registerNewAccount($id, $data['inputUserFirstName'], $data['inputUserLastName'], $data['inputUserEmailAddress'], $data['inputUserPsw']))
+                    if (registerAccount($id, $data['inputUserFirstName'], $data['inputUserLastName'], $data['inputUserEmailAddress'], $data['inputUserPsw']))
                     {
-                        createSession($data['inputUserEmailAddress']);
+                        if (!isset($_SESSION['userEmailAddress'])){
+                            createSession($data['inputUserEmailAddress']);
+                        }
                         $registerErrorMessage = null;
                         require "view/home.php";
                     }
@@ -171,6 +167,21 @@ function userManage($data){
         }
         else
         {
+            $users = json_decode(file_get_contents("model/data/users.json"),true);
+
+            if (isset($_SESSION['userEmailAddress'])){
+                foreach ($users as $user) {
+                    if ($_SESSION['userEmailAddress'] == $user['email']) {
+                        $dataUser = $user;
+                    }
+                }
+            }
+            else{
+                if (isset($users)){
+                    $dataUser = $data;
+                }
+            }
+
             $registerErrorMessage = null;
             require "view/register.php";
         }
