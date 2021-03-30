@@ -1,8 +1,15 @@
 <?php
 
 /**
+ * @param $articles
+ * @param $adCategorie
  * @param $adTitle
- * @param $adContent
+ * @param $adDescription
+ * @param $adPrice
+ * @param $adPicture
+ * @param $street
+ * @param $city
+ * @param $userEmail
  * @return bool
  */
 function registerNewAd($articles, $adCategorie, $adTitle, $adDescription, $adPrice, $adPicture, $street, $city, $userEmail)
@@ -48,7 +55,7 @@ function uploadPicture($picture)
         $file_size = $picture['picture']['size'];
         $file_tmp = $picture['picture']['tmp_name'];
         $file_type = $picture['picture']['type'];
-        $file_ext = strtolower(end(explode('.', $file_name)));
+        $file_ext = substr( strrchr($file_name, '.'), 1);
 
         $extensions = array("jpeg", "jpg", "png", "svg", "gif");
 
@@ -70,7 +77,9 @@ function uploadPicture($picture)
     return $uploadfile;
 }
 
-
+/**
+ * @return mixed
+ */
 function viewArticles()
 {
     $file = "model/data/ad.json";
@@ -80,8 +89,13 @@ function viewArticles()
     return json_decode(file_get_contents($file));
 }
 
-
-function modifAd($id, $article)
+/**
+ * @param $id
+ * @param $article
+ * @param $picture
+ * @return bool
+ */
+function modifAd($id, $article, $picture)
 {
     $result = false;
 
@@ -94,8 +108,11 @@ function modifAd($id, $article)
     $tempArray = json_decode($data_results);
 
 //
-    if ($article["picture"] == NULL || $article["picture"] == ""){
-        $article["picture"] = $tempArray[$id-1]["picture"];
+    if (isset($picture["picture"]) && $picture["picture"]["size"] > 0){
+        $article["picture"] = uploadPicture($picture);
+    }
+    else{
+        $article["picture"] = $tempArray[$id-1]->picture;
     }
 
     $data2add = array('id' => $id, 'categorie' => $article["categorie"], 'title' => $article["title"], 'description' => $article["description"], 'price' => $article["price"], 'picture' => $article["picture"], 'street' => $article["street"], 'city' => $article["city"], 'userEmail' => $_SESSION["userEmailAddress"]);
@@ -114,7 +131,10 @@ function modifAd($id, $article)
     return true;
 }
 
-
+/**
+ * @param $id
+ * @return bool
+ */
 function deleteAd($id)
 {
     $result = false;

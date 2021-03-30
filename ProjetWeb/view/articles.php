@@ -49,7 +49,7 @@ ob_start();
 
         <div class="boxA" >
             <?php foreach ($articles as $article): ?>
-                <?php if ($article->categorie == $categorie["categorie"]): ?>
+                <?php if (isset($article->categorie) && $article->categorie == $categorie["categorie"]): ?>
                     <div class="box" id="boxArticle1">
                         <img src="<?=$article->picture; ?>" width="320" height="180" alt="" />
                         <h3><?=$article->title; ?></h3>

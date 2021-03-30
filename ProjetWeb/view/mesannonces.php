@@ -33,7 +33,7 @@ ob_start();
                             <td class="productdetail">Titre</td>
                             <td class="productdetail">Description</td>
                             <td class="productdetail">Prix</td>
-                            <td class="productdetail"><a  href="index.php?action=createAd"> <button class="button"> Ajouter</button></a>
+                            <td class="productdetail"><a  href="index.php?action=adManage&articleId="> <button class="button"> Ajouter</button></a>
                             </td>
 
                         </tr>
@@ -71,7 +71,7 @@ ob_start();
                                     <td class="product"><?=$article->description; ?></td>
                                     <td class="product"><?=$article->price; ?> CHF</td>
                                     <td class="product">
-                                        <a id="faficon" href="index.php?action=articleModify&articleId=<?=$article->id?>" class=" fa fa-cogs fa-2x"></a>
+                                        <a id="faficon" href="index.php?action=adManage&articleId=<?=$article->id?>" class=" fa fa-cogs fa-2x"></a>
                                         <br>
                                         <br>
                                         <a id="faficon" href="index.php?action=articleDelete&articleId=<?=$article->id?>" class=" fa fa-trash fa-2x"></a>

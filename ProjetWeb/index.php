@@ -24,20 +24,8 @@ if (isset($_GET['action'])) {
         case 'CGU' :
             CGU();
             break;
-        case 'createAd' :
-            createAd();
-            break;
-        case "validationAd" :
-            validationAd($_POST, $_FILES);
-            break;
         case "articles" :
             articles($_POST);
-            break;
-        case "articleModify" :
-            articleModify($_GET['articleId']);
-            break;
-        case "confirmationmodif" :
-            confirmationmodif($_GET['articleId'], $_POST);
             break;
         case "accountmodify" :
             accountModify();
@@ -51,6 +39,16 @@ if (isset($_GET['action'])) {
         case "articleDelete" :
             articleDelete($_GET['articleId']);
             break;
+
+
+        case "adManage" :
+            adManage($_GET['articleId']);
+            break;
+        case "adValidation" :
+                adValidation($_GET['articleId'], $_POST, $_FILES);
+            break;
+
+
         default :
             lost();
     }
