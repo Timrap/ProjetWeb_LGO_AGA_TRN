@@ -1,1 +1,10 @@
-[{"id":1,"firstName":"Timoth\u00e9e","lastName":"Rapin","email":"rapin.timothee@cpnv.ch","hashPwd":"$2y$10$d7N0Dgp8Cu4z.CPdiwUhHOE1gNDIHdVWkBTo2WUU\/D.I.vvyKQxoS","userType":"1"},{"id":2,"firstName":"Timoth\u00e9e","lastName":"Rapin","email":"rapin.timothee2@cpnv.ch","hashPwd":"$2y$10$jZAaRnJKM.fYTryn6EALnO8Ang\/tPw7JcsgzN1Kd6Z53NGVGQoGsK","userType":"1"}]
+[
+  {
+    "id": 1,
+    "firstName": "Timoth\u00e9e",
+    "lastName": "Rapin",
+    "email": "rapin.timothee@cpnv.ch",
+    "hashPwd": "$2y$10$9e05sQn\/pnVKGpxLSSU7ZuWJF3i\/PzfvPVPdS4MqmEbA67v2ocNxy",
+    "userType": "1"
+  }
+]

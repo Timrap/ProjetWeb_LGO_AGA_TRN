@@ -95,8 +95,9 @@ function registerAccount($id, $userFirstName, $userLastName, $userEmailAddress, 
 }
 
 
-
-
+/**
+ * @param $data
+ */
 function userManage($data){
     try {
         //variable set
@@ -191,85 +192,3 @@ function userManage($data){
         require "view/register.php";
     }
 }
-
-/*
-function userValidation($data)
-{
-    try {
-        //variable set
-        if (isset($data['inputUserEmailAddress']) && isset($data['inputUserPsw']) && isset($data['inputUserPswRepeat'])) {
-
-
-            $users = json_decode(file_get_contents("model/data/users.json"), true);
-
-
-            if (isset($_SESSION['userEmailAddress'])) {
-                $create = false;
-
-                foreach ($users as $user) {
-
-                    if ($_SESSION['userEmailAddress'] == $user['email']) {
-                        $id = $user['id'];
-                    }
-                }
-            } else {
-                $create = true;
-
-                if (isset($users)) {
-                    foreach ($users as $user) {
-                        $id = $user["id"];
-                    }
-                    $id++;
-                } else $id = 1;
-            }
-            /*
-                        if (isset($id) && $id != ""){
-                            $create = false;
-                        }
-                        else{
-                            $create = true;
-
-                            if (isset($users)){
-                                foreach ($users as $user) {
-                                    $id = $user->id;
-                                }
-                                $id++;
-                            }
-                            else $id = 1;
-                        }
-                        *//*
-
-
-            //extract register parameters
-            $userFirstName = $data['inputUserFirstName'];
-            $userLastName = $data['inputUserLastName'];
-            $userEmailAddress = $data['inputUserEmailAddress'];
-            $userPsw = $data['inputUserPsw'];
-            $userPswRepeat = $data['inputUserPswRepeat'];
-
-            if ($userPsw == $userPswRepeat) {
-                require_once "model/usersManager.php";
-                if (registerNewAccount($id, $userFirstName, $userLastName, $userEmailAddress, $userPsw)) {
-                    createSession($userEmailAddress);
-                    $registerErrorMessage = null;
-                    require "view/home.php";
-                } else {
-                    $registerErrorMessage = "L'inscription n'est pas possible avec les valeurs saisies !";
-                    require "view/register.php";
-                }
-
-            } else {
-                $registerErrorMessage = "Les mots de passe ne sont pas similaires !";
-                require "view/register.php";
-            }
-
-        } else {
-            $registerErrorMessage = null;
-            require "view/register.php";
-        }
-
-    } catch (ModelDataBaseException $ex) {
-        $registerErrorMessage = "Nous rencontrons actuellement un problème technique. Il est temporairement impossible de s'enregistrer. Désolé du dérangement !";
-        require "view/register.php";
-    }
-}*/
