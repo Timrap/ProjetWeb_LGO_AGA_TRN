@@ -2,7 +2,7 @@
 <!--
 Design by TEMPLATED
 http://templated.co
-Released for free under the Creative Commons Attribution License
+Released for free unFder the Creative Commons Attribution License
 
 Name       : Porphyrio
 Description: A two-column, fixed-width design with dark color scheme.

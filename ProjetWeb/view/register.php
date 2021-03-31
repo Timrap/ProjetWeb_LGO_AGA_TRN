@@ -93,7 +93,7 @@ ob_start();
                         </div>
                     </div>
                     <?php endif; ?>
-
+                </div>
                 <div class="container-login100-form-btn">
                     <button type="submit" class="login100-form-btn">
                         <?php if(isset($_SESSION['userEmailAddress'])) echo "Modifier";
