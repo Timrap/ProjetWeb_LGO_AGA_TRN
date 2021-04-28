@@ -33,13 +33,11 @@ ob_start();
                             <td class="productdetail">Titre</td>
                             <td class="productdetail">Description</td>
                             <td class="productdetail">Prix</td>
-                            <td class="productdetail"><a  href="index.php?action=adManage&articleId="> <button class="button"> Ajouter</button></a></td>
+                            <td class="productdetail"><a  href="index.php?action=adManage&articleId="> <button class="button"> Ajouter</button></a>
+                            </td>
+
                         </tr>
                     </thead>
-                </table>
-            </div>
-        </div>
-    </div>
                     <tbody>
                     <?php if(isset($articles)): ?>
                         <?php foreach ($articles as $article): ?>
