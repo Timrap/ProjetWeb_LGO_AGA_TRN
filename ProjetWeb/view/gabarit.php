@@ -1,5 +1,5 @@
 <!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<!--
+
 Design by TEMPLATED
 http://templated.co
 Released for free unFder the Creative Commons Attribution License
@@ -36,6 +36,8 @@ Released   : 20130902
     <link rel="stylesheet" type="text/css" href="view/contents/css/main.css">
 
     <link rel="stylesheet" type="text/css" href="view/contents/vendor/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="view/contents/vendor/bootstrap/css/bootstrap-grid.css">
+    <link rel="stylesheet" type="text/css" href="view/contents/vendor/bootstrap/css/bootstrap-reboot.css">
 </head>
 <body>
 <div id="header-wrapper">
