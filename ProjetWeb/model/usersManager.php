@@ -8,6 +8,8 @@
  * @version   27-JAN-2020
  */
 
+require_once 'model/dbConnector.php';
+
 /**
  * @brief This function is designed to verify user's login
  * @param $userEmailAddress : must be meet RFC 5321/5322
@@ -62,14 +64,34 @@ function firstNameLastName($userEmailAddress){
  * @return bool : "true" only if the user doesn't already exist. In all other cases will be "false".
  * @throws ModelDataBaseException : will be throw if something goes wrong with the database opening process
  */
-function registerAccount($id, $userFirstName, $userLastName, $userEmailAddress, $userPsw)
+function registerAccount(/*$id, */$userFirstName, $userLastName, $userEmailAddress, $userPsw)
 {
+
+    $result = false;
+
+    $strSeparator = "'";
+
+    $userHashPsw = password_hash($userPsw, PASSWORD_DEFAULT);
+
+    $registerQuery = "INSERT INTO users (Firstname, Lastname, Mail, Type, PasswordHash) VALUES ('$userFirstName', '$userLastName', '$userEmailAddress', 0, '$userHashPsw')";
+
+    require_once 'model/dbConnector.php';
+    $queryResult = executeQueryInsert($registerQuery);
+    if ($queryResult){
+        $result = $queryResult;
+    }
+
+    return $result;
+
+
+    /*
     $result = false;
 
     $file = "model/data/users.json";
 
-    //open or read json data
+    //open or read DB data
     $users = json_decode(file_get_contents($file));
+    $users = executeQueryInsert($query));
 
 //  hash password and create an array to add in JSON file
     $userHashPsw = password_hash($userPsw, PASSWORD_DEFAULT);
@@ -91,7 +113,7 @@ function registerAccount($id, $userFirstName, $userLastName, $userEmailAddress, 
     file_put_contents($file, $jsonData);
 
 //    json_encode($data);
-    return true;
+    return true;*/
 }
 
 
@@ -105,9 +127,12 @@ function userManage($data){
 
 
 
-            $users = json_decode(file_get_contents("model/data/users.json"),true);
+            //$users = json_decode(file_get_contents("model/data/users.json"),true);
+            $strSeparator = "'";
+            $query = "SELECT users.Firstname, users.Lastname, users.Mail, users.Type, users.PasswordHash FROM users WHERE users.Mail = " . $strSeparator . $data['inputUserEmailAddress'] . $strSeparator;
+            $user = executeQuerySelect($query);
 
-
+/*
             if (isset($_SESSION['userEmailAddress'])){
                 foreach ($users as $user) {
                     if ($_SESSION['userEmailAddress'] == $user['email']) {
@@ -115,7 +140,12 @@ function userManage($data){
                         $id = $user['id'];
                     }
                 }
+            }*/
+            if (isset($_SESSION['userEmailAddress']) && $_SESSION['userEmailAddress'] == $user['Mail']){
+                $dataUser = $user;
+                $id = $user['id'];
             }
+/*
             else{
                 if (isset($users)){
                     $dataUser = $data;
@@ -125,8 +155,8 @@ function userManage($data){
                     $id++;
                 }
                 else $id = 1;
-            }
-
+            }*/
+/*
             $existAccount = false;
             if (isset($users) && $_SESSION['userEmailAddress'] != $data['inputUserEmailAddress']){
                 foreach ($users as $user){
@@ -134,14 +164,35 @@ function userManage($data){
                         $existAccount = true;
                     }
                 }
+            }*/
+            $existAccount = false;
+            if (isset($user) && $_SESSION['userEmailAddress'] != $data['inputUserEmailAddress']){
+                if ($data['inputUserEmailAddress'] == $user['email']){
+                    $existAccount = true;
+                }
             }
+
+
             if ($existAccount == false){
                 if ($data['inputUserPsw'] == $data['inputUserPswRepeat']) {
-                    require_once "model/usersManager.php";
+                    require_once "model/usersManager.php";/*
                     if (registerAccount($id, $data['inputUserFirstName'], $data['inputUserLastName'], $data['inputUserEmailAddress'], $data['inputUserPsw']))
                     {
                         if (!isset($_SESSION['userEmailAddress'])){
                             createSession($data['inputUserEmailAddress'],"1");
+                        }
+                        $registerErrorMessage = null;
+                        require "view/home.php";
+                    }
+                    else
+                    {
+                        $registerErrorMessage = "L'inscription n'est pas possible avec les valeurs saisies !";
+                        require "view/register.php";
+                    }*/
+                    if (registerAccount($data['inputUserFirstName'], $data['inputUserLastName'], $data['inputUserEmailAddress'], $data['inputUserPsw']))
+                    {
+                        if (!isset($_SESSION['userEmailAddress'])){
+                            createSession($data['inputUserEmailAddress'],1);
                         }
                         $registerErrorMessage = null;
                         require "view/home.php";

@@ -72,6 +72,7 @@ function register($data)
 {
     require_once 'model/usersManager.php';
     userManage($data);
+    //register($data);
 }
 
 function userName($userEmail){
