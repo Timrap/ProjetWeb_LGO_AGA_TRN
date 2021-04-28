@@ -43,6 +43,9 @@ Released   : 20130902
 		<div id="logo">
 			<h1><a href="index.php?action=home">AnnoncesFaciles</a></h1>
 		</div>
+
+
+
 		<div id="menu">
 			<ul>
 				<li><a href="index.php?action=home">Accueil</a></li>
@@ -53,11 +56,9 @@ Released   : 20130902
                     <li><a href="index.php?action=mesAnnonces">Mes annonces</a></li>
                     <li><a href="index.php?action=accountManage">
                             <img src="view/contents/images/icon-header-01-log.png" alt="connecté"/>
-                            <?=userName($_SESSION['userEmailAddress']); ?>
-                            <ul>
-                                <li><li><a href="index.php?action=logout">Se déconnecter</a></li></li>
-                            </ul>
-                        </a></li>
+                            <?=userName($_SESSION['userEmailAddress']); ?></a>
+                              <li><a href="index.php?action=logout">Se déconnecter</a></li>
+                        </li>
                 <?php else: ?>
                     <li><a href="index.php?action=login">Se connecter</a></li>
                     <li><a href="index.php?action=accountManage">S'inscrire</a></li>

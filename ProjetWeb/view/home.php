@@ -85,6 +85,7 @@ $title = 'annoncesfaciles - home';
         <h2>Catégories</h2>
 
 
+
         <div class="tab-pane fade show active" id="best-seller" role="tabpanel">
             <div class="row">
 
@@ -101,11 +102,11 @@ $title = 'annoncesfaciles - home';
                                     <i class="icon-wishlist icon_heart dis-none" aria-hidden="true"></i>
                                 </a>
                                 <h3>Véhicule motorisé</h3>
-                                <p>Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna congue rutrum.</p>
+                                <p>Découvrez tous les articles de cette catégorie.</p>
                                 <div class="block2-btn-addcart w-size1 trans-0-3">
                                     <!-- Button -->
                                     <button type="submit" class="button" name="categorie" value="1">
-                                        Read More
+                                        Voir plus
                                     </button>
                                 </div>
                             </div>
@@ -126,11 +127,11 @@ $title = 'annoncesfaciles - home';
                                     <i class="icon-wishlist icon_heart dis-none" aria-hidden="true"></i>
                                 </a>
                                 <h3>Appreil électronique</h3>
-                                <p>Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna congue rutrum.</p>
+                                <p>Découvrez tous les articles de cette catégorie.</p>
                                 <div class="block2-btn-addcart w-size1 trans-0-3">
                                     <!-- Button -->
                                     <button type="submit" class="button" name="categorie" value="2">
-                                        Read More
+                                        Voir plus
                                     </button>
                                 </div>
                             </div>
@@ -151,11 +152,11 @@ $title = 'annoncesfaciles - home';
                                     <i class="icon-wishlist icon_heart dis-none" aria-hidden="true"></i>
                                 </a>
                                 <h3>Mobilier</h3>
-                                <p>Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna congue rutrum.</p>
+                                <p>Découvrez tous les articles de cette catégorie.</p>
                                 <div class="block2-btn-addcart w-size1 trans-0-3">
                                     <!-- Button -->
                                     <button type="submit" class="button" name="categorie" value="3">
-                                        Read More
+                                        Voir plus
                                     </button>
                                 </div>
                             </div>
@@ -176,11 +177,11 @@ $title = 'annoncesfaciles - home';
                                     <i class="icon-wishlist icon_heart dis-none" aria-hidden="true"></i>
                                 </a>
                                 <h3>Bijou</h3>
-                                <p>Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna congue rutrum.</p>
+                                <p>Découvrez tous les articles de cette catégorie.</p>
                                 <div class="block2-btn-addcart w-size1 trans-0-3">
                                     <!-- Button -->
                                     <button type="submit" class="button" name="categorie" value="4">
-                                        Read More
+                                        Voir plus
                                     </button>
                                 </div>
                             </div>
@@ -201,11 +202,11 @@ $title = 'annoncesfaciles - home';
                                     <i class="icon-wishlist icon_heart dis-none" aria-hidden="true"></i>
                                 </a>
                                 <h3>Immobilier</h3>
-                                <p>Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna congue rutrum.</p>
+                                <p>Découvrez tous les articles de cette catégorie.</p>
                                 <div class="block2-btn-addcart w-size1 trans-0-3">
                                     <!-- Button -->
                                     <button type="submit" class="button" name="categorie" value="5">
-                                        Read More
+                                        Voir plus
                                     </button>
                                 </div>
                             </div>
@@ -226,11 +227,11 @@ $title = 'annoncesfaciles - home';
                                     <i class="icon-wishlist icon_heart dis-none" aria-hidden="true"></i>
                                 </a>
                                 <h3>Décoration</h3>
-                                <p>Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna congue rutrum.</p>
+                                <p>Découvrez tous les articles de cette catégorie.</p>
                                 <div class="block2-btn-addcart w-size1 trans-0-3">
                                     <!-- Button -->
                                     <button type="submit" class="button" name="categorie" value="6">
-                                        Read More
+                                        Voir plus
                                     </button>
                                 </div>
                             </div>
