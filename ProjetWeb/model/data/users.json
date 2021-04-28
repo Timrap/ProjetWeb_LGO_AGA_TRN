@@ -1,10 +1,1 @@
-[
-  {
-    "id": 1,
-    "firstName": "Timoth\u00e9e",
-    "lastName": "Rapin",
-    "email": "rapin.timothee@cpnv.ch",
-    "hashPwd": "$2y$10$9e05sQn\/pnVKGpxLSSU7ZuWJF3i\/PzfvPVPdS4MqmEbA67v2ocNxy",
-    "userType": "1"
-  }
-]
+[{"id":1,"firstName":"Timoth\u00e9e","lastName":"Rapin","email":"rapin.timothee@cpnv.ch","hashPwd":"$2y$10$9e05sQn\/pnVKGpxLSSU7ZuWJF3i\/PzfvPVPdS4MqmEbA67v2ocNxy","userType":"2"},{"id":2,"firstName":"projetweb","lastName":"testeeeeee","email":"test@gmail.com","hashPwd":"$2y$10$J5hOrnFGXB3\/F7dGbyv2T.E8qP0IBHqtOKjU0XysONMJG2OQgMSmu","userType":"1"},{"id":3,"firstName":"Luca","lastName":"Gatto","email":"lgo@cpnv.ch","hashPwd":"$2y$10$ZLx5fM6UvRKrF17Sns\/I4ejDM1fgP7lRqPz3O1LTKf4cDa8fu\/rVK","userType":"2"},{"id":4,"firstName":"Timoth\u00e9e","lastName":"Rapin","email":"timothee.rapin@cpnv.ch","hashPwd":"$2y$10$XCN5QISpXoIQryubtwqs0OUmywUXqRgXIDc9bRBl.xQNWCc2kBwqi","userType":"1"}]
