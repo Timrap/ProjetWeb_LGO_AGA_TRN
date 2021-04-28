@@ -1,5 +1,5 @@
 <!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<!--
+
 Design by TEMPLATED
 http://templated.co
 Released for free unFder the Creative Commons Attribution License
@@ -36,6 +36,8 @@ Released   : 20130902
     <link rel="stylesheet" type="text/css" href="view/contents/css/main.css">
 
     <link rel="stylesheet" type="text/css" href="view/contents/vendor/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="view/contents/vendor/bootstrap/css/bootstrap-grid.css">
+    <link rel="stylesheet" type="text/css" href="view/contents/vendor/bootstrap/css/bootstrap-reboot.css">
 </head>
 <body>
 <div id="header-wrapper">
@@ -43,6 +45,9 @@ Released   : 20130902
 		<div id="logo">
 			<h1><a href="index.php?action=home">AnnoncesFaciles</a></h1>
 		</div>
+
+
+
 		<div id="menu">
 			<ul>
 				<li><a href="index.php?action=home">Accueil</a></li>
@@ -53,11 +58,9 @@ Released   : 20130902
                     <li><a href="index.php?action=mesAnnonces">Mes annonces</a></li>
                     <li><a href="index.php?action=accountManage">
                             <img src="view/contents/images/icon-header-01-log.png" alt="connecté"/>
-                            <?=userName($_SESSION['userEmailAddress']); ?>
-                            <ul>
-                                <li><li><a href="index.php?action=logout">Se déconnecter</a></li></li>
-                            </ul>
-                        </a></li>
+                            <?=userName($_SESSION['userEmailAddress']); ?></a>
+                              <li><a href="index.php?action=logout">Se déconnecter</a></li>
+                        </li>
                 <?php else: ?>
                     <li><a href="index.php?action=login">Se connecter</a></li>
                     <li><a href="index.php?action=accountManage">S'inscrire</a></li>

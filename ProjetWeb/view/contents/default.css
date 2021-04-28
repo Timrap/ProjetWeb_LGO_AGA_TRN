@@ -396,7 +396,7 @@
 
 	.productdetail
 	{
-		padding-right: 150px;
+		padding-right: 115px;
 
 	}
 
@@ -514,7 +514,7 @@
 		border: solid;
 		border-color: #000000;
 		height: 300px;
-		width: 1000px;
+		width: 100%;
 	}
 
 	#titre
@@ -522,7 +522,7 @@
 		border: solid;
 		border-color: #000000;
 		height: 50px;
-		width: 1000px;
+		width: 100%;
 	}
 
 	#choice
@@ -530,7 +530,7 @@
 		border: solid;
 		border-color: #000000;
 		height: 50px;
-		width: 1000px;
+		width: 100%;
 	}
 
 
@@ -540,7 +540,7 @@
 		border: solid;
 		border-color: #000000;
 		height: 50px;
-		width: 1000px;
+		width: 100%;
 	
 	}
 
@@ -549,7 +549,7 @@
 		border: solid;
 		border-color: #000000;
 		height: 50px;
-		width: 1000px;
+		width: 100%;
 	}
 
 	#Npa
@@ -557,7 +557,7 @@
 		border: solid;
 		border-color: #000000;
 		height: 50px;
-		width: 1000px;
+		width: 100%;
 	}
 
 	#picture
