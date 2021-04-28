@@ -129,7 +129,7 @@ $title = 'annoncesfaciles - home';
                                 <p>Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna congue rutrum.</p>
                                 <div class="block2-btn-addcart w-size1 trans-0-3">
                                     <!-- Button -->
-                                    <button type="submit" class="button" name="categorie" value="1">
+                                    <button type="submit" class="button" name="categorie" value="2">
                                         Read More
                                     </button>
                                 </div>
@@ -154,7 +154,7 @@ $title = 'annoncesfaciles - home';
                                 <p>Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna congue rutrum.</p>
                                 <div class="block2-btn-addcart w-size1 trans-0-3">
                                     <!-- Button -->
-                                    <button type="submit" class="button" name="categorie" value="1">
+                                    <button type="submit" class="button" name="categorie" value="3">
                                         Read More
                                     </button>
                                 </div>
@@ -179,7 +179,7 @@ $title = 'annoncesfaciles - home';
                                 <p>Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna congue rutrum.</p>
                                 <div class="block2-btn-addcart w-size1 trans-0-3">
                                     <!-- Button -->
-                                    <button type="submit" class="button" name="categorie" value="1">
+                                    <button type="submit" class="button" name="categorie" value="4">
                                         Read More
                                     </button>
                                 </div>
@@ -204,7 +204,7 @@ $title = 'annoncesfaciles - home';
                                 <p>Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna congue rutrum.</p>
                                 <div class="block2-btn-addcart w-size1 trans-0-3">
                                     <!-- Button -->
-                                    <button type="submit" class="button" name="categorie" value="1">
+                                    <button type="submit" class="button" name="categorie" value="5">
                                         Read More
                                     </button>
                                 </div>
@@ -229,7 +229,7 @@ $title = 'annoncesfaciles - home';
                                 <p>Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna congue rutrum.</p>
                                 <div class="block2-btn-addcart w-size1 trans-0-3">
                                     <!-- Button -->
-                                    <button type="submit" class="button" name="categorie" value="1">
+                                    <button type="submit" class="button" name="categorie" value="6">
                                         Read More
                                     </button>
                                 </div>
