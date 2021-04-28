@@ -49,10 +49,12 @@ Released   : 20130902
                 <?php endif;?>
                 <?php if (isset($_SESSION['userEmailAddress'])) : ?>
                     <li><a href="index.php?action=mesAnnonces">Mes annonces</a></li>
-                    <li><a href="index.php?action=logout">Se déconnecter</a></li>
                     <li><a href="index.php?action=accountManage">
                             <img src="view/contents/images/icon-header-01-log.png" alt="connecté"/>
                             <?=userName($_SESSION['userEmailAddress']); ?>
+                            <ul>
+                                <li><li><a href="index.php?action=logout">Se déconnecter</a></li></li>
+                            </ul>
                         </a></li>
                 <?php else: ?>
                     <li><a href="index.php?action=login">Se connecter</a></li>
