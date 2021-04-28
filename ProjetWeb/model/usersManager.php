@@ -141,7 +141,7 @@ function userManage($data){
                     if (registerAccount($id, $data['inputUserFirstName'], $data['inputUserLastName'], $data['inputUserEmailAddress'], $data['inputUserPsw']))
                     {
                         if (!isset($_SESSION['userEmailAddress'])){
-                            createSession($data['inputUserEmailAddress']);
+                            createSession($data['inputUserEmailAddress'],"1");
                         }
                         $registerErrorMessage = null;
                         require "view/home.php";
@@ -191,4 +191,21 @@ function userManage($data){
         $registerErrorMessage = "Nous rencontrons actuellement un problème technique. Il est temporairement impossible de s'enregistrer. Désolé du dérangement !";
         require "view/register.php";
     }
+}
+
+function userType($userEmailAddress)
+{
+    $result = false;
+
+    $res = json_decode(file_get_contents("model/data/users.json"),true);
+
+    // Scan the users JSON's file for userType
+    foreach ($res as $item) {
+
+        if ($userEmailAddress == $item['email']) {
+            $result = $item['userType'];
+        }
+    }
+
+    return $result;
 }
