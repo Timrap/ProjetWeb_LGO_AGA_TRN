@@ -34,6 +34,8 @@ Released   : 20130902
     <link rel="stylesheet" type="text/css" href="view/contents/css/util.css">
     <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="view/contents/css/main.css">
+
+    <link rel="stylesheet" type="text/css" href="view/contents/vendor/bootstrap/css/bootstrap.css">
 </head>
 <body>
 <div id="header-wrapper">
