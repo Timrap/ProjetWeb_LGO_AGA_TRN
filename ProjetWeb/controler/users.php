@@ -13,9 +13,11 @@
  * @brief This function is designed to create a new user session
  * @param $userEmailAddress : user unique id, must be meet RFC 5321/5322
  */
-function createSession($userEmailAddress)
+function createSession($userEmailAddress, $userType)
 {
     $_SESSION['userEmailAddress'] = $userEmailAddress;
+    $_SESSION['userType'] = $userType;
+    $_SESSION['userTypeView'] = "1";
 }
 
 /**
@@ -34,8 +36,9 @@ function login($loginRequest)
             //try to check if user/psw are matching with the database
             require_once "model/usersManager.php";
             if (isLoginCorrect($userEmailAddress, $userPsw)) {
+                $userType = userType($userEmailAddress);
                 $loginErrorMessage = null;
-                createSession($userEmailAddress);
+                createSession($userEmailAddress, $userType);
                 require "view/home.php";
             } else { //if the user/psw does not match, login form appears again with an error message
                 $loginErrorMessage = "L'adresse email et/ou le mot de passe ne correspondent pas !";
@@ -140,3 +143,8 @@ function accountValidation($data){
     require_once 'model/usersManager.php';
     userValidation($data);
 }*/
+
+function viewType($userTypeView){
+    $_SESSION['userTypeView'] = $userTypeView['viewType'];
+    home();
+}
