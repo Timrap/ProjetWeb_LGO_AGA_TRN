@@ -125,72 +125,29 @@ function userManage($data){
         //variable set
         if (isset($data['inputUserEmailAddress']) && isset($data['inputUserPsw']) && isset($data['inputUserPswRepeat'])) {
 
-
-
-            //$users = json_decode(file_get_contents("model/data/users.json"),true);
             $strSeparator = "'";
             $query = "SELECT users.Firstname, users.Lastname, users.Mail, users.Type, users.PasswordHash FROM users WHERE users.Mail = " . $strSeparator . $data['inputUserEmailAddress'] . $strSeparator;
             $user = executeQuerySelect($query);
 
-/*
-            if (isset($_SESSION['userEmailAddress'])){
-                foreach ($users as $user) {
-                    if ($_SESSION['userEmailAddress'] == $user['email']) {
-                        $dataUser = $user;
-                        $id = $user['id'];
-                    }
-                }
-            }*/
-            if (isset($_SESSION['userEmailAddress']) && $_SESSION['userEmailAddress'] == $user['Mail']){
+            // Test si l'email existe déjà
+            $existAccount = false;
+            if (isset($user)){
                 $dataUser = $user;
                 $id = $user['id'];
-            }
-/*
-            else{
-                if (isset($users)){
-                    $dataUser = $data;
-                    foreach ($users as $user) {
-                        $id = $user["id"];
-                    }
-                    $id++;
-                }
-                else $id = 1;
-            }*/
-/*
-            $existAccount = false;
-            if (isset($users) && $_SESSION['userEmailAddress'] != $data['inputUserEmailAddress']){
-                foreach ($users as $user){
-                    if ($data['inputUserEmailAddress'] == $user['email']){
-                        $existAccount = true;
-                    }
-                }
-            }*/
-            $existAccount = false;
-            if (isset($user) && $_SESSION['userEmailAddress'] != $data['inputUserEmailAddress']){
-                if ($data['inputUserEmailAddress'] == $user['email']){
-                    $existAccount = true;
-                }
+                $existAccount = true;
             }
 
-
+            // Si l'email n'existe pas dans la BDD
             if ($existAccount == false){
+
+                // Si l'utilisateur à entré 2 fois le même mot de passe
                 if ($data['inputUserPsw'] == $data['inputUserPswRepeat']) {
-                    require_once "model/usersManager.php";/*
-                    if (registerAccount($id, $data['inputUserFirstName'], $data['inputUserLastName'], $data['inputUserEmailAddress'], $data['inputUserPsw']))
-                    {
-                        if (!isset($_SESSION['userEmailAddress'])){
-                            createSession($data['inputUserEmailAddress'],"1");
-                        }
-                        $registerErrorMessage = null;
-                        require "view/home.php";
-                    }
-                    else
-                    {
-                        $registerErrorMessage = "L'inscription n'est pas possible avec les valeurs saisies !";
-                        require "view/register.php";
-                    }*/
+                    require_once "model/usersManager.php";
+
+                    // Si le compte à bien été créé dans la BDD
                     if (registerAccount($data['inputUserFirstName'], $data['inputUserLastName'], $data['inputUserEmailAddress'], $data['inputUserPsw']))
                     {
+                        // Crée la séssion si elle n'éxiste pas
                         if (!isset($_SESSION['userEmailAddress'])){
                             createSession($data['inputUserEmailAddress'],1);
                         }
@@ -219,13 +176,15 @@ function userManage($data){
         }
         else
         {
-            $users = json_decode(file_get_contents("model/data/users.json"),true);
+            //$users = json_decode(file_get_contents("model/data/users.json"),true);
+            $strSeparator = "'";
+            $query = "SELECT users.Firstname, users.Lastname, users.Mail, users.Type, users.PasswordHash FROM users WHERE users.Mail = " . $strSeparator . $data['inputUserEmailAddress'] . $strSeparator;
+            $user = executeQuerySelect($query);
+
 
             if (isset($_SESSION['userEmailAddress'])){
-                foreach ($users as $user) {
-                    if ($_SESSION['userEmailAddress'] == $user['email']) {
-                        $dataUser = $user;
-                    }
+                if ($_SESSION['userEmailAddress'] == $user['email']) {
+                    $dataUser = $user;
                 }
             }
             else{
