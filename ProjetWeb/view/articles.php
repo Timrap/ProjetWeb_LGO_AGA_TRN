@@ -47,21 +47,37 @@ ob_start();
 
         <!--<form class="login100-form validate-form" action="index.php?action=articles" method="post">-->
 
-        <div class="boxA" >
+    <div class="tab-pane fade show active" id="best-seller" role="tabpanel">
+        <div class="row">
             <?php foreach ($articles as $article): ?>
                 <?php if (isset($article->categorie) && $article->categorie == $categorie["categorie"]): ?>
-                    <div class="box" id="boxArticle1">
-                        <img src="<?=$article->picture; ?>" width="320" height="180" alt="" />
-                        <h3><?=$article->title; ?></h3>
-                        <p><?=$article->description; ?></p>
-                        <p>CHF <?=$article->price; ?> .-</p>
-                        <!--<button type="submit" class="button" name="categorie" value="1">
-                            Read More
-                        </button>-->
+
+                    <div class="col-sm-6 col-md-3 col-lg-4 p-b-50">
+                        <!-- Block2 -->
+                        <div class="block2">
+                            <div class="block2-img wrap-pic-w of-hidden pos-relative">
+                                <img src="<?=$article->picture; ?>" width="320" height="180" alt="" />
+
+                                <div class="block2-overlay trans-0-3">
+                                    <a href="#" class="block2-btn-addwishlist hov-pointer trans-0-3">
+                                        <i class="icon-wishlist icon_heart_alt" aria-hidden="true"></i>
+                                        <i class="icon-wishlist icon_heart dis-none" aria-hidden="true"></i>
+                                    </a>
+                                    <h3><?=$article->title; ?></h3>
+                                    <p><?=$article->description; ?></p>
+                                    <p>CHF <?=$article->price; ?> .-</p>
+                                    <div class="block2-btn-addcart w-size1 trans-0-3">
+                                        <!-- Button -->
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
                     </div>
                 <?php endif; ?>
             <?php endforeach; ?>
         </div>
+    </div>
     </div>
 
 <!--
