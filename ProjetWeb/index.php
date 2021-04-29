@@ -39,6 +39,9 @@ if (isset($_GET['action'])) {
         case "articleDelete" :
             articleDelete($_GET['articleId']);
             break;
+        case "administration" :
+            administration();
+            break;
 
 
         case 'accountManage' :

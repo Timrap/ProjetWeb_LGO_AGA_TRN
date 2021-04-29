@@ -90,7 +90,10 @@ function confirmationAccount()
     require_once "view/confirmationAccount.php";
 }
 
-
+function administration ()
+{
+    require "view/administration.php";
+}
 
 function accountManage($data)
 {

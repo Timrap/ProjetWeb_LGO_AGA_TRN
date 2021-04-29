@@ -12,15 +12,15 @@ Released   : 20130902
 -->
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title></title>
-<meta name="keywords" content="" />
-<meta name="description" content="" />
-<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet" />
-<link href="view/contents/default.css" rel="stylesheet" type="text/css" media="all" />
-<link href="view/contents/fonts.css" rel="stylesheet" type="text/css" media="all" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet" />
+    <link href="view/contents/default.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="view/contents/fonts.css" rel="stylesheet" type="text/css" media="all" />
 
-<!--[if IE 6]><link href="default_ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
+    <!--[if IE 6]><link href="default_ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
     <!--<link rel="stylesheet" type="text/css" href="view/contents/vendor/bootstrap/css/bootstrap.min.css">-->
     <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="view/contents/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
@@ -39,49 +39,55 @@ Released   : 20130902
 </head>
 <body>
 <div id="header-wrapper">
-	<div id="header" class="container">
-		<div id="logo">
-			<h1><a href="index.php?action=home">AnnoncesFaciles</a></h1>
-		</div>
+    <div id="header" class="container">
+        <div id="logo">
+            <h1><a href="index.php?action=home">AnnoncesFaciles</a></h1>
+        </div>
 
 
 
-		<div id="menu">
-			<ul>
-				<li><a href="index.php?action=home">Accueil</a></li>
+        <div id="menu">
+            <ul>
+                <li><a href="index.php?action=home">Accueil</a></li>
                 <?php if (isset($_SESSION['userType']) && $_SESSION['userType'] > 1 && isset($_SESSION['userTypeView']) && $_SESSION['userTypeView'] > 1) : ?>
                     <li><a href="index.php?action=administration">Administration</a></li>
                 <?php endif;?>
                 <?php if (isset($_SESSION['userEmailAddress'])) : ?>
                     <li><a href="index.php?action=mesAnnonces">Mes annonces</a></li>
+                    <li><a href="index.php?action=logout">Se déconnecter</a></li>
                     <li><a href="index.php?action=accountManage">
                             <img src="view/contents/images/icon-header-01-log.png" alt="connecté"/>
                             <?=userName($_SESSION['userEmailAddress']); ?></a>
-                              <li><a href="index.php?action=logout">Se déconnecter</a></li>
-                        </li>
+
+
+                    </li>
                 <?php else: ?>
                     <li><a href="index.php?action=login">Se connecter</a></li>
                     <li><a href="index.php?action=accountManage">S'inscrire</a></li>
                     <img src="view/contents/images/icon-header-01.png" alt="déconnecté"/>
                 <?php endif;?>
-			</ul>
-		</div>
+            </ul>
+        </div>
 
-	</div>
+    </div>
+
 </div>
 
 <?=$content; ?>
 
 <div id="copyright" class="container">
-    <?php if (isset($_SESSION['userType']) && $_SESSION['userType'] > 1) : ?>
-        <form action="index.php?action=viewType" method="post">
-            <input type="radio" id="viewType1" name="viewType" value="1" onclick="this.form.submit()">
-            <label for="viewType1">Utilisateur</label>
-            <input type="radio" id="viewType2" name="viewType" value="2" onclick="this.form.submit()">
-            <label for="viewType2">Administrateur</label>
-        </form>
-    <?php endif;?>
+
     <p>&copy; Untitled. All rights reserved. | Photos by <a href="http://fotogrph.com/">Fotogrph</a> | Design by <a href="http://templated.co" rel="nofollow">TEMPLATED</a>.</p>
+
+        <?php if (isset($_SESSION['userType']) && $_SESSION['userType'] > 1) : ?>
+            <form action="index.php?action=viewType" method="post">
+                <input type="radio" id="viewType1" name="viewType" value="1" onclick="this.form.submit()">
+                <label for="viewType1">Utilisateur</label>
+                <input type="radio" id="viewType2" name="viewType" value="2" onclick="this.form.submit()">
+                <label for="viewType2">Administrateur</label>
+            </form>
+        <?php endif;?>
+
 </div>
 </body>
 </html>

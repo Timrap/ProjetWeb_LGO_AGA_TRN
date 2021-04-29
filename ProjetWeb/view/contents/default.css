@@ -314,18 +314,19 @@
 		top: 2.4em;
 		right: 2em;
 
+
 	}
-	
+
 	#menu ul
 	{
 		display: inline-block;
 	}
-	
+
 	#menu li
 	{
 		display: block;
 		float: left;
-		text-align: center;
+		text-align: center
 	}
 	
 	#menu li a, #menu li span
@@ -333,7 +334,7 @@
 		text-decoration: none;
 		padding: 1em 1.5em;
 		color: #ffffff;
-		font-size: 20px;
+		font-size: 17px;
 
 	}
 	

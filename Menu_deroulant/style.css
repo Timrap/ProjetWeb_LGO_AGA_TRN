@@ -12,7 +12,7 @@ body {
 }
 
 ul {
-    text-align: left;
+    text-align: right;
     display: inline;
     padding: 15px 4px 17px 0;
     list-style: none;
@@ -27,14 +27,14 @@ ul li {
     cursor: pointer;
 }
 ul li:hover {
-    background: #555;
+    background: #777;
     color: #fff;
 }
 
 ul li ul {
     padding: 0;
     position: absolute;
-    top: 46px;
+    top: 44px;
     left: 0;
     width: 200px;
     display: none;
@@ -44,5 +44,5 @@ ul li ul li {
     display: block;
     color: #fff;
 }
-ul li ul li:hover { background: #666; }
+ul li ul li:hover { background: #00; }
 ul li:hover ul { display: block;}
