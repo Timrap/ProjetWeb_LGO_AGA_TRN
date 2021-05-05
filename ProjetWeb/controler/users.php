@@ -72,7 +72,6 @@ function register($data)
 {
     require_once 'model/usersManager.php';
     userManage($data);
-    //register($data);
 }
 
 function userName($userEmail){
@@ -100,53 +99,7 @@ function accountManage($data)
 {
     require_once 'model/usersManager.php';
     userManage($data);
-
-    /*
-
-    require_once "model/adManager.php";
-    $file = "model/data/users.json";
-
-    //open or read json data
-    $users = json_decode(file_get_contents($file));
-
-    if (isset($_SESSION['userEmailAddress'])){
-        $id = $_SESSION['userEmailAddress'];
-        foreach ($users as $user){
-            if ($user->id == $id){
-                require_once "view/accountmodify.php";
-            }
-        }
-    }
-    else{
-        require_once "view/register.php";
-    }
-
-
-    /*
-    $id = accountId();
-
-
-    $users = viewUsers();
-
-    if (isset($_SESSION['userEmailAddress']) && $id != ""){
-        foreach ($users as $user){
-            if ($user->id == $id){
-                require_once "view/accountmodify.php";
-            }
-        }
-    }
-    else{
-        require_once "view/register.php";
-    }
-
-
-    userManage($data);*/
 }
-/*
-function accountValidation($data){
-    require_once 'model/usersManager.php';
-    userValidation($data);
-}*/
 
 function viewType($userTypeView){
     $_SESSION['userTypeView'] = $userTypeView['viewType'];

@@ -21,19 +21,19 @@ function isLoginCorrect($userEmailAddress, $userPsw)
 {
    $result = false;
 
-   $res = json_decode(file_get_contents("model/data/users.json"),true);
+    $strSeparator = "'";
+    $query = "SELECT users.PasswordHash FROM users WHERE users.Mail = " . $strSeparator . $userEmailAddress . $strSeparator;
 
-   // Scan the users JSON's file to check login and pswd
-   foreach ($res as $item) {
-
-        if ($userEmailAddress == $item['email']) {
-            if (password_verify($userPsw, $item['hashPwd'])){
-                return true;
-            }
+    require_once 'model/dbConnector.php';
+    $queryResult = executeQuerySelect($query);
+    $queryResult = $queryResult[0];
+    if ($queryResult){
+        if (password_verify($userPsw, $queryResult['PasswordHash'])){
+            return true;
         }
-   }
+    }
 
-   return $result;
+    return $result;
 }
 
 /**
@@ -41,19 +41,19 @@ function isLoginCorrect($userEmailAddress, $userPsw)
  * @return string
  */
 function firstNameLastName($userEmailAddress){
-    $users = json_decode(file_get_contents("model/data/users.json"),true);
 
-    // Scan the users JSON's file to get firstName and lastName
-    foreach ($users as $user) {
 
-        if ($userEmailAddress == $user['email']) {
-            $firstName = $user['firstName'];
-            $lastName = $user['lastName'];
-        }
-    }
+    $strSeparator = "'";
+    $query = "SELECT Firstname, Lastname FROM users WHERE Mail = " . $strSeparator . $userEmailAddress . $strSeparator;
+
+    require_once 'model/dbConnector.php';
+    $queryResult = executeQuerySelect($query);
+    $user = $queryResult[0];
+
+    $firstName = $user['Firstname'];
+    $lastName = $user['Lastname'];
 
     $result = "$firstName $lastName";
-
     return $result;
 }
 
@@ -66,7 +66,6 @@ function firstNameLastName($userEmailAddress){
  */
 function registerAccount(/*$id, */$userFirstName, $userLastName, $userEmailAddress, $userPsw)
 {
-
     $result = false;
 
     $strSeparator = "'";
@@ -82,38 +81,6 @@ function registerAccount(/*$id, */$userFirstName, $userLastName, $userEmailAddre
     }
 
     return $result;
-
-
-    /*
-    $result = false;
-
-    $file = "model/data/users.json";
-
-    //open or read DB data
-    $users = json_decode(file_get_contents($file));
-    $users = executeQueryInsert($query));
-
-//  hash password and create an array to add in JSON file
-    $userHashPsw = password_hash($userPsw, PASSWORD_DEFAULT);
-    $data2add = array('id' => $id, 'firstName' => $userFirstName, 'lastName' => $userLastName, 'email' =>$userEmailAddress, 'hashPwd' => $userHashPsw, 'userType' =>'1');
-
-//append additional json to json file
-    if (isset($_SESSION['userEmailAddress']) && $_SESSION['userEmailAddress']!="" && isset($users)){
-        foreach ($users as $user) {
-            if ($user->id == $data2add["id"]) {
-                $users[$id-1] = $data2add;
-            }
-        }
-    }
-    else{
-        $users[] = $data2add;
-    }
-    $jsonData = json_encode($users);
-
-    file_put_contents($file, $jsonData);
-
-//    json_encode($data);
-    return true;*/
 }
 
 
@@ -131,7 +98,7 @@ function userManage($data){
 
             // Test si l'email existe déjà
             $existAccount = false;
-            if (isset($user)){
+            if (isset($user) && $user!="" && $user!=null && $user!=0){
                 $dataUser = $user;
                 $id = $user['id'];
                 $existAccount = true;
@@ -205,17 +172,9 @@ function userManage($data){
 
 function userType($userEmailAddress)
 {
-    $result = false;
-
-    $res = json_decode(file_get_contents("model/data/users.json"),true);
-
-    // Scan the users JSON's file for userType
-    foreach ($res as $item) {
-
-        if ($userEmailAddress == $item['email']) {
-            $result = $item['userType'];
-        }
-    }
-
+    $strSeparator = "'";
+    $query = "SELECT users.Type FROM users WHERE Mail = " . $strSeparator . $userEmailAddress . $strSeparator;
+    $user = executeQuerySelect($query);
+    $result = $user['userType'];
     return $result;
 }
