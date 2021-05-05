@@ -143,22 +143,6 @@ function userManage($data){
         }
         else
         {
-            $strSeparator = "'";
-            $query = "SELECT users.Firstname, users.Lastname, users.Mail, users.Type, users.PasswordHash FROM users WHERE users.Mail = " . $strSeparator . $data['inputUserEmailAddress'] . $strSeparator;
-            $user = executeQuerySelect($query);
-
-
-            if (isset($_SESSION['userEmailAddress'])){
-                if ($_SESSION['userEmailAddress'] == $user['email']) {
-                    $dataUser = $user;
-                }
-            }
-            else{
-                if (isset($users)){
-                    $dataUser = $data;
-                }
-            }
-
             $registerErrorMessage = null;
             require "view/register.php";
         }
