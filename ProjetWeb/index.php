@@ -27,6 +27,9 @@ if (isset($_GET['action'])) {
         case "articles" :
             articles($_POST);
             break;
+        case 'displayArticleDetail':
+            displayArticleDetail($_GET['code']);
+            break;
         case "mesAnnonces" :
             mesAnnonces();
             break;
@@ -36,8 +39,6 @@ if (isset($_GET['action'])) {
         case "administration" :
             administration();
             break;
-
-
         case 'accountManage' :
             accountManage($_POST);
             break;

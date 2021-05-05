@@ -64,7 +64,12 @@ ob_start();
                             break;
                     }
                     ?>
-                <td class="tableArticles"><img src="<?=$article->picture; ?>" width="100" alt="" /></td>
+                <td> <?php if(is_file($article->picture)) : ?>
+                        <img class="imageProduct" src="<?=$article->picture; ?>" alt="IMG-PRODUCT"/>
+                    <?php else :?>
+                    <img class="imageProduct" src="view/contents/images/pas-image-disponible.png" alt="no image"/>
+                <?php endif;?>
+                </td>
                 <td class="tableArticles"><?=$article->title; ?></td>
                 <td class="tableArticles"> <textarea class="descriptionArea"  readonly> <?=$article->description; ?></textarea></td>
                 <td class="tableArticles"><?=$article->price; ?> CHF</td>

@@ -312,6 +312,13 @@
 /* Menu                                                                          */
 /*********************************************************************************/
 
+
+	.imageProduct
+	{
+		width: 120px;
+	}
+
+
 	.tableArticles
 	{
 		align-content: center;
