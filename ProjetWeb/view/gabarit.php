@@ -60,8 +60,6 @@ Released   : 20130902
                     <li><a href="index.php?action=accountManage">
                             <img src="view/contents/images/icon-header-01-log.png" alt="connecté"/>
                             <?=userName($_SESSION['userEmailAddress']); ?></a>
-
-
                     </li>
                 <?php else: ?>
                     <li><a href="index.php?action=login">Se connecter</a></li>
@@ -84,9 +82,10 @@ Released   : 20130902
         <?php if (isset($_SESSION['userType']) && $_SESSION['userType'] > 1) : ?>
             <form action="index.php?action=viewType" method="post">
                 <input type="radio" id="viewType1" name="viewType" value="1" onclick="this.form.submit()">
-                <label for="viewType1">Utilisateur</label>
+                <label id="adminboutons" for="viewType1">Utilisateur</label>
+                <br>
                 <input type="radio" id="viewType2" name="viewType" value="2" onclick="this.form.submit()">
-                <label for="viewType2">Administrateur</label>
+                <label id="adminboutons" for="viewType2">Administrateur</label>
             </form>
         <?php endif;?>
 

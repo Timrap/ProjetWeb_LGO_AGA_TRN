@@ -276,7 +276,8 @@
 		position: relative;
 		margin-top: 0em;
 		padding: 3em 0em;
-		background-color: rgba(0,0,0,1);
+		background-color: rgb(0, 0, 0);
+
 	}
 
 /*********************************************************************************/
@@ -314,7 +315,6 @@
 		top: 2.4em;
 		right: 2em;
 
-
 	}
 
 	#menu ul
@@ -342,8 +342,15 @@
 	{
 		 /*background-color: rgb(0,0,100);*/
 		color: rgb(80, 140, 250);
+
 	}
-	
+
+
+
+
+
+
+
 	#menu .current_page_item a
 	{
 	}
@@ -561,6 +568,12 @@
 		width: 100%;
 	}
 
+	#adminboutons
+	{
+		color: #96063b;
+		font-weight: bold;
+	}
+
 	#picture
 	{
 
@@ -671,5 +684,4 @@
 		text-decoration: none;
 		color: rgba(255,255,255,0.6);
 	}
-
 
