@@ -27,12 +27,6 @@ if (isset($_GET['action'])) {
         case "articles" :
             articles($_POST);
             break;
-        case "accountmodify" :
-            accountModify();
-            break;
-        case "confirmationAccount" :
-            confirmationAccount();
-            break;
         case "mesAnnonces" :
             mesAnnonces();
             break;
