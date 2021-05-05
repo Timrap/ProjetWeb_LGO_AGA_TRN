@@ -143,7 +143,6 @@ function userManage($data){
         }
         else
         {
-            //$users = json_decode(file_get_contents("model/data/users.json"),true);
             $strSeparator = "'";
             $query = "SELECT users.Firstname, users.Lastname, users.Mail, users.Type, users.PasswordHash FROM users WHERE users.Mail = " . $strSeparator . $data['inputUserEmailAddress'] . $strSeparator;
             $user = executeQuerySelect($query);
@@ -175,6 +174,7 @@ function userType($userEmailAddress)
     $strSeparator = "'";
     $query = "SELECT users.Type FROM users WHERE Mail = " . $strSeparator . $userEmailAddress . $strSeparator;
     $user = executeQuerySelect($query);
-    $result = $user['userType'];
+    $user = $user[0];
+    $result = $user['Type'];
     return $result;
 }
