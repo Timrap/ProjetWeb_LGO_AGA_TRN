@@ -22,7 +22,6 @@ ob_start();
     </div>
 
     <!-- Product -->
-    aa
     <div id="contentpagecreat" class="container">
 
         <table class="table table-striped table-dark" class="tableArticles">
@@ -67,7 +66,7 @@ ob_start();
                     ?>
                 <td class="tableArticles"><img src="<?=$article->picture; ?>" width="100" alt="" /></td>
                 <td class="tableArticles"><?=$article->title; ?></td>
-                <td class="tableArticles"> <textarea class="descriptionArea" readonly> <?=$article->description; ?></textarea></td>
+                <td class="tableArticles"> <textarea class="descriptionArea"  readonly> <?=$article->description; ?></textarea></td>
                 <td class="tableArticles"><?=$article->price; ?> CHF</td>
                 <td class="tableArticles"><a id="faficon" href="index.php?action=adManage&articleId=<?=$article->id?>"class=" fa fa-cogs fa-2x"></a> <a id="faficon" href="index.php?action=articleDelete&articleId=<?=$article->id?>" class=" fa fa-trash fa-2x"></a></td>
             </tr>
