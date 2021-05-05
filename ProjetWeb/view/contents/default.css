@@ -116,6 +116,9 @@
 	{
 		text-decoration: none;
 		size: 30px;
+		padding-left: 25px;
+		align-content: center;
+		color: black;
 	}
 
 
@@ -307,6 +310,19 @@
 /*********************************************************************************/
 /* Menu                                                                          */
 /*********************************************************************************/
+
+	.tableArticles
+	{
+		align-content: center;
+		padding-top: 20px;
+	}
+
+	.descriptionArea
+	{
+		resize: none;
+		height: 110px;
+	}
+
 
 	#menu
 	{

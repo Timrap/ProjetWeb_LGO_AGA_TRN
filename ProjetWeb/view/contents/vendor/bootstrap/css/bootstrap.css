@@ -268,7 +268,7 @@ caption {
 }
 
 th {
-  text-align: left;
+  text-align: center;
 }
 
 label {
@@ -1325,13 +1325,13 @@ pre code {
 .table th,
 .table td {
   padding: 0.75rem;
-  vertical-align: top;
+  vertical-align: middle;
   border-top: 1px solid #e9ecef;
 }
 
 .table thead th {
-  vertical-align: bottom;
-  border-bottom: 2px solid #e9ecef;
+  vertical-align: middle;
+  border-bottom: 5px solid #e9ecef;
 }
 
 .table tbody + tbody {
@@ -1477,7 +1477,7 @@ pre code {
 .table-dark,
 .table-dark > th,
 .table-dark > td {
-  background-color: #c6c8ca;
+  background-color: #ddd;
 }
 
 .table-hover .table-dark:hover {
