@@ -43,7 +43,7 @@ ob_start();
 					</span>
 
                     <div class="wrap-input100 validate-input" data-validate = "une adresse E-mail est obligatoire: ex@abc.xyz">
-                        <input class="input100" type="text" name="inputUserEmailAddress" placeholder="Adresse email">
+                        <input class="input100" type="text" name="inputUserEmailAddress" placeholder="Adresse email" value="<?php if( isset($_POST['inputUserEmailAddress'])) {echo $_POST['inputUserEmailAddress'];}?>"/>
                         <span class="focus-input100"></span>
                         <span class="symbol-input100">
 							<i class="fa fa-envelope" aria-hidden="true"></i>

@@ -44,7 +44,7 @@ ob_start();
 					</span>
 
             <div class="wrap-input100 validate-input" data-validate = "vous devez ajouter votre nom">
-                <input class="input100" type="text" name="inputUserLastName" placeholder="Nom" value="<?php if(isset($dataUser['lastName'])) echo $dataUser['lastName']; ?>">
+                <input class="input100" type="text" name="inputUserLastName" placeholder="Nom" value="<?php if( isset($_POST['inputUserLastName'])) {echo $_POST['inputUserLastName'];}?>"/>
                 <span class="focus-input100"></span>
                 <span class="symbol-input100">
 							<i class="fa fa-user-circle-o" aria-hidden="true"></i>
@@ -52,7 +52,7 @@ ob_start();
             </div>
 
             <div class="wrap-input100 validate-input" data-validate = "vous devez ajouter votre prénom">
-                <input class="input100" type="text" name="inputUserFirstName" placeholder="Prénom" value="<?php if(isset($dataUser['firstName'])) echo $dataUser['firstName']; ?>">
+                <input class="input100" type="text" name="inputUserFirstName" placeholder="Prénom" value="<?php if( isset($_POST['inputUserFirstName'])) {echo $_POST['inputUserFirstName'];}?>"/>
                 <span class="focus-input100"></span>
                 <span class="symbol-input100">
 							<i class="fa fa-user-circle-o" aria-hidden="true"></i>
@@ -60,7 +60,7 @@ ob_start();
             </div>
 
             <div class="wrap-input100 validate-input" data-validate = "une adresse E-mail est obligatoire: ex@abc.xyz">
-                <input class="input100" type="email" name="inputUserEmailAddress" placeholder="Adresse email" value="<?php if(isset($dataUser['email'])) echo $dataUser['email']; ?>">
+                <input class="input100" type="email" name="inputUserEmailAddress" placeholder="Adresse email" value="<?php if( isset($_POST['inputUserEmailAddress'])) {echo $_POST['inputUserEmailAddress'];}?>"/>
                 <span class="focus-input100"></span>
                 <span class="symbol-input100">
 							<i class="fa fa-envelope" aria-hidden="true"></i>
