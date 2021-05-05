@@ -1,4 +1,4 @@
-    <?php
+<?php
 /**
  * Projet                      Project name
  * @file                       mesannonces.php
@@ -23,68 +23,58 @@ ob_start();
 
     <!-- Product -->
     <div id="contentpagecreat" class="container">
-        <div class="boxA" >
-            <div class="box" id="boxArticle1">
-                <table>
-                    <thead>
-                        <tr>
-                            <td class="productdetail">Catégorie</td>
-                            <td class="productdetail">Image</td>
-                            <td class="productdetail">Titre</td>
-                            <td class="productdetail">Description</td>
-                            <td class="productdetail">Prix</td>
-                            <td class="productdetail"><a  href="index.php?action=adManage&articleId="> <button class="button"> Ajouter</button></a>
-                            </td>
 
-                        </tr>
-                    </thead>
-                    <tbody>
-                    <?php if(isset($articles)): ?>
-                        <?php foreach ($articles as $article): ?>
-                            <?php if (isset($article->userEmail) && $article->userEmail == $_SESSION['userEmailAddress']): ?>
-                                <tr>
-                                    <td class="product">
-                                        <?php
-                                            switch ($article->categorie){
-                                                case 1:
-                                                    echo "Véhicule motorisé";
-                                                    break;
-                                                case 2:
-                                                    echo "Appreil électronique";
-                                                    break;
-                                                case 3:
-                                                    echo "Mobilier";
-                                                    break;
-                                                case 4:
-                                                    echo "Bijou";
-                                                    break;
-                                                case 5:
-                                                    echo "Immobilier";
-                                                    break;
-                                                case 6:
-                                                    echo "Décoration";
-                                                    break;
-                                            }
-                                        ?>
-                                    <td class="product"><img src="<?=$article->picture; ?>" width="100" alt="" /></td>
-                                    <td class="product"><?=$article->title; ?></td>
-                                    <td class="product"><?=$article->description; ?></td>
-                                    <td class="product"><?=$article->price; ?> CHF</td>
-                                    <td class="product">
-                                        <a id="faficon" href="index.php?action=adManage&articleId=<?=$article->id?>" class=" fa fa-cogs fa-2x"></a>
-                                        <br>
-                                        <br>
-                                        <a id="faficon" href="index.php?action=articleDelete&articleId=<?=$article->id?>" class=" fa fa-trash fa-2x"></a>
-                                    </td>
-                                </tr>
-                            <?php endif; ?>
-                        <?php endforeach; ?>
-                    <?php endif; ?>
-                    </tbody>
-                </table>
-            </div>
-
-        </div>
+        <table class="table table-striped table-dark" class="tableArticles">
+            <thead>
+            <tr>
+                <th class="tableArticles">Catégorie</th>
+                <th class="tableArticles">Image</th>
+                <th class="tableArticles">Titre</th>
+                <th class="tableArticles">Description</th>
+                <th class="tableArticles">Prix</th>
+                <th class="tableArticles"><a  href="index.php?action=adManage&articleId="> <button class="button"> Ajouter</button></a></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <?php if(isset($articles)): ?>
+                <?php foreach ($articles as $article): ?>
+                <?php if (isset($article->userEmail) && $article->userEmail == $_SESSION['userEmailAddress']): ?>
+            <tr>
+                <td class="tableArticles">
+                    <?php
+                    switch ($article->categorie){
+                        case 1:
+                            echo "Véhicule motorisé";
+                            break;
+                        case 2:
+                            echo "Appreil électronique";
+                            break;
+                        case 3:
+                            echo "Mobilier";
+                            break;
+                        case 4:
+                            echo "Bijou";
+                            break;
+                        case 5:
+                            echo "Immobilier";
+                            break;
+                        case 6:
+                            echo "Décoration";
+                            break;
+                    }
+                    ?>
+                <td class="tableArticles"><img src="<?=$article->picture; ?>" width="100" alt="" /></td>
+                <td class="tableArticles"><?=$article->title; ?></td>
+                <td class="tableArticles"> <textarea class="descriptionArea"  readonly> <?=$article->description; ?></textarea></td>
+                <td class="tableArticles"><?=$article->price; ?> CHF</td>
+                <td class="tableArticles"><a id="faficon" href="index.php?action=adManage&articleId=<?=$article->id?>"class=" fa fa-cogs fa-2x"></a> <a id="faficon" href="index.php?action=articleDelete&articleId=<?=$article->id?>" class=" fa fa-trash fa-2x"></a></td>
+            </tr>
+            <?php endif; ?>
+            <?php endforeach; ?>
+            <?php endif; ?>
+            </tbody>
+        </table>
     </div>
 
 <?php

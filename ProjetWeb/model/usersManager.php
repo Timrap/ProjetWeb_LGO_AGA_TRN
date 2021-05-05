@@ -21,19 +21,19 @@ function isLoginCorrect($userEmailAddress, $userPsw)
 {
    $result = false;
 
-   $res = json_decode(file_get_contents("model/data/users.json"),true);
+    $strSeparator = "'";
+    $query = "SELECT users.PasswordHash FROM users WHERE users.Mail = " . $strSeparator . $userEmailAddress . $strSeparator;
 
-   // Scan the users JSON's file to check login and pswd
-   foreach ($res as $item) {
-
-        if ($userEmailAddress == $item['email']) {
-            if (password_verify($userPsw, $item['hashPwd'])){
-                return true;
-            }
+    require_once 'model/dbConnector.php';
+    $queryResult = executeQuerySelect($query);
+    $queryResult = $queryResult[0];
+    if ($queryResult){
+        if (password_verify($userPsw, $queryResult['PasswordHash'])){
+            return true;
         }
-   }
+    }
 
-   return $result;
+    return $result;
 }
 
 /**
@@ -41,19 +41,19 @@ function isLoginCorrect($userEmailAddress, $userPsw)
  * @return string
  */
 function firstNameLastName($userEmailAddress){
-    $users = json_decode(file_get_contents("model/data/users.json"),true);
 
-    // Scan the users JSON's file to get firstName and lastName
-    foreach ($users as $user) {
 
-        if ($userEmailAddress == $user['email']) {
-            $firstName = $user['firstName'];
-            $lastName = $user['lastName'];
-        }
-    }
+    $strSeparator = "'";
+    $query = "SELECT Firstname, Lastname FROM users WHERE Mail = " . $strSeparator . $userEmailAddress . $strSeparator;
+
+    require_once 'model/dbConnector.php';
+    $queryResult = executeQuerySelect($query);
+    $user = $queryResult[0];
+
+    $firstName = $user['Firstname'];
+    $lastName = $user['Lastname'];
 
     $result = "$firstName $lastName";
-
     return $result;
 }
 
@@ -66,7 +66,6 @@ function firstNameLastName($userEmailAddress){
  */
 function registerAccount(/*$id, */$userFirstName, $userLastName, $userEmailAddress, $userPsw)
 {
-
     $result = false;
 
     $strSeparator = "'";
@@ -82,38 +81,6 @@ function registerAccount(/*$id, */$userFirstName, $userLastName, $userEmailAddre
     }
 
     return $result;
-
-
-    /*
-    $result = false;
-
-    $file = "model/data/users.json";
-
-    //open or read DB data
-    $users = json_decode(file_get_contents($file));
-    $users = executeQueryInsert($query));
-
-//  hash password and create an array to add in JSON file
-    $userHashPsw = password_hash($userPsw, PASSWORD_DEFAULT);
-    $data2add = array('id' => $id, 'firstName' => $userFirstName, 'lastName' => $userLastName, 'email' =>$userEmailAddress, 'hashPwd' => $userHashPsw, 'userType' =>'1');
-
-//append additional json to json file
-    if (isset($_SESSION['userEmailAddress']) && $_SESSION['userEmailAddress']!="" && isset($users)){
-        foreach ($users as $user) {
-            if ($user->id == $data2add["id"]) {
-                $users[$id-1] = $data2add;
-            }
-        }
-    }
-    else{
-        $users[] = $data2add;
-    }
-    $jsonData = json_encode($users);
-
-    file_put_contents($file, $jsonData);
-
-//    json_encode($data);
-    return true;*/
 }
 
 
@@ -125,72 +92,29 @@ function userManage($data){
         //variable set
         if (isset($data['inputUserEmailAddress']) && isset($data['inputUserPsw']) && isset($data['inputUserPswRepeat'])) {
 
-
-
-            //$users = json_decode(file_get_contents("model/data/users.json"),true);
             $strSeparator = "'";
             $query = "SELECT users.Firstname, users.Lastname, users.Mail, users.Type, users.PasswordHash FROM users WHERE users.Mail = " . $strSeparator . $data['inputUserEmailAddress'] . $strSeparator;
             $user = executeQuerySelect($query);
 
-/*
-            if (isset($_SESSION['userEmailAddress'])){
-                foreach ($users as $user) {
-                    if ($_SESSION['userEmailAddress'] == $user['email']) {
-                        $dataUser = $user;
-                        $id = $user['id'];
-                    }
-                }
-            }*/
-            if (isset($_SESSION['userEmailAddress']) && $_SESSION['userEmailAddress'] == $user['Mail']){
+            // Test si l'email existe déjà
+            $existAccount = false;
+            if (isset($user) && $user!="" && $user!=null && $user!=0){
                 $dataUser = $user;
                 $id = $user['id'];
-            }
-/*
-            else{
-                if (isset($users)){
-                    $dataUser = $data;
-                    foreach ($users as $user) {
-                        $id = $user["id"];
-                    }
-                    $id++;
-                }
-                else $id = 1;
-            }*/
-/*
-            $existAccount = false;
-            if (isset($users) && $_SESSION['userEmailAddress'] != $data['inputUserEmailAddress']){
-                foreach ($users as $user){
-                    if ($data['inputUserEmailAddress'] == $user['email']){
-                        $existAccount = true;
-                    }
-                }
-            }*/
-            $existAccount = false;
-            if (isset($user) && $_SESSION['userEmailAddress'] != $data['inputUserEmailAddress']){
-                if ($data['inputUserEmailAddress'] == $user['email']){
-                    $existAccount = true;
-                }
+                $existAccount = true;
             }
 
-
+            // Si l'email n'existe pas dans la BDD
             if ($existAccount == false){
+
+                // Si l'utilisateur à entré 2 fois le même mot de passe
                 if ($data['inputUserPsw'] == $data['inputUserPswRepeat']) {
-                    require_once "model/usersManager.php";/*
-                    if (registerAccount($id, $data['inputUserFirstName'], $data['inputUserLastName'], $data['inputUserEmailAddress'], $data['inputUserPsw']))
-                    {
-                        if (!isset($_SESSION['userEmailAddress'])){
-                            createSession($data['inputUserEmailAddress'],"1");
-                        }
-                        $registerErrorMessage = null;
-                        require "view/home.php";
-                    }
-                    else
-                    {
-                        $registerErrorMessage = "L'inscription n'est pas possible avec les valeurs saisies !";
-                        require "view/register.php";
-                    }*/
+                    require_once "model/usersManager.php";
+
+                    // Si le compte à bien été créé dans la BDD
                     if (registerAccount($data['inputUserFirstName'], $data['inputUserLastName'], $data['inputUserEmailAddress'], $data['inputUserPsw']))
                     {
+                        // Crée la séssion si elle n'éxiste pas
                         if (!isset($_SESSION['userEmailAddress'])){
                             createSession($data['inputUserEmailAddress'],1);
                         }
@@ -219,21 +143,6 @@ function userManage($data){
         }
         else
         {
-            $users = json_decode(file_get_contents("model/data/users.json"),true);
-
-            if (isset($_SESSION['userEmailAddress'])){
-                foreach ($users as $user) {
-                    if ($_SESSION['userEmailAddress'] == $user['email']) {
-                        $dataUser = $user;
-                    }
-                }
-            }
-            else{
-                if (isset($users)){
-                    $dataUser = $data;
-                }
-            }
-
             $registerErrorMessage = null;
             require "view/register.php";
         }
@@ -246,17 +155,10 @@ function userManage($data){
 
 function userType($userEmailAddress)
 {
-    $result = false;
-
-    $res = json_decode(file_get_contents("model/data/users.json"),true);
-
-    // Scan the users JSON's file for userType
-    foreach ($res as $item) {
-
-        if ($userEmailAddress == $item['email']) {
-            $result = $item['userType'];
-        }
-    }
-
+    $strSeparator = "'";
+    $query = "SELECT users.Type FROM users WHERE Mail = " . $strSeparator . $userEmailAddress . $strSeparator;
+    $user = executeQuerySelect($query);
+    $user = $user[0];
+    $result = $user['Type'];
     return $result;
 }
