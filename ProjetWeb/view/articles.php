@@ -56,7 +56,11 @@ ob_start();
                         <!-- Block2 -->
                         <div class="block2">
                             <div class="block2-img wrap-pic-w of-hidden pos-relative">
-                                <img src="<?=$article->picture; ?>" width="320" height="180" alt="" />
+                                <?php if(is_file($article->picture)) : ?>
+                                        <img class="imageProductList" src="<?=$article->picture; ?>" alt="IMG-PRODUCT"/>
+                                    <?php else :?>
+                                        <img class="imageProductList" src="view/contents/images/noImages.jpg" alt="no image"/>
+                                    <?php endif;?>
 
                                 <div class="block2-overlay trans-0-3">
                                     <a href="#" class="block2-btn-addwishlist hov-pointer trans-0-3">
