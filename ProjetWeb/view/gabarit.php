@@ -76,19 +76,16 @@ Released   : 20130902
 <?=$content; ?>
 
 <div id="copyright" class="container">
-
     <p>&copy; Untitled. All rights reserved. | Photos by <a href="http://fotogrph.com/">Fotogrph</a> | Design by <a href="http://templated.co" rel="nofollow">TEMPLATED</a>.</p>
-
-        <?php if (isset($_SESSION['userType']) && $_SESSION['userType'] > 1) : ?>
-            <form action="index.php?action=viewType" method="post">
-                <input type="radio" id="viewType1" name="viewType" value="1" onclick="this.form.submit()">
-                <label id="adminboutons" for="viewType1">Utilisateur</label>
-                <br>
-                <input type="radio" id="viewType2" name="viewType" value="2" onclick="this.form.submit()">
-                <label id="adminboutons" for="viewType2">Administrateur</label>
-            </form>
-        <?php endif;?>
-
+    <?php if (isset($_SESSION['userType']) && $_SESSION['userType'] > 1) : ?>
+        <form action="index.php?action=viewType" method="post">
+            <input type="radio" id="viewType1" name="viewType" value="1" onclick="this.form.submit()">
+            <label id="adminboutons" for="viewType1">Utilisateur</label>
+            <br>
+            <input type="radio" id="viewType2" name="viewType" value="2" onclick="this.form.submit()">
+            <label id="adminboutons" for="viewType2">Administrateur</label>
+        </form>
+    <?php endif;?>
 </div>
 </body>
 </html>
