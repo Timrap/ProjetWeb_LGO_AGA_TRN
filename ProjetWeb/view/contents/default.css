@@ -174,13 +174,13 @@
 	{
 		display: inline-block;
 		padding: 1em 2em 1em 2em;
-		background: #96063b;
+		background: #000000;
 		letter-spacing: 0.20em;
 		text-decoration: none;
 		text-transform: uppercase;
 		font-weight: 400;
 		font-size: 0.90em;
-		color: #FFF;
+		color: #ffffff;
 	}
 	
 	.button:before
