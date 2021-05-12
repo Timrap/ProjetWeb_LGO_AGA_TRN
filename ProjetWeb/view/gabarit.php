@@ -76,7 +76,7 @@ Released   : 20130902
 <?=$content; ?>
 
 <div id="copyright" class="container">
-    <p>&copy; Untitled. All rights reserved. | Photos by <a href="http://fotogrph.com/">Fotogrph</a> | Design by <a href="http://templated.co" rel="nofollow">TEMPLATED</a>.</p>
+    <p>&copy; Untitled. All rights reserved. | Design by LGO - AGA - TRN.</p>
     <?php if (isset($_SESSION['userType']) && $_SESSION['userType'] > 1) : ?>
         <form action="index.php?action=viewType" method="post">
             <input type="radio" id="viewType1" name="viewType" value="1" onclick="this.form.submit()">

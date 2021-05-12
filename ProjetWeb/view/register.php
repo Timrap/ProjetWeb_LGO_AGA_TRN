@@ -93,8 +93,8 @@ ob_start();
                 </div>
                 <?php endif; ?>
 
-            <div  class="container-login100-form-btn">
-                <button  type="submit" class="login100-form-btn">
+            <div  class="container-login100-form-btn button">
+                <button  type="submit" class="login100-form-btn ">
                     <?php if(isset($_SESSION['userEmailAddress'])) echo "Modifier";
                     else echo "S'inscrire";
                     ?>

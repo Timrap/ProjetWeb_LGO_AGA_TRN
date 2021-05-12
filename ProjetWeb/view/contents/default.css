@@ -118,7 +118,7 @@
 		size: 30px;
 		padding-left: 25px;
 		align-content: center;
-		color: black;
+		color: #000000;
 	}
 
 
@@ -516,7 +516,7 @@
 
 	.button:hover {
 		background: #5738c7;
-
+		color:white;
 	}
 	#fileElem {
 		display: none;
@@ -534,12 +534,12 @@
 		font-size: 100%;
 	}
 
-	#boutonlogin
+/*	#boutonlogin
 	{
 		color: #000000;
 		font-size: 75%;
 	}
-
+*/
 	#boutoncgu
 	{
 		border: solid;
