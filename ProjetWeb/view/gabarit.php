@@ -59,12 +59,12 @@ Released   : 20130902
                     <li><a href="index.php?action=logout">Se déconnecter</a></li>
                     <li><a href="index.php?action=accountManage">
                             <img src="view/contents/images/icon-header-01-log.png" alt="connecté"/>
-                            <?=userName($_SESSION['userEmailAddress']); ?></a>
+                            <?= userName($_SESSION['userEmailAddress']); ?></a>
                     </li>
                 <?php else: ?>
                     <li><a href="index.php?action=login">Se connecter</a></li>
-                    <li><a href="index.php?action=accountManage">S'inscrire</a></li>
-                    <img src="view/contents/images/icon-header-01.png" alt="déconnecté"/>
+                    <li><a href="index.php?action=accountManage"><img src="view/contents/images/icon-header-01.png" alt="déconnecté"/> S'inscrire</a></li>
+
                 <?php endif;?>
             </ul>
         </div>
