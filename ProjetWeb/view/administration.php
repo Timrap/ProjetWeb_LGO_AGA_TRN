@@ -60,11 +60,11 @@ $title = 'annoncesfaciles - home';
                                 <img class="imageProduct" src="view/contents/images/pas-image-disponible.png" alt="no image"/>
                             </?php endif;?>
                         </td>-->
-                        <td class="tableArticles"><?=$user['Firstname']; ?></td>
-                        <td class="tableArticles"><?=$user['Lastname']; ?></td>
-                        <td class="tableArticles"><?=$user['Mail']; ?></td>
-                        <td class="tableArticles"><?=$user['Type']; ?></td>
-                        <td class="tableArticles"><a id="faficon" href="index.php?action=adManage&articleId=<?=$user['idUsers']?>"class="fa fa-cogs fa-2x"></a> <a id="faficon" href="index.php?action=articleDelete&articleId=<?=$user['idUsers']?>" class="fa fa-trash fa-2x"></a></td>
+                        <td class="tableArticles"><?=$user['firstName']; ?></td>
+                        <td class="tableArticles"><?=$user['lastName']; ?></td>
+                        <td class="tableArticles"><?=$user['mail']; ?></td>
+                        <td class="tableArticles"><?=$user['type']; ?></td>
+                        <td class="tableArticles"><a id="faficon" href="index.php?action=adManage&articleId=<?=$user['id']?>"class="fa fa-cogs fa-2x"></a> <a id="faficon" href="index.php?action=articleDelete&articleId=<?=$user['id']?>" class="fa fa-trash fa-2x"></a></td>
                     </tr>
                 <?php endforeach; ?>
             <?php endif; ?>

@@ -84,13 +84,13 @@ function administration ()
     require_once 'model/dbConnector.php';
 
     // Récupérer les utilisateus
-    $query = "SELECT users.idUsers, users.Firstname, users.Lastname, users.Mail, users.Type FROM users";
+    $query = "SELECT users.id, users.firstName, users.lastName, users.mail, users.type FROM users";
     $queryResult = executeQuerySelect($query);
     //$queryResult = $queryResult[0];
     $users = $queryResult;
 
     // Récupérer les articles
-    $query = "SELECT advertisements.Title, advertisements.Category, advertisements.Description, advertisements.Image, advertisements.Price FROM advertisements";
+    $query = "SELECT advertisements.title, advertisements.category, advertisements.description, advertisements.image, advertisements.price FROM advertisements";
     $queryResult = executeQuerySelect($query);
     //$queryResult = $queryResult[0];
     $articles = $queryResult;

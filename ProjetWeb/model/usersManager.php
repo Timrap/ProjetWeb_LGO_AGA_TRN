@@ -22,13 +22,13 @@ function isLoginCorrect($userEmailAddress, $userPsw)
    $result = false;
 
     $strSeparator = "'";
-    $query = "SELECT users.PasswordHash FROM users WHERE users.Mail = " . $strSeparator . $userEmailAddress . $strSeparator;
+    $query = "SELECT users.passwordHash FROM users WHERE users.mail = " . $strSeparator . $userEmailAddress . $strSeparator;
 
     require_once 'model/dbConnector.php';
     $queryResult = executeQuerySelect($query);
     $queryResult = $queryResult[0];
     if ($queryResult){
-        if (password_verify($userPsw, $queryResult['PasswordHash'])){
+        if (password_verify($userPsw, $queryResult['passwordHash'])){
             return true;
         }
     }
@@ -44,14 +44,14 @@ function firstNameLastName($userEmailAddress){
 
 
     $strSeparator = "'";
-    $query = "SELECT Firstname, Lastname FROM users WHERE Mail = " . $strSeparator . $userEmailAddress . $strSeparator;
+    $query = "SELECT users.firstName, users.lastName FROM users WHERE mail = " . $strSeparator . $userEmailAddress . $strSeparator;
 
     require_once 'model/dbConnector.php';
     $queryResult = executeQuerySelect($query);
     $user = $queryResult[0];
 
-    $firstName = $user['Firstname'];
-    $lastName = $user['Lastname'];
+    $firstName = $user['firstName'];
+    $lastName = $user['lastName'];
 
     $result = "$firstName $lastName";
     return $result;
@@ -72,7 +72,7 @@ function registerAccount(/*$id, */$userFirstName, $userLastName, $userEmailAddre
 
     $userHashPsw = password_hash($userPsw, PASSWORD_DEFAULT);
 
-    $registerQuery = "INSERT INTO users (Firstname, Lastname, Mail, Type, PasswordHash) VALUES ('$userFirstName', '$userLastName', '$userEmailAddress', 0, '$userHashPsw')";
+    $registerQuery = "INSERT INTO users (firstName, lastName, mail, type, passwordHash) VALUES ('$userFirstName', '$userLastName', '$userEmailAddress', 0, '$userHashPsw')";
 
     require_once 'model/dbConnector.php';
     $queryResult = executeQueryInsert($registerQuery);
@@ -93,7 +93,7 @@ function userManage($data){
         if (isset($data['inputUserEmailAddress']) && isset($data['inputUserPsw']) && isset($data['inputUserPswRepeat'])) {
 
             $strSeparator = "'";
-            $query = "SELECT users.Firstname, users.Lastname, users.Mail, users.Type, users.PasswordHash FROM users WHERE users.Mail = " . $strSeparator . $data['inputUserEmailAddress'] . $strSeparator;
+            $query = "SELECT users.firstName, users.lastName, users.mail, users.type, users.passwordHash FROM users WHERE users.mail = " . $strSeparator . $data['inputUserEmailAddress'] . $strSeparator;
             $user = executeQuerySelect($query);
 
             // Test si l'email existe déjà
@@ -154,9 +154,9 @@ function userManage($data){
 function userType($userEmailAddress)
 {
     $strSeparator = "'";
-    $query = "SELECT users.Type FROM users WHERE Mail = " . $strSeparator . $userEmailAddress . $strSeparator;
+    $query = "SELECT users.type FROM users WHERE mail = " . $strSeparator . $userEmailAddress . $strSeparator;
     $user = executeQuerySelect($query);
     $user = $user[0];
-    $result = $user['Type'];
+    $result = $user['type'];
     return $result;
 }
