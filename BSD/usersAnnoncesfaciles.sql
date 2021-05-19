@@ -1,9 +1,4 @@
-﻿-- --------------------------------------------------------
--- Hôte :                        127.0.0.1
--- Version du serveur:           8.0.21 - MySQL Community Server - GPL
--- SE du serveur:                Win64
--- HeidiSQL Version:             11.0.0.5919
--- --------------------------------------------------------
+
 
 INSERT INTO `users` (`firstName`, `lastName`, `mail`, `type`, `passwordHash`) VALUES
 	('Rapin', 'Timothée', 'timothee.rapin@cpnv.ch', 2, '$2y$10$ZFNfBI4L7syajgcl4ya0u.MhrjQD4LztnHVm04vSGCptboc6gzs.a'),
