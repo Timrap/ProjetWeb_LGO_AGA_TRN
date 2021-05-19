@@ -12,234 +12,125 @@
 ob_start();
 $title = 'annoncesfaciles - home';
 ?>
-<!-- <div id="page" class="container">
 
-     <<form class="login100-form validate-form" action="index.php?action=articles" method="post">
+<!-- Users -->
+<div id="contentpagecreat" class="container">
 
-         <div class="title">
-             <h2>Catégories</h2>
-         </div>
+    <table class="table table-striped table-dark" class="tableArticles">
+        <thead>
+        <tr>
+            <th class="tableArticles">Prénom</th>
+            <th class="tableArticles">Nom</th>
+            <th class="tableArticles">eMail</th>
+            <th class="tableArticles">Type</th>
+            <th class="tableArticles"><a  href="index.php?action=adManage&articleId="> <button class="button"> Ajouter</button></a></th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <?php if(isset($users)): ?>
+                    <?php foreach ($users as $user): ?>
+                    <tr><!--
+                        <td class="tableArticles">
+                            </?php
+                            switch ($user->categorie){
+                                case 1:
+                                    echo "Véhicule motorisé";
+                                    break;
+                                case 2:
+                                    echo "Appreil électronique";
+                                    break;
+                                case 3:
+                                    echo "Mobilier";
+                                    break;
+                                case 4:
+                                    echo "Bijou";
+                                    break;
+                                case 5:
+                                    echo "Immobilier";
+                                    break;
+                                case 6:
+                                    echo "Décoration";
+                                    break;
+                            }
+                            ?>
+                        <td> </?php if(is_file($user->picture)) : ?>
+                                <img class="imageProduct" src="</?=$user->picture; ?>" alt="IMG-PRODUCT"/>
+                            </?php else :?>
+                                <img class="imageProduct" src="view/contents/images/pas-image-disponible.png" alt="no image"/>
+                            </?php endif;?>
+                        </td>-->
+                        <td class="tableArticles"><?=$user['Firstname']; ?></td>
+                        <td class="tableArticles"><?=$user['Lastname']; ?></td>
+                        <td class="tableArticles"><?=$user['Mail']; ?></td>
+                        <td class="tableArticles"><?=$user['Type']; ?></td>
+                        <td class="tableArticles"><a id="faficon" href="index.php?action=adManage&articleId=<?=$user['idUsers']?>"class="fa fa-cogs fa-2x"></a> <a id="faficon" href="index.php?action=articleDelete&articleId=<?=$user['idUsers']?>" class="fa fa-trash fa-2x"></a></td>
+                    </tr>
+                <?php endforeach; ?>
+            <?php endif; ?>
+        </tbody>
+    </table>
+</div>
 
-         <div class="box" id="boxArticle1">
-             <img src="view/contents/annonce1-passat/1.jpg" width="320" height="180" alt="" />
-             <h3>Voitures</h3>
-             <p>Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna congue rutrum.</p>
-             <button type="submit" class="button" name="article" value="1">
-                 Read More
-             </button>
-         </div>
+<!-- Product -->
+<div id="contentpagecreat" class="container">
 
-         <div class="box">
-             <img src="view/contents/annonce2-iphone/iphone1.jpg" width="320" height="180" alt="" />
-             <h3>Smartphones</h3>
-             <p>Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna congue rutrum.</p>
-             <button type="submit" class="button" name="article" value="2">
-                 Read More
-             </button>
-         </div>
-
-
-
-         <div class="box">
-             <img src="view/contents/annonce3-montre/montre1.jpg" width="320" height="180" alt="" />
-             <h3>Montres</h3>
-             <p>Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna congue rutrum.</p>
-             <button type="submit" class="button" name="article" value="3">
-                 Read More
-             </button>
-         </div>
-
-             <div class="box">
-                 <img src="view/contents/annonce4-table/table.jpg" width="320" height="180" alt="" />
-                 <h3>Tables</h3>
-                 <p>Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna congue rutrum.</p>
-                 <button type="submit" class="button" name="article" value="4">
-                     Read More
-                 </button>
-             </div>
-
-
-
-             <div class="box">
-                 <img src="view/contents/annonce5-ordinateur/ordinateur1.jpg" width="320" height="180" alt="" />
-                 <h3>Ordinateurs</h3>
-                 <p>Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna congue rutrum.</p>
-                 <button type="submit" class="button" name="article" value="5">
-                     Read More
-                 </button>
-             </div>
-
-             <div class="box">
-                 <img src="view/contents/annonce6-playstation/playstation1.jpg" width="320" height="180" alt="" />
-                 <h3>Consoles</h3>
-                 <p>Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna congue rutrum.</p>
-                 <button type="submit" class="button" name="article" value="6">
-                     Read More
-                 </button>
-             </div>
- </div>
--->
-<div id="page" class="container">
-    <form action="index.php?action=articles" method="post">
-        <div class="title">
-            <h2>Administration</h2>
-
-
-
-            <div class="tab-pane fade show active" id="best-seller" role="tabpanel">
-                <div class="row">
-
-
-                    <div class="col-sm-6 col-md-3 col-lg-4 p-b-50">
-                        <!-- Block2 -->
-                        <div class="block2">
-                            <div class="block2-img wrap-pic-w of-hidden pos-relative">
-                                <img src="view/contents/annonce1-passat/1.jpg" width="320" height="180" alt="" />
-
-                                <div class="block2-overlay trans-0-3">
-                                    <a href="#" class="block2-btn-addwishlist hov-pointer trans-0-3">
-                                        <i class="icon-wishlist icon_heart_alt" aria-hidden="true"></i>
-                                        <i class="icon-wishlist icon_heart dis-none" aria-hidden="true"></i>
-                                    </a>
-                                    <h3>Véhicule motorisé</h3>
-                                    <p>Découvrez tous les articles de cette catégorie.</p>
-                                    <div class="block2-btn-addcart w-size1 trans-0-3">
-                                        <!-- Button -->
-                                        <button type="submit" class="button" name="categorie" value="1">
-                                            Voir plus
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div class="col-sm-6 col-md-3 col-lg-4 p-b-50">
-                        <!-- Block2 -->
-                        <div class="block2">
-                            <div class="block2-img wrap-pic-w of-hidden pos-relative">
-                                <img src="view/contents/annonce2-iphone/iphone1.jpg" width="320" height="180" alt="" />
-
-                                <div class="block2-overlay trans-0-3">
-                                    <a href="#" class="block2-btn-addwishlist hov-pointer trans-0-3">
-                                        <i class="icon-wishlist icon_heart_alt" aria-hidden="true"></i>
-                                        <i class="icon-wishlist icon_heart dis-none" aria-hidden="true"></i>
-                                    </a>
-                                    <h3>Appreil électronique</h3>
-                                    <p>Découvrez tous les articles de cette catégorie.</p>
-                                    <div class="block2-btn-addcart w-size1 trans-0-3">
-                                        <!-- Button -->
-                                        <button type="submit" class="button" name="categorie" value="2">
-                                            Voir plus
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div class="col-sm-6 col-md-3 col-lg-4 p-b-50">
-                        <!-- Block2 -->
-                        <div class="block2">
-                            <div class="block2-img wrap-pic-w of-hidden pos-relative">
-                                <img src="view/contents/annonce4-table/table.jpg" width="320" height="180" alt="" />
-
-                                <div class="block2-overlay trans-0-3">
-                                    <a href="#" class="block2-btn-addwishlist hov-pointer trans-0-3">
-                                        <i class="icon-wishlist icon_heart_alt" aria-hidden="true"></i>
-                                        <i class="icon-wishlist icon_heart dis-none" aria-hidden="true"></i>
-                                    </a>
-                                    <h3>Mobilier</h3>
-                                    <p>Découvrez tous les articles de cette catégorie.</p>
-                                    <div class="block2-btn-addcart w-size1 trans-0-3">
-                                        <!-- Button -->
-                                        <button type="submit" class="button" name="categorie" value="3">
-                                            Voir plus
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div class="col-sm-6 col-md-3 col-lg-4 p-b-50">
-                        <!-- Block2 -->
-                        <div class="block2">
-                            <div class="block2-img wrap-pic-w of-hidden pos-relative">
-                                <img src="view/contents/annonce3-montre/montre1.jpg" width="320" height="180" alt="" />
-
-                                <div class="block2-overlay trans-0-3">
-                                    <a href="#" class="block2-btn-addwishlist hov-pointer trans-0-3">
-                                        <i class="icon-wishlist icon_heart_alt" aria-hidden="true"></i>
-                                        <i class="icon-wishlist icon_heart dis-none" aria-hidden="true"></i>
-                                    </a>
-                                    <h3>Bijou</h3>
-                                    <p>Découvrez tous les articles de cette catégorie.</p>
-                                    <div class="block2-btn-addcart w-size1 trans-0-3">
-                                        <!-- Button -->
-                                        <button type="submit" class="button" name="categorie" value="4">
-                                            Voir plus
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div class="col-sm-6 col-md-3 col-lg-4 p-b-50">
-                        <!-- Block2 -->
-                        <div class="block2">
-                            <div class="block2-img wrap-pic-w of-hidden pos-relative">
-                                <img src="view/contents/annonce5-ordinateur/ordinateur1.jpg" width="320" height="180" alt="" />
-
-                                <div class="block2-overlay trans-0-3">
-                                    <a href="#" class="block2-btn-addwishlist hov-pointer trans-0-3">
-                                        <i class="icon-wishlist icon_heart_alt" aria-hidden="true"></i>
-                                        <i class="icon-wishlist icon_heart dis-none" aria-hidden="true"></i>
-                                    </a>
-                                    <h3>Immobilier</h3>
-                                    <p>Découvrez tous les articles de cette catégorie.</p>
-                                    <div class="block2-btn-addcart w-size1 trans-0-3">
-                                        <!-- Button -->
-                                        <button type="submit" class="button" name="categorie" value="5">
-                                            Voir plus
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div class="col-sm-6 col-md-3 col-lg-4 p-b-50">
-                        <!-- Block2 -->
-                        <div class="block2">
-                            <div class="block2-img wrap-pic-w of-hidden pos-relative">
-                                <img src="view/contents/annonce6-playstation/playstation1.jpg" width="320" height="180" alt="" />
-
-                                <div class="block2-overlay trans-0-3">
-                                    <a href="#" class="block2-btn-addwishlist hov-pointer trans-0-3">
-                                        <i class="icon-wishlist icon_heart_alt" aria-hidden="true"></i>
-                                        <i class="icon-wishlist icon_heart dis-none" aria-hidden="true"></i>
-                                    </a>
-                                    <h3>Décoration</h3>
-                                    <p>Découvrez tous les articles de cette catégorie.</p>
-                                    <div class="block2-btn-addcart w-size1 trans-0-3">
-                                        <!-- Button -->
-                                        <button type="submit" class="button" name="categorie" value="6">
-                                            Voir plus
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-    </form>
+    <table class="table table-striped table-dark" class="tableArticles">
+        <thead>
+        <tr>
+            <th class="tableArticles">Catégorie</th>
+            <th class="tableArticles">Image</th>
+            <th class="tableArticles">Titre</th>
+            <th class="tableArticles">Description</th>
+            <th class="tableArticles">Prix</th>
+            <th class="tableArticles"><a  href="index.php?action=adManage&articleId="> <button class="button"> Ajouter</button></a></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <?php if(isset($articles)): ?>
+            <?php foreach ($articles as $article): ?>
+            <?php if (isset($article->userEmail) && $article->userEmail == $_SESSION['userEmailAddress']): ?>
+        <tr>
+            <td class="tableArticles">
+                <?php
+                switch ($article->categorie){
+                    case 1:
+                        echo "Véhicule motorisé";
+                        break;
+                    case 2:
+                        echo "Appreil électronique";
+                        break;
+                    case 3:
+                        echo "Mobilier";
+                        break;
+                    case 4:
+                        echo "Bijou";
+                        break;
+                    case 5:
+                        echo "Immobilier";
+                        break;
+                    case 6:
+                        echo "Décoration";
+                        break;
+                }
+                ?>
+            <td> <?php if(is_file($article->picture)) : ?>
+                    <img class="imageProduct" src="<?=$article->picture; ?>" alt="IMG-PRODUCT"/>
+                <?php else :?>
+                    <img class="imageProduct" src="view/contents/images/pas-image-disponible.png" alt="no image"/>
+                <?php endif;?>
+            </td>
+            <td class="tableArticles"><?=$article->title; ?></td>
+            <td class="tableArticles"> <textarea class="descriptionArea"  readonly> <?=$article->description; ?></textarea></td>
+            <td class="tableArticles"><?=$article->price; ?> CHF</td>
+            <td class="tableArticles"><a id="faficon" href="index.php?action=adManage&articleId=<?=$article->id?>"class=" fa fa-cogs fa-2x"></a> <a id="faficon" href="index.php?action=articleDelete&articleId=<?=$article->id?>" class=" fa fa-trash fa-2x"></a></td>
+        </tr>
+        <?php endif; ?>
+        <?php endforeach; ?>
+        <?php endif; ?>
+        </tbody>
+    </table>
 </div>
 
 <?php

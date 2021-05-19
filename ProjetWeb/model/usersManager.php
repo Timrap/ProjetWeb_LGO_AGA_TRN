@@ -138,8 +138,6 @@ function userManage($data){
                 $registerErrorMessage = "L'adresse email existe déjà !";
                 require "view/register.php";
             }
-
-
         }
         else
         {
