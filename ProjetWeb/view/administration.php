@@ -21,50 +21,37 @@ $title = 'annoncesfaciles - home';
         <tr>
             <th class="tableArticles">Prénom</th>
             <th class="tableArticles">Nom</th>
-            <th class="tableArticles">eMail</th>
+            <th class="tableArticles">Mail</th>
             <th class="tableArticles">Type</th>
-            <th class="tableArticles"><a  href="index.php?action=adManage&articleId="> <button class="button"> Ajouter</button></a></th>
+            <th class="tableArticles"></th>
         </tr>
         </thead>
         <tbody>
             <tr>
                 <?php if(isset($users)): ?>
                     <?php foreach ($users as $user): ?>
-                    <tr><!--
-                        <td class="tableArticles">
-                            </?php
-                            switch ($user->categorie){
-                                case 1:
-                                    echo "Véhicule motorisé";
-                                    break;
-                                case 2:
-                                    echo "Appreil électronique";
-                                    break;
-                                case 3:
-                                    echo "Mobilier";
-                                    break;
-                                case 4:
-                                    echo "Bijou";
-                                    break;
-                                case 5:
-                                    echo "Immobilier";
-                                    break;
-                                case 6:
-                                    echo "Décoration";
-                                    break;
-                            }
-                            ?>
-                        <td> </?php if(is_file($user->picture)) : ?>
-                                <img class="imageProduct" src="</?=$user->picture; ?>" alt="IMG-PRODUCT"/>
-                            </?php else :?>
-                                <img class="imageProduct" src="view/contents/images/pas-image-disponible.png" alt="no image"/>
-                            </?php endif;?>
-                        </td>-->
+                    <tr>
                         <td class="tableArticles"><?=$user['firstName']; ?></td>
                         <td class="tableArticles"><?=$user['lastName']; ?></td>
                         <td class="tableArticles"><?=$user['mail']; ?></td>
-                        <td class="tableArticles"><?=$user['type']; ?></td>
-                        <td class="tableArticles"><a id="faficon" href="index.php?action=adManage&articleId=<?=$user['id']?>"class="fa fa-cogs fa-2x"></a> <a id="faficon" href="index.php?action=articleDelete&articleId=<?=$user['id']?>" class="fa fa-trash fa-2x"></a></td>
+                        <td class="tableArticles"><?php
+                            switch ($user['type']) {
+                                case 0:
+                                    echo "Utilisateur";
+                                    break;
+                                case 1:
+                                    echo "Gestionaire";
+                                    break;
+                                case 2:
+                                    echo "Administrateur";
+                                    break;
+                            }
+                        ?>
+                        </td>
+                        <td class="tableArticles">
+                            <a id="faficon" href="index.php?action=adManage&userId=<?=$user['id']?>"class="fa fa-cogs fa-2x"></a>
+                            <a id="faficon" href="index.php?action=articleDelete&userId=<?=$user['id']?>" class="fa fa-trash fa-2x"></a>
+                        </td>
                     </tr>
                 <?php endforeach; ?>
             <?php endif; ?>
