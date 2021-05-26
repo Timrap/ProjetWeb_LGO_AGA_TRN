@@ -160,3 +160,19 @@ function userType($userEmailAddress)
     $result = $user['type'];
     return $result;
 }
+
+function userDeleteFromDB($userId){
+    $result = false;
+
+    $strSeparator = "'";
+
+    $DeleteQuery = "DELETE FROM users WHERE id = " . $strSeparator . $userId . $strSeparator;
+
+    require_once 'model/dbConnector.php';
+    $queryResult = executeQueryInsert($DeleteQuery);
+    if ($queryResult){
+        $result = $queryResult;
+    }
+
+    return $result;
+}

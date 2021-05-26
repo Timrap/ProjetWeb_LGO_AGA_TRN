@@ -108,3 +108,10 @@ function viewType($userTypeView){
     $_SESSION['userTypeView'] = $userTypeView['viewType'];
     home();
 }
+
+function userDelete($userId){
+    $userId = $userId['userId'];
+    require_once 'model/usersManager.php';
+    userDeleteFromDB($userId);
+    administration();
+}
