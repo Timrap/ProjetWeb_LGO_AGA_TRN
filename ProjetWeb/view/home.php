@@ -236,9 +236,11 @@ $title = 'annoncesfaciles - home';
                                     </div>
                                 </div>
                             </div>
-
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
     </form>
 </div>
 
