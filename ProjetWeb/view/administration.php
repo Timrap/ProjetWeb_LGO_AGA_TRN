@@ -25,7 +25,7 @@ $title = 'annoncesfaciles - home';
         <tr>
             <th class="tableArticles">Prénom</th>
             <th class="tableArticles">Nom</th>
-            <th class="tableArticles">eMail</th>
+            <th class="tableArticles">Mail</th>
             <th class="tableArticles">Type</th>
             <th class="tableArticles"></th>
         </tr>
@@ -57,7 +57,7 @@ $title = 'annoncesfaciles - home';
             <th class="tableArticles">Titre</th>
             <th class="tableArticles">Description</th>
             <th class="tableArticles">Prix</th>
-            <th class="tableArticles"><a  href="index.php?action=adManage&articleId="> <button class="button"> Ajouter</button></a></th>
+            <th class="tableArticles"></th>
         </tr>
         </thead>
         <tbody>

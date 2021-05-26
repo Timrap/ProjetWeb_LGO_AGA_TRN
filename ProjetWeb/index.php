@@ -54,6 +54,9 @@ if (isset($_GET['action'])) {
         case "userDelete" :
             userDelete($_GET);
             break;
+        case 'userManage' :
+            userAccountManage($_POST, $_GET);
+            break;
 
 
         default :

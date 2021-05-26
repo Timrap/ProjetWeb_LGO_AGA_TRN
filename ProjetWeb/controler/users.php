@@ -115,3 +115,9 @@ function userDelete($userId){
     userDeleteFromDB($userId);
     administration();
 }
+
+function userAccountManage($data, $userId)
+{
+    require_once 'model/usersManager.php';
+    userAccountManageInDb($data, $userId);
+}
