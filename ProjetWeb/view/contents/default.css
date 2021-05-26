@@ -718,3 +718,52 @@
 		color: rgba(255,255,255,0.6);
 	}
 
+	#lienConditionGénérales
+	{
+		color: #7f60ef;
+		font-size: 17px;
+
+
+	}
+
+	#lienConditionGénérales:hover
+	{
+
+		color: #5738c7;
+
+	}
+
+
+	#buttonRegister
+	{
+		display: inline-block;
+		padding: 1em 2em 1em 2em;
+		background: #7f60ef;
+		text-decoration: none;
+		color: #ffffff;
+		border-radius: 2rem;
+		font-size: 1em;
+		font-family: Poppins-Regular sans-serif;
+	}
+
+	#buttonRegister:hover
+	{
+		background: #5738c7;
+		color:white;
+	}
+
+	#jaiLu
+	{
+		font-size: 20px;
+		font-family: Poppins-Regular sans-serif;
+		display: block;
+		padding: 0px 0px 10px 20px;
+		text-align: left;
+	}
+
+	#checkbox
+	{
+		padding: 0px 0px 0px 20px;
+	}
+
+

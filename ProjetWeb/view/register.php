@@ -85,16 +85,17 @@ ob_start();
             <?php if(!isset($_SESSION['userEmailAddress'])) : ?>
             <div class="col-md-12 form-group">
                 <div class="creat_account d-flex align-items-center" id="condition">
-                    <div>
-                        <input type="checkbox" name="CGU" required>
-                        J'ai lu et j'accepte <br><a class="conditiongeneral" href="index.php?action=CGU">Les conditions générales d'utilisation</a>.
+                    <div id="checkbox"> <input type="checkbox"  name="CGU" required></div>
+                    <div id="jaiLu">
+
+                         <a class="conditiongeneral" href="index.php?action=CGU" id="lienConditionGénérales">J'ai lu et j'accepte les conditions générales d'utilisation du site.</a>
                         </input>
                     </div>
                 </div>
                 <?php endif; ?>
 
-            <div >
-                <button  type="submit" class="login100-form-btn ">
+            <div>
+                <button  type="submit" class="login100-form-btn " id="buttonRegister">
                     <?php if(isset($_SESSION['userEmailAddress'])) echo "Modifier";
                     else echo "S'inscrire";
                     ?>
