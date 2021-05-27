@@ -766,4 +766,17 @@
 		padding: 0px 0px 0px 20px;
 	}
 
+	#pasDeCompte
+	{
+		color:#7f60ef;
+		font-size: 17px;
+	}
+
+	#pasDeCompte:hover
+	{
+		color: #5738c7;
+	}
+
+
+
 
