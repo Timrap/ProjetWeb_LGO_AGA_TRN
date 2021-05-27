@@ -160,3 +160,99 @@ function userType($userEmailAddress)
     $result = $user['type'];
     return $result;
 }
+
+function userDeleteFromDB($userId){
+    $result = false;
+
+    $strSeparator = "'";
+
+    $DeleteQuery = "DELETE FROM users WHERE id = " . $strSeparator . $userId . $strSeparator;
+
+    require_once 'model/dbConnector.php';
+    $queryResult = executeQueryInsert($DeleteQuery);
+    if ($queryResult){
+        $result = $queryResult;
+    }
+
+    return $result;
+}
+
+function userAccountManageInDb($data, $userId){
+    $userId = $userId['userId'];
+
+    try {
+        //variable set
+        if (isset($userId) && isset($data['inputUserEmailAddress'])){
+
+            $strSeparator = "'";
+            $query = "SELECT users.firstName, users.lastName, users.mail, users.type, users.passwordHash FROM users WHERE users.id = " . $strSeparator . $userId . $strSeparator;
+            $user = executeQuerySelect($query);
+
+            // Test si l'email existe déjà
+            $existAccount = false;
+            if (isset($user) && $user!="" && $user!=null && $user!=0){
+                $dataUser = $user;
+                $existAccount = true;
+            }
+
+            // Si l'email n'existe pas dans la BDD
+            if ($existAccount == false){
+
+                // Si l'utilisateur à entré 2 fois le même mot de passe
+                if ($data['inputUserPsw'] == $data['inputUserPswRepeat']) {
+                    require_once "model/usersManager.php";
+
+                    // Si le compte à bien été créé dans la BDD
+                    if (updateAccount($userId, $data['inputUserFirstName'], $data['inputUserLastName'], $data['inputUserEmailAddress'], $data['inputUserPsw']))
+                    {
+                        $registerErrorMessage = null;
+                        require "view/administration.php";
+                    }
+                    else
+                    {
+                        $registerErrorMessage = "L'inscription n'est pas possible avec les valeurs saisies !";
+                        require "view/updateUser.php";
+                    }
+
+                }
+                else
+                {
+                    $registerErrorMessage = "Les mots de passe ne sont pas similaires !";
+                    require "view/updateUser.php";
+                }
+            }
+            else{
+                $registerErrorMessage = "L'adresse email existe déjà !";
+                require "view/updateUser.php";
+            }
+        }
+        else
+        {
+            $registerErrorMessage = null;
+            require "view/updateUser.php";
+        }
+
+    } catch (ModelDataBaseException $ex) {
+        $registerErrorMessage = "Nous rencontrons actuellement un problème technique. Il est temporairement impossible de s'enregistrer. Désolé du dérangement !";
+        require "view/updateUser.php";
+    }
+}
+
+function updateAccount($userId, $userFirstName, $userLastName, $userEmailAddress, $userPsw)
+{
+    $result = false;
+
+    $strSeparator = "'";
+
+    $userHashPsw = password_hash($userPsw, PASSWORD_DEFAULT);
+
+    $registerQuery = "UPDATE users SET firstName = '$userFirstName' SET lastName = '$userLastName' SET mail = '$userEmailAddress' SET type = 0 SET passwordHash = '$userHashPsw' WHERE id = " . $strSeparator . $userId . $strSeparator;
+
+    require_once 'model/dbConnector.php';
+    $queryResult = executeQueryInsert($registerQuery);
+    if ($queryResult){
+        $result = $queryResult;
+    }
+
+    return $result;
+}

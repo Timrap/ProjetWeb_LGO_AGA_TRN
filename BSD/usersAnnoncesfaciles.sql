@@ -1,4 +1,4 @@
-
+DELETE FROM users;
 
 INSERT INTO `users` (`firstName`, `lastName`, `mail`, `type`, `passwordHash`) VALUES
 	('Rapin', 'Timothée', 'timothee.rapin@cpnv.ch', 2, '$2y$10$ZFNfBI4L7syajgcl4ya0u.MhrjQD4LztnHVm04vSGCptboc6gzs.a'),
