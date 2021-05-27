@@ -60,13 +60,13 @@ ob_start();
 
 
                     <div class="container-login100-form-btn">
-                        <button type="submit" class="login100-form-btn">
+                        <button  type="submit" class="login100-form-btn " id="buttonRegister">
                            Se connecter
                         </button>
                     </div>
 
                     <div class="text-center p-t-136">
-                        <a class="txt2" href="index.php?action=register">
+                        <a class="txt2" href="index.php?action=register" id="pasDeCompte">
                             Pas de compte ?
                             <i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
                         </a>

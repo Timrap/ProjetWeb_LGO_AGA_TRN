@@ -1,13 +1,9 @@
 <?php
 /**
- * @file      register.php
- * @brief     This view is designed to display the register form
- * @author    Created by Pascal.BENZONANA
- * @author    Updated by Nicolas.GLASSEY
- * @version   13-APR-2020
+ * @file      updateUser.php
  */
 
-$title = 'annoncesfaciles . Register';
+$title = 'annoncesfaciles . updateUser';
 
 ob_start();
 ?>
@@ -36,11 +32,9 @@ ob_start();
 
 <div class="container-login100">
     <div class="wrap-login100">
-        <form class="login100-form validate-form" action="index.php?action=register" method="post" >
+        <form class="login100-form validate-form" action="index.php?action=userAccountManage" method="post" >
 					<span class="login100-form-title">
-						<?php if(isset($_SESSION['userEmailAddress'])) echo "Modifier mes informations";
-                        else echo "S'inscrire";
-                        ?>
+						Modifier
 					</span>
 
             <div class="wrap-input100 validate-input" data-validate = "vous devez ajouter votre nom">
@@ -96,9 +90,7 @@ ob_start();
 
             <div>
                 <button  type="submit" class="login100-form-btn " id="buttonRegister">
-                    <?php if(isset($_SESSION['userEmailAddress'])) echo "Modifier";
-                    else echo "S'inscrire";
-                    ?>
+                    Modifier
                 </button>
             </div>
             </div>

@@ -13,9 +13,13 @@ ob_start();
 $title = 'annoncesfaciles - home';
 ?>
 
-<!-- Users -->
+
 <div id="contentpagecreat" class="container">
 
+    <a href="#articlesAdministration" class="button">Articles</a>
+
+    <!-- Users -->
+    <h2>Utilisateurs</h2>
     <table class="table table-striped table-dark" class="tableArticles">
         <thead>
         <tr>
@@ -34,35 +38,18 @@ $title = 'annoncesfaciles - home';
                         <td class="tableArticles"><?=$user['firstName']; ?></td>
                         <td class="tableArticles"><?=$user['lastName']; ?></td>
                         <td class="tableArticles"><?=$user['mail']; ?></td>
-                        <td class="tableArticles"><?php
-                            switch ($user['type']) {
-                                case 0:
-                                    echo "Utilisateur";
-                                    break;
-                                case 1:
-                                    echo "Gestionaire";
-                                    break;
-                                case 2:
-                                    echo "Administrateur";
-                                    break;
-                            }
-                        ?>
-                        </td>
-                        <td class="tableArticles">
-                            <a id="faficon" href="index.php?action=adManage&userId=<?=$user['id']?>"class="fa fa-cogs fa-2x"></a>
-                            <a id="faficon" href="index.php?action=articleDelete&userId=<?=$user['id']?>" class="fa fa-trash fa-2x"></a>
-                        </td>
+                        <td class="tableArticles"><?=$user['type']; ?></td>
+                        <td class="tableArticles"><a id="faficon" href="index.php?action=userManage&userId=<?=$user['id']?>"class="fa fa-cogs fa-2x"></a> <a id="faficon" href="index.php?action=userDelete&userId=<?=$user['id']?>" class="fa fa-trash fa-2x"></a></td>
                     </tr>
                 <?php endforeach; ?>
             <?php endif; ?>
         </tbody>
     </table>
-</div>
 
-<!-- Product -->
-<div id="contentpagecreat" class="container">
 
-    <table class="table table-striped table-dark" class="tableArticles">
+    <!-- Articles -->
+    <h2>Articles</h2>
+    <table class="table table-striped table-dark" class="tableArticles" id="articlesAdministration">
         <thead>
         <tr>
             <th class="tableArticles">Catégorie</th>
@@ -70,7 +57,7 @@ $title = 'annoncesfaciles - home';
             <th class="tableArticles">Titre</th>
             <th class="tableArticles">Description</th>
             <th class="tableArticles">Prix</th>
-            <th class="tableArticles"><a  href="index.php?action=adManage&articleId="> <button class="button"> Ajouter</button></a></th>
+            <th class="tableArticles"></th>
         </tr>
         </thead>
         <tbody>
@@ -119,6 +106,7 @@ $title = 'annoncesfaciles - home';
         </tbody>
     </table>
 </div>
+
 
 <?php
 $content = ob_get_clean();

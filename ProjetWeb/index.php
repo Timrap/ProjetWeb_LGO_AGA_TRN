@@ -51,6 +51,13 @@ if (isset($_GET['action'])) {
         case "viewType" :
             viewType($_POST);
             break;
+        case "userDelete" :
+            userDelete($_GET);
+            break;
+        case 'userManage' :
+            userAccountManage($_POST, $_GET);
+            break;
+
 
         default :
             lost();
