@@ -90,49 +90,53 @@ function deleteAd($id)
 function adUpdate($id, $data, $picture){
     $result = false;
 
-    $file = "model/data/ad.json";
+    $title = $data['title'];
+    $category = $data['category'];
+    $description = $data['description'];
+    $image = $data['image'];
+    $price = $data['price'];
+    //$Users_id = $data['User_id'];
 
-    //open or read json data
-    $articles = json_decode(file_get_contents($file));
 
-    //
-    if (isset($id) && $id != ""){
-        $create = false;
-    }
-    else{
-        $create = true;
+    //transformation en int
 
-        if (isset($articles)){
-            foreach ($articles as $article) {
-                $id = $article->id;
-            }
-            $id++;
-        }
-        else $id = 1;
-    }
+    $price = intVal($price);
+    //$Users_id = intVal($Users_id);
+    $category = intVal($category);
 
-    //
+
+    /*
     if (isset($picture["picture"]) && $picture["picture"]["size"] > 0){
         $data["picture"] = uploadPicture($picture);
     }
     else{
         $data["picture"] = $articles[$id-1]->picture;
     }
+    */
 
-    $data2add = array('id' => $id, 'categorie' => $data['categorie'], 'title' => $data['title'], 'description' => $data['description'], 'price' => $data['price'], 'picture' => $data["picture"], 'street' => $data['street'], 'city' => $data['city'], 'userEmail' => $_SESSION['userEmailAddress']);
+    //$data['street'], 'city' => $data['city'], 'userEmail' => $_SESSION['userEmailAddress']);
 
-    //append additional json to json file
-    if ($create == false){
-        foreach ($articles as $data) {
-            if ($data->id == $data2add["id"]) {
-                $articles[$id-1] = $data2add;
-            }
+    //si l'article existe déjà modifi l'article
+    if (isset($id) && $id != ""){
+
+        $strSeparator = "'";
+        $query = "UPDATE advertisements SET title = '$title' SET category = '$category' SET description = '$description' SET image = '$image' SET price = '$price' SET Users_id = '$Users_id' WHERE id = " . $strSeparator . $id . $strSeparator;
+
         }
-    }
-    else{
-        $articles[] = $data2add;
-    }
+    //créer l'article
+    else {
+        $strSeparator = "'";
+        $query = "INSERT INTO advertisements (title, category, description, image, price/*, Users_id*/) VALUES ('$title', '$category', '$description','$image', '$price')";
 
+    }
+    require_once 'model/dbConnector.php';
+    $queryResult = executeQueryUpdate($query);
+    if ($queryResult){
+        $result = $queryResult;
+    }
+}
+
+/*
     $jsonData = json_encode($articles) . "\n";
 
     file_put_contents($file, $jsonData,);
@@ -141,3 +145,4 @@ function adUpdate($id, $data, $picture){
     //  json_encode($data);
     return true;
 }
+*/

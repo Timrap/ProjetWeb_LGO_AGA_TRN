@@ -50,6 +50,21 @@ function executeQueryInsert($query)
     return $queryResult;
 }
 
+function executeQueryUpdate($query)
+{
+    $queryResult = null;
+
+    $dbConnexion = openDBConnexion();                  // Ouvre la connection à la BD
+    if ($dbConnexion != null) {
+        $statement = $dbConnexion->prepare($query);     // Préparation de la requête
+        $statement->execute();                          // Execution de la requête
+        $queryResult = true;
+    }
+    $dbConnexion = null;                                // Fermeture de ma connection à la DB
+    return $queryResult;
+}
+
+
 /**
  * @brief
  * @return PDO|null
