@@ -181,11 +181,19 @@ function userAccountManageInDb($data, $userId){
     $userId = $userId['userId'];
     
     $strSeparator = "'";
-    $query = "SELECT users.firstName, users.lastName, users.mail, users.type, users.passwordHash FROM users WHERE users.id = " . $strSeparator . $userId . $strSeparator;
+    $query = "SELECT users.id, users.firstName, users.lastName, users.mail, users.type, users.passwordHash FROM users WHERE users.id = " . $strSeparator . $userId . $strSeparator;
     
     require_once 'model/dbConnector.php';
     $queryResult = executeQuerySelect($query);
     $user = $queryResult[0];
+    
+    $strSeparator = "'";
+    $query = "SELECT users.id FROM users WHERE users.mail = " . $strSeparator . $_SESSION['userEmailAddress'] . $strSeparator;
+    
+    require_once 'model/dbConnector.php';
+    $queryResult = executeQuerySelect($query);
+    $userIdSession = $queryResult[0];
+    $userIdSession = $userIdSession[0];
     
     try {
         //variable set
@@ -209,13 +217,17 @@ function userAccountManageInDb($data, $userId){
                     require_once "model/usersManager.php";*/
 
                 // S'il y a toujours 1 administrateur
-                $query = "SELECT users.mail FROM users WHERE users.type = 2";
-                $queryResult = executeQuerySelect($query);
-                $nbAdmin = 0;
-                foreach ($queryResult as $result){
-                    $nbAdmin++;
-                }
-                if ($data['inputUserType']>1 || $nbAdmin>1) {
+                $query = "SELECT count(users.mail) FROM users WHERE users.type = 2";
+                $nbAdmin = executeQuerySelect($query);
+                $nbAdmin = $nbAdmin[0][0];
+                
+                /*
+                 * 0 = utilisateur
+                 * 1 = Gestionaire
+                 * 2 = Administrateur
+                 */
+                
+                if ($data['inputUserType']==2 || $nbAdmin>1 || $user['id']!=$userIdSession) {
     
                     // Si le compte à bien été créé dans la BDD
                     if (updateAccount($userId, $data['inputUserFirstName'], $data['inputUserLastName'], $data['inputUserEmailAddress'], $data['inputUserType'])) {
