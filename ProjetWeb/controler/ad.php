@@ -52,6 +52,6 @@ function adManage($id){
  */
 function adValidation($id, $data, $picture){
         require_once "model/adManager.php";
-        adUpdate($id, $data, $picture);
+        adUpdate($id, $data, $picture,$_SESSION['id']);
         mesAnnonces();
 }

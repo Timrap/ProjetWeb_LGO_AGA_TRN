@@ -87,7 +87,7 @@ function deleteAd($id)
  * @param $picture
  * @return bool
  */
-function adUpdate($id, $data, $picture){
+function adUpdate($id, $data, $picture, $Users_id){
     $result = false;
 
     $title = $data['title'];
@@ -95,13 +95,11 @@ function adUpdate($id, $data, $picture){
     $description = $data['description'];
     $image = $data['image'];
     $price = $data['price'];
-    //$Users_id = $data['User_id'];
 
 
     //transformation en int
 
     $price = intVal($price);
-    //$Users_id = intVal($Users_id);
     $category = intVal($category);
 
 
@@ -120,13 +118,13 @@ function adUpdate($id, $data, $picture){
     if (isset($id) && $id != ""){
 
         $strSeparator = "'";
-        $query = "UPDATE advertisements SET title = '$title' SET category = '$category' SET description = '$description' SET image = '$image' SET price = '$price' SET Users_id = '$Users_id' WHERE id = " . $strSeparator . $id . $strSeparator;
+        $query = "UPDATE advertisements SET title = '$title', category = '$category', description = '$description', image = '$image', price = '$price', Users_id = '$Users_id' WHERE id = " . $strSeparator . $id . $strSeparator;
 
         }
     //créer l'article
     else {
         $strSeparator = "'";
-        $query = "INSERT INTO advertisements (title, category, description, image, price/*, Users_id*/) VALUES ('$title', '$category', '$description','$image', '$price')";
+        $query = "INSERT INTO advertisements (title, category, description, image, price, Users_id) VALUES ('$title', $category, '$description','$image', $price,$Users_id)";
 
     }
     require_once 'model/dbConnector.php';

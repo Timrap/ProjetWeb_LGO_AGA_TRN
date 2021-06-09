@@ -15,9 +15,12 @@
  */
 function createSession($userEmailAddress, $userType)
 {
+    require_once "model/usersManager.php";
+
     $_SESSION['userEmailAddress'] = $userEmailAddress;
     $_SESSION['userType'] = $userType;
     $_SESSION['userTypeView'] = "1";
+    $_SESSION['id'] = getUserId ($userEmailAddress);
 }
 
 /**

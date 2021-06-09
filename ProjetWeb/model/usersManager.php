@@ -36,6 +36,15 @@ function isLoginCorrect($userEmailAddress, $userPsw)
     return $result;
 }
 
+function getUserId($userEmailAddress)
+{
+    $query = "SELECT id FROM users WHERE mail = '".$userEmailAddress."';";
+    require_once 'model/dbConnector.php';
+    $queryResult = executeQuerySelect($query);
+    $queryResult = $queryResult[0];
+    return $queryResult;
+}
+
 /**
  * @param $userEmailAddress
  * @return string
