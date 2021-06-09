@@ -111,28 +111,7 @@ $title = 'annoncesfaciles - articleDetails';
     </div>
 </div>
 
-
 <?php
 $content = ob_get_clean();
 require 'gabarit.php';
 ?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<?php
-$content = ob_get_clean();
-require 'gabarit.php';
-?>
-
