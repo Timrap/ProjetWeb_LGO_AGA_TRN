@@ -67,8 +67,8 @@ $title = 'annoncesfaciles - home';
 
 
     <!-- Articles -->
-    <h2>Articles</h2>
-    <table class="table table-striped table-dark" class="tableArticles" id="articlesAdministration">
+    <h2 id="articlesAdministration">Articles</h2>
+    <table class="table table-striped table-dark" class="tableArticles">
         <thead>
         <tr>
             <th class="tableArticles">Catégorie</th>
@@ -83,11 +83,11 @@ $title = 'annoncesfaciles - home';
         <tr>
             <?php if(isset($articles)): ?>
             <?php foreach ($articles as $article): ?>
-            <?php if (isset($article->userEmail) && $article->userEmail == $_SESSION['userEmailAddress']): ?>
+            
         <tr>
             <td class="tableArticles">
                 <?php
-                switch ($article->categorie){
+                switch ($article['category']){
                     case 1:
                         echo "Véhicule motorisé";
                         break;
@@ -108,18 +108,17 @@ $title = 'annoncesfaciles - home';
                         break;
                 }
                 ?>
-            <td> <?php if(is_file($article->picture)) : ?>
-                    <img class="imageProduct" src="<?=$article->picture; ?>" alt="IMG-PRODUCT"/>
+            <td> <?php if(is_file($article['image'])) : ?>
+                    <img class="imageProduct" src="<?=$article['image']; ?>" alt="IMG-PRODUCT"/>
                 <?php else :?>
                     <img class="imageProduct" src="view/contents/images/pas-image-disponible.png" alt="no image"/>
                 <?php endif;?>
             </td>
-            <td class="tableArticles"><?=$article->title; ?></td>
-            <td class="tableArticles"> <textarea class="descriptionArea"  readonly> <?=$article->description; ?></textarea></td>
-            <td class="tableArticles"><?=$article->price; ?> CHF</td>
-            <td class="tableArticles"><a id="faficon" href="index.php?action=adManage&articleId=<?=$article->id?>"class=" fa fa-cogs fa-2x"></a> <a id="faficon" href="index.php?action=articleDelete&articleId=<?=$article->id?>" class=" fa fa-trash fa-2x"></a></td>
+            <td class="tableArticles"><?=$article['title']; ?></td>
+            <td class="tableArticles"> <textarea class="descriptionArea"  readonly> <?=$article['description']; ?></textarea></td>
+            <td class="tableArticles"><?=$article['price']; ?> CHF</td>
+            <td class="tableArticles"><a id="faficon" href="index.php?action=adManage&articleId=<?=$article['id']?>"class=" fa fa-cogs fa-2x"></a> <a id="faficon" href="index.php?action=articleDelete&articleId=<?=$article['id']?>" class=" fa fa-trash fa-2x"></a></td>
         </tr>
-        <?php endif; ?>
         <?php endforeach; ?>
         <?php endif; ?>
         </tbody>

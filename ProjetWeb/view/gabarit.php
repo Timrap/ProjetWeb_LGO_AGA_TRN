@@ -115,10 +115,10 @@ Released   : 20130902
     <p>&copy; Untitled. All rights reserved. | Design by LGO - AGA - TRN.</p>
     <?php if (isset($_SESSION['userType']) && $_SESSION['userType'] > 1) : ?>
         <form action="index.php?action=viewType" method="post">
-            <input type="radio" id="viewType1" name="viewType" value="1" onclick="this.form.submit()">
+            <input type="radio" id="viewType1" name="viewType" value="1" <?php if ($_SESSION['userTypeView'] == 1){echo 'checked="checked"';} ?> onclick="this.form.submit()">
             <label id="adminboutons" for="viewType1">Utilisateur</label>
             <br>
-            <input type="radio" id="viewType2" name="viewType" value="2" onclick="this.form.submit()">
+            <input type="radio" id="viewType2" name="viewType" value="2" <?php if ($_SESSION['userTypeView'] == 2){echo 'checked="checked"';} ?> onclick="this.form.submit()">
             <label id="adminboutons" for="viewType2">Administrateur</label>
         </form>
     <?php endif;?>
