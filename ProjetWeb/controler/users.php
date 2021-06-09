@@ -20,7 +20,7 @@ function createSession($userEmailAddress, $userType)
     $_SESSION['userEmailAddress'] = $userEmailAddress;
     $_SESSION['userType'] = $userType;
     $_SESSION['userTypeView'] = "1";
-    $_SESSION['id'] = getUserId ($userEmailAddress);
+    $_SESSION['id'] = getUserId ($userEmailAddress)[0];
 }
 
 /**
