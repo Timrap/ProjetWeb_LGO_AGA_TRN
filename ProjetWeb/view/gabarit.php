@@ -53,6 +53,8 @@ Released   : 20130902
                 <li><a href="index.php?action=home">Accueil</a></li>
                 <?php if (isset($_SESSION['userType']) && $_SESSION['userType'] > 1 && isset($_SESSION['userTypeView']) && $_SESSION['userTypeView'] > 1) : ?>
                     <li><a href="index.php?action=administration">Administration</a></li>
+                    <li><a href="index.php?action=articleDetails">Afficag</a></li>
+
                 <?php endif;?>
                 <?php if (isset($_SESSION['userEmailAddress'])) : ?>
                     <li><a href="index.php?action=mesAnnonces">Mes annonces</a></li>
