@@ -790,3 +790,83 @@
 
 
 
+	svg{
+    	position: relative;
+		width: 1.4em;
+		max-width: max-content;
+		color: rgb(240,240,240);
+		cursor: pointer;
+		fill: none;
+		stroke: rgb(240,240,240);
+		stroke-linecap: round;
+		stroke-linejoin: round;
+		stroke-width: 1;
+		stroke-dasharray: 160px;
+		stroke-dashoffset: 0;
+		paint-order: fill markers stroke;
+
+		animation: 1s linear effect;
+	}
+
+	svg .iconUser{
+		stroke-dasharray: 57px;
+	}
+
+	svg .user{
+		animation: 3.2s;
+	}
+
+	svg.logged .user{
+		fill: #7f60ef;
+	}
+
+	button:hover {
+		animation: 4s infinite linear effect02;
+	}
+
+	@keyframes effect {
+		0%{
+			stroke-dasharray: 80px;
+			stroke-dashoffset: 80px;
+			fill-opacity: 0;
+		}
+		90%{
+			stroke-dasharray: 80px;
+			stroke-dashoffset: 160;
+			fill-opacity: 0;
+		}
+		100%{
+			stroke-dasharray: 80px;
+			stroke-dashoffset: 160;
+			fill-opacity: 1;
+		}
+	}
+
+	@keyframes effect02 {
+		0%{
+			stroke-dasharray: 57px;
+			stroke-dashoffset: 0;
+			fill-opacity: 0;
+		}
+		20%{
+			stroke-dasharray: 28.5px;
+			stroke-dashoffset: 0;
+		}
+		40%{
+			stroke-dasharray: 28.5px;
+			stroke-dashoffset: 28.5px;
+		}
+		60%{
+			stroke-dasharray: 28.5px;
+			stroke-dashoffset: 57px;
+		}
+		80%{
+			stroke-dasharray: 28.5px;
+			stroke-dashoffset: 85.5px;
+		}
+		100%{
+			stroke-dasharray: 57px;
+			stroke-dashoffset: 228px;
+			fill-opacity: 0;
+		}
+	}

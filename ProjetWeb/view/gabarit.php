@@ -60,12 +60,46 @@ Released   : 20130902
                     <li><a href="index.php?action=mesAnnonces">Mes annonces</a></li>
                     <li><a href="index.php?action=logout">Se déconnecter</a></li>
                     <li><a href="index.php?action=accountManage">
-                            <img src="view/contents/images/icon-header-01-log.png" alt="connecté"/>
+                            <svg class="iconUser logged" viewBox="0 0 20 20">
+                                <circle transform="rotate(90 10 10)" cx="10" cy="10" r="9"/>
+                                <!--2.1 1.65-->
+                                <path class="user" d="
+                M 10 19
+                c -2.1 0, -3.75 -.818, -3.75 -.818
+                v 0 -.682
+                c 0 -2.1, 1.65 -3.75, 3.75 -3.75
+                c 2.1 0, 3.75 -1.65, 3.75 -3.75
+                c 0 -2.1, -1.65 -3.75, -3.75 -3.75
+                c -2.1 0, -3.75 1.65, -3.75 3.75
+                c 0 2.1, 1.65 3.75, 3.75 3.75
+                c 2.1 0, 3.75 1.65, 3.75 3.75
+                v 0 .682
+                c 0 0, -1.65 .818, -3.75 .818
+                z
+                "/>
+                            </svg>
                             <?= userName($_SESSION['userEmailAddress']); ?></a>
                     </li>
                 <?php else: ?>
                     <li><a href="index.php?action=login">Se connecter</a></li>
-                    <li><a href="index.php?action=accountManage"><img src="view/contents/images/icon-header-01.png" alt="déconnecté"/> S'inscrire</a></li>
+                    <li><a href="index.php?action=accountManage"><svg class="iconUser" viewBox="0 0 20 20">
+                                <circle transform="rotate(90 10 10)" cx="10" cy="10" r="9"/>
+                                <!--2.1 1.65-->
+                                <path class="user" d="
+                M 10 19
+                c -2.1 0, -3.75 -.818, -3.75 -.818
+                v 0 -.682
+                c 0 -2.1, 1.65 -3.75, 3.75 -3.75
+                c 2.1 0, 3.75 -1.65, 3.75 -3.75
+                c 0 -2.1, -1.65 -3.75, -3.75 -3.75
+                c -2.1 0, -3.75 1.65, -3.75 3.75
+                c 0 2.1, 1.65 3.75, 3.75 3.75
+                c 2.1 0, 3.75 1.65, 3.75 3.75
+                v 0 .682
+                c 0 0, -1.65 .818, -3.75 .818
+                z
+                "/>
+                            </svg> S'inscrire</a></li>
 
                 <?php endif;?>
             </ul>
