@@ -38,7 +38,26 @@ $title = 'annoncesfaciles - home';
                         <td class="tableArticles"><?=$user['firstName']; ?></td>
                         <td class="tableArticles"><?=$user['lastName']; ?></td>
                         <td class="tableArticles"><?=$user['mail']; ?></td>
-                        <td class="tableArticles"><?=$user['type']; ?></td>
+                        <td class="tableArticles">
+                            <?php
+                                switch ($user['type']){
+                                    
+                                    case 0:
+                                        echo 'Utilisateur';
+                                        break;
+                                        
+                                    case 1:
+                                        echo 'Gestionaire';
+                                        break;
+                                        
+                                    case 2:
+                                        echo 'Administrateur';
+                                        break;
+                                        
+                                }
+                                $user['type'];
+                            ?>
+                        </td>
                         <td class="tableArticles"><a id="faficon" href="index.php?action=userManage&userId=<?=$user['id']?>"class="fa fa-cogs fa-2x"></a> <a id="faficon" href="index.php?action=userDelete&userId=<?=$user['id']?>" class="fa fa-trash fa-2x"></a></td>
                     </tr>
                 <?php endforeach; ?>

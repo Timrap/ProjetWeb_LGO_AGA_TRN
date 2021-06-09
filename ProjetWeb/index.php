@@ -47,7 +47,7 @@ if (isset($_GET['action'])) {
             break;
         case "adValidation" :
             adValidation($_GET['articleId'], $_POST, $_FILES);
-        break;
+            break;
         case "viewType" :
             viewType($_POST);
             break;

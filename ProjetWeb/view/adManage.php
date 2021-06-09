@@ -55,7 +55,7 @@ ob_start();
                         <br>
                         <!-- liste deroulante -->
                         <h4>
-                            <select name="categorie" id="choice">
+                            <select name="category" id="choice">
                                 <option>Choisir une catégorie</option>
                                 <option value="1" <?php if (isset($article) && $article->categorie == 1): ?> selected<?php endif;?>>Véhicule Motorisé</option>
                                 <option value="2" <?php if (isset($article) && $article->categorie == 2): ?> selected<?php endif;?>>Appareil éléctronique</option>
@@ -106,7 +106,7 @@ ob_start();
                         <br>
                         <div id="picture">
                             <!-- Le nom de l'élément input détermine le nom dans le tableau $_FILES -->
-                            Choisissez votre image : <input name="picture" type="file" accept="image/*">
+                            Choisissez votre image : <input name="image" type="file" accept="image/*">
                             <img src="<?php if (isset($article))echo $article->picture?>">
 
                             <!--Choisissez votre image : <input name="picture" type="file" accept="image/*" />-->
