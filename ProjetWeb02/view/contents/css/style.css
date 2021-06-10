@@ -1,0 +1,264 @@
+:root{
+    --color_01: #7f60ef;
+    --color_02: #000;
+    --color_03: #fff;
+    --color_04: #5738c7;
+    
+    --spacement_01: 5%;
+    --spacement_02: 20px;
+}
+
+body{
+    padding: 0 calc(var(--spacement_01) * 2);
+    
+    background-color: var(--color_01);                  /* Used if the image is unavailable */
+    background-image: url(../images/background.jpg);    /* The image used */
+    /*width: 500px;                                     /* You must set a specified height */
+    background-position: left;                          /* Center the image */
+    background-repeat: no-repeat;                       /* Do not repeat the image */
+    background-size: cover;                             /* Resize the background image to cover the entire container */
+    background-attachment: fixed;
+
+    font-family: 'Source Sans Pro', Arial, sans-serif;
+    font-size: 12pt;
+    font-weight: 300;
+    color: var(--color_02);
+}
+
+h1{
+
+}
+h2{
+    margin-bottom: calc(var(--spacement_02) * 2);
+    font-size: 35px;
+    font-weight: bold;
+}
+h3{
+    margin: var(--spacement_02) 0;
+    font-size: 29px;
+}
+
+p{
+    margin: 1em auto;
+}
+
+/* BUTTON */
+button, .button{
+    display: inline-block;
+    padding: 1em 2em;
+    background-color: var(--color_01);
+    letter-spacing: 0.20em;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 0.90em;
+    color: var(--color_03);
+    border-radius: 2rem;
+}
+
+button:hover, .button:hover{
+    background-color: var(--color_04);
+    cursor: pointer;
+}
+
+
+
+
+/* MENU *//*
+#header{
+    background-color: var(--color_02);
+    min-height: var(--spacement_01);
+    font-weight: bold;
+}
+
+#header ul {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: var(--color_02);
+}
+
+#header ul li {float: left;}
+
+#header ul li a {
+    display: block;
+    color: var(--color_03);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+#header ul li a:hover:not(.active) {background-color: var(--color_02);}
+
+#header ul li a.active {background-color: var(--color_01);}
+
+#header ul li.right {float: right;}
+
+@media screen and (max-width: 600px) {
+    #header ul li.right,
+    #header ul li {float: none;}
+}*/
+
+/* MENU V.02 */
+nav{
+    padding: 1em 2em;
+    background-color: var(--color_02);
+    color: var(--color_03);
+}
+
+nav ul{
+    overflow: hidden;
+}
+/*
+nav div.center{
+    display: flex;
+    margin: 0 auto;
+}
+*/
+nav li{
+    position: relative;
+    float: left;
+}
+
+nav li:hover{
+    background-color: var(--color_01);
+}
+nav li.brand:hover{
+    background-color: transparent;
+}
+
+nav li.right{
+    float: right;
+}
+
+nav a, .scrollingButton{
+    display: inline-block;
+    padding: 1em 2em;
+    cursor: pointer;
+    
+    border-radius: 2rem;
+}
+
+nav ul li ul {
+    position: relative;
+    /*position: absolute;
+    /*top: 44px;*/
+    left: 0;
+    width: 200px;
+    display: none;
+}
+nav ul li ul li {
+    background: var(--color_01);
+    display: block;
+    color: var(--color_03);
+}
+nav ul li ul li:hover {
+    background: var(--color_04);
+}
+nav ul li:hover ul {
+    display: block;
+}
+
+
+
+
+/* CONTENT */
+#page{
+    margin: var(--spacement_01) 0;
+    padding: calc(var(--spacement_02) * 5);
+    background-color: var(--color_03);
+}
+
+
+
+/* HOME & ARTICLES d'une catégorie */
+
+.grid{
+    display: grid;
+    justify-content: center;
+    grid-gap: 4em 0.5em;
+    grid-template-columns: 1fr;
+}
+@media screen and (min-width: 1106px){
+    .grid{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media screen and (min-width: 1530px){
+    .grid{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.grid div{
+    justify-self: center;
+}
+
+.grid div *{
+    display: inline-block;
+}
+
+
+
+/* ADMINISTRATION */
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table td, table th {
+    padding: 1em;
+}
+
+table tr:nth-child(even){background-color: #f2f2f2;}
+
+table tr:hover {background-color: #ddd;}
+
+table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: var(--color_01);
+    color: var(--color_03);
+}
+
+
+.table{
+    border-collapse: collapse;
+}
+
+tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+
+thead{
+    display: table-header-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+
+.table thead th {
+    vertical-align: middle;
+    border-bottom: 5px solid var(--color_03);
+}
+
+.table th, .table td {
+    padding: 0.75rem;
+    vertical-align: middle;
+    border-top: 1px solid var(--color_03);
+}
+
+tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+
+
+/* COPYRIGHT */
+#copyright{
+    text-align: center;
+    color: var(--color_03);
+}
