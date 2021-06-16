@@ -59,31 +59,16 @@ function viewArticles($id)
  */
 function deleteAd($id)
 {
-    $result = false;
+    $off = '0';
 
-//  Create an array to add in JSON file
-    $data2add = array('id' => $id);
+    $strSeparator = "'";
+    $query = "UPDATE advertisements SET enable = '$off'WHERE id = " . $strSeparator . $id . $strSeparator;
 
-    $file = "model/data/ad.json";
-
-//open or read json data
-    $data_results = file_get_contents($file);
-    $articles = json_decode($data_results);
-
-
-//append additional json to json file
-    foreach ($articles as $data) {
-        if ($data->id == $id) {
-            $articles[$id-1] = $data2add;
-        }
+    require_once 'model/dbConnector.php';
+    $queryResult = executeQueryUpdate($query);
+    if ($queryResult) {
+        $result = $queryResult;
     }
-    //$tempArray[$id] = $data2add;
-    $jsonData = json_encode($articles) . "\n";
-
-    file_put_contents($file, $jsonData,);
-
-//    json_encode($data);
-    return true;
 }
 
 /**
