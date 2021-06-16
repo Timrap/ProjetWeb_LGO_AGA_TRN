@@ -30,7 +30,7 @@ ob_start();
         <div class="container">
             <div class="row">
                 <div class="col-md-12 p-b-30" id="formulaire1">
-                    <form class="leave-comment" action="index.php?action=adValidation&articleId=<?php if (isset($article))echo $article->id; ?>" method="post" enctype="multipart/form-data">
+                    <form class="leave-comment" action="index.php?action=adValidation&articleId=<?php if (isset($article['id']))echo $article['id']; ?>" method="post" enctype="multipart/form-data">
 
                         <h2 class="m-text26 p-b-36 p-t-15">
                             <?php if (isset($article)){
@@ -46,7 +46,7 @@ ob_start();
                             Titre
                         </h4>
                         <div class="bo4 of-hidden size15 m-b-20" >
-                            <br> <input class="sizefull s-text7 p-l-22 p-r-22" id="titre" type="text" name="title" value="<?php if(isset($article)) echo $article->title; ?>" placeholder="Titre" >
+                            <br> <input class="sizefull s-text7 p-l-22 p-r-22" id="titre" type="text" name="title" value="<?php if(isset($article['title'])) echo $article['title']; ?>" placeholder="Titre" >
                         </div>
                         <br>
                         <h4>
@@ -57,11 +57,11 @@ ob_start();
                         <h4>
                             <select name="category" id="choice">
                                 <option>Choisir une catégorie</option>
-                                <option value="1" <?php if (isset($article) && $article->categorie == 1): ?> selected<?php endif;?>>Véhicule Motorisé</option>
-                                <option value="2" <?php if (isset($article) && $article->categorie == 2): ?> selected<?php endif;?>>Appareil éléctronique</option>
-                                <option value="3" <?php if (isset($article) && $article->categorie == 3): ?> selected<?php endif;?>>Mobilier</option>
-                                <option value="4" <?php if (isset($article) && $article->categorie == 4): ?> selected<?php endif;?>>Bijou</option>
-                                <option value="5" <?php if (isset($article) && $article->categorie == 5): ?> selected<?php endif;?>>Immobilier</option>
+                                <option value="1" <?php if (isset($article['category']) && $article['category'] == 1): ?> selected<?php endif;?>>Véhicule Motorisé</option>
+                                <option value="2" <?php if (isset($article['category']) && $article['category'] == 2): ?> selected<?php endif;?>>Appareil éléctronique</option>
+                                <option value="3" <?php if (isset($article['category']) && $article['category'] == 3): ?> selected<?php endif;?>>Mobilier</option>
+                                <option value="4" <?php if (isset($article['category']) && $article['category'] == 4): ?> selected<?php endif;?>>Bijou</option>
+                                <option value="5" <?php if (isset($article['category']) && $article['category'] == 5): ?> selected<?php endif;?>>Immobilier</option>
                             </select>
                         </h4>
                         <br>
@@ -71,7 +71,7 @@ ob_start();
                         <br>
                         <!-- champs description -->
                         <div class="bo4 of-hidden size15 m-b-20">
-                            <textarea id="description" name="description" placeholder="Description" required><?php if (isset($article))echo $article->description ?></textarea>
+                            <textarea id="description" name="description" placeholder="Description" required><?php if (isset($article['description']))echo $article['description'] ?></textarea>
                         </div class="md-12">
                         <br>
 
@@ -81,7 +81,7 @@ ob_start();
                         <br>
                         <!-- champs prix -->
                         <div class="bo4 of-hidden size15 m-b-20">
-                            <input class="sizefull s-text7 p-l-22 p-r-22" id="prix" type="number" name="price" value="<?php if (isset($article))echo $article->price ?>" placeholder="Prix du produit en CHF" >
+                            <input class="sizefull s-text7 p-l-22 p-r-22" id="prix" type="number" name="price" value="<?php if (isset($article['price']))echo $article['price'] ?>" placeholder="Prix du produit en CHF" >
                         </div>
                         <br>
                         <!-- Drag and drop -->
@@ -107,7 +107,7 @@ ob_start();
                         <div id="picture">
                             <!-- Le nom de l'élément input détermine le nom dans le tableau $_FILES -->
                             Choisissez votre image : <input name="image" type="file" accept="image/*">
-                            <img src="<?php if (isset($article))echo $article->picture?>">
+                            <img src="<?php if (isset($article['image']))echo $article['image']?>">
 
                             <!--Choisissez votre image : <input name="picture" type="file" accept="image/*" />-->
                         </div>
@@ -117,12 +117,12 @@ ob_start();
                         </h4>
                         <!-- champs rue -->
                         <div class="bo4 of-hidden size15 m-b-20">
-                            <br> <input class="sizefull s-text7 p-l-22 p-r-22" id="Rue" type="text" name="street" value="<?php if (isset($article))echo $article->street ?>" placeholder="Rue" >
+                            <br> <input class="sizefull s-text7 p-l-22 p-r-22" id="Rue" type="text" name="street" value="<?php if (isset($article['street']))echo $article['street'] ?>" placeholder="Rue" >
                         </div>
 
                         <!-- champs ville, npa -->
                         <div class="bo4 of-hidden size15 m-b-20" >
-                            <br> <input class="sizefull s-text7 p-l-22 p-r-22" id="Npa" type="text" name="city" value="<?php if (isset($article))echo $article->city ?>" placeholder="Ville, NPA" >
+                            <br> <input class="sizefull s-text7 p-l-22 p-r-22" id="Npa" type="text" name="city" value="<?php if (isset($article['city']))echo $article['city'] ?>" placeholder="Ville, NPA" >
                         </div>
 
                         <br>

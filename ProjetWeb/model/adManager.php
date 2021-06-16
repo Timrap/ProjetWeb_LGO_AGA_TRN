@@ -39,13 +39,18 @@ function uploadPicture($picture)
 /**
  * @return mixed
  */
-function viewArticles()
+function viewArticles($id)
 {
-    $file = "model/data/ad.json";
-
-    //open or read json data
-
-    return json_decode(file_get_contents($file));
+    $strSeparator = "'";
+    $query = "SELECT advertisements.id, advertisements.title, advertisements.category, advertisements.description, advertisements.image, advertisements.price, advertisements.Users_id FROM advertisements WHERE id = " . $strSeparator . $id . $strSeparator;
+    
+    require_once 'model/dbConnector.php';
+    $queryResult = executeQuerySelect($query);
+    if ($queryResult){
+        $article = $queryResult[0];
+    }
+    
+    return  $article;
 }
 
 /**
@@ -124,7 +129,7 @@ function adUpdate($id, $data, $picture, $Users_id){
     //créer l'article
     else {
         $strSeparator = "'";
-        $query = "INSERT INTO advertisements (title, category, description, image, price, Users_id) VALUES ('$title', $category, '$description','$image', $price,$Users_id)";
+        $query = "INSERT INTO advertisements (title, category, description, image, price, enable, Users_id) VALUES ('$title', $category, '$description','$image', $price, 1,$Users_id)";
 
     }
     require_once 'model/dbConnector.php';

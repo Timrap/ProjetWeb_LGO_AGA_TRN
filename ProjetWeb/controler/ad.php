@@ -31,18 +31,10 @@ function mesAnnonces(){
  */
 function adManage($id){
     require_once "model/adManager.php";
-    $articles = viewArticles();
+    $article = viewArticles($id);
 
-    if ($id != ""){
-        foreach ($articles as $article){
-            if ($article->id == $id){
-                require_once "view/adManage.php";
-            }
-        }
-    }
-    else{
-        require_once "view/adManage.php";
-    }
+    require_once "view/adManage.php";
+    
 }
 
 /**
@@ -53,5 +45,6 @@ function adManage($id){
 function adValidation($id, $data, $picture){
         require_once "model/adManager.php";
         adUpdate($id, $data, $picture,$_SESSION['id']);
-        mesAnnonces();
+        //mesAnnonces();
+        home();
 }
