@@ -20,13 +20,13 @@ $title = 'annoncesfaciles - home';
 
     <!-- Users -->
     <h2>Utilisateurs</h2>
-    <table class="table table-striped table-dark" class="tableArticles">
+    <table id="tableAdminUsers" class="table table-striped table-dark tableArticles">
         <thead>
         <tr>
-            <th class="tableArticles">Prénom</th>
-            <th class="tableArticles">Nom</th>
-            <th class="tableArticles">Mail</th>
-            <th class="tableArticles">Type</th>
+            <th class="tableArticles" onclick="sortTable(0)">Prénom</th>
+            <th class="tableArticles" onclick="sortTable(1)">Nom</th>
+            <th class="tableArticles" onclick="sortTable(2)">Mail</th>
+            <th class="tableArticles" onclick="sortTable(3)">Type</th>
             <th class="tableArticles"></th>
         </tr>
         </thead>

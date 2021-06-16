@@ -870,3 +870,7 @@
 			fill-opacity: 0;
 		}
 	}
+
+	th{
+		cursor: pointer;
+	}

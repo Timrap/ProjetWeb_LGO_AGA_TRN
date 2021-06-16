@@ -38,6 +38,8 @@ Released   : 20130902
     <link rel="stylesheet" type="text/css" href="view/contents/vendor/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="view/contents/vendor/bootstrap/css/bootstrap-grid.css">
     <link rel="stylesheet" type="text/css" href="view/contents/vendor/bootstrap/css/bootstrap-reboot.css">
+    
+    <script src="view/contents/js/main.js"></script>
 </head>
 <body>
 <div id="header-wrapper">
