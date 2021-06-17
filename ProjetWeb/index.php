@@ -27,11 +27,8 @@ if (isset($_GET['action'])) {
         case "articles" :
             articles($_POST);
             break;
-        case 'displayArticleDetail':
-            displayArticleDetail($_GET['code']);
-            break;
         case "mesAnnonces" :
-            mesAnnonces();
+            dispayAd($_GET['articleId']);
             break;
         case "articleDelete" :
             articleDelete($_GET['articleId']);
@@ -46,7 +43,7 @@ if (isset($_GET['action'])) {
             adManage($_GET['articleId']);
             break;
         case "adValidation" :
-            adValidation($_GET['articleId'], $_POST, $_FILES);
+            adValidation($_GET['articleId'], $_POST);
             break;
         case "viewType" :
             viewType($_POST);

@@ -107,8 +107,7 @@ ob_start();
                         <div id="picture">
                             <!-- Le nom de l'élément input détermine le nom dans le tableau $_FILES -->
                             Choisissez votre image : <input name="image" type="file" accept="image/*">
-                            <img src="<?php if (isset($article))echo $article->picture?>">
-
+                                <img src="<?php if (isset($article))echo $article->picture?>">
                             <!--Choisissez votre image : <input name="picture" type="file" accept="image/*" />-->
                         </div>
                         <br><br>

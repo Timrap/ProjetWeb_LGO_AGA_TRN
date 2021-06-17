@@ -14,16 +14,16 @@ function articles($categorie){
 function articleDelete($id){
     require_once "model/adManager.php";
     deleteAd($id);
-    mesAnnonces();
+    dispayAd($id);
 }
 
 /**
  *
  */
-function mesAnnonces(){
+function dispayAd($id){
     require_once "model/adManager.php";
-    $articles = viewArticles();
-    require_once "view/mesannonces.php";
+    $articles = viewArticles($id);
+    require_once "view/myAds.php";
 }
 
 /**
@@ -50,8 +50,8 @@ function adManage($id){
  * @param $data
  * @param $picture
  */
-function adValidation($id, $data, $picture){
+function adValidation($id, $data){
         require_once "model/adManager.php";
-        adUpdate($id, $data, $picture,$_SESSION['id']);
-        mesAnnonces();
+        adUpdate($id, $data,$_SESSION['id']);
+        dispayAd($id);
 }

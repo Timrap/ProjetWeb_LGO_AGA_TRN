@@ -39,13 +39,19 @@ function uploadPicture($picture)
 /**
  * @return mixed
  */
-function viewArticles()
+function viewArticles($id)
 {
-    $file = "model/data/ad.json";
 
-    //open or read json data
 
-    return json_decode(file_get_contents($file));
+    $strSeparator = "'";
+    $query = "SELECT advertisements.id, advertisements.title, advertisements.category, advertisements.description, advertisements.image, advertisements.price, advertisements.Users_id FROM advertisements WHERE id = " . $strSeparator . $id . $strSeparator;
+
+    require_once 'model/dbConnector.php';
+    $queryResult = executeQuerySelect($query);
+    if ($queryResult){
+        $article = $queryResult[0];
+    }
+    return  $article;
 }
 
 /**
@@ -87,14 +93,15 @@ function deleteAd($id)
  * @param $picture
  * @return bool
  */
-function adUpdate($id, $data, $picture, $Users_id){
+function adUpdate($id, $data,$Users_id){
     $result = false;
 
     $title = $data['title'];
     $category = $data['category'];
     $description = $data['description'];
-    $image = $data['image'];
+    $image = "view\contents\images\pas-image-disponible.png";
     $price = $data['price'];
+    $enable = $data['enable']='1';
 
 
     //transformation en int
@@ -103,6 +110,14 @@ function adUpdate($id, $data, $picture, $Users_id){
     $category = intVal($category);
 
 
+    /* if(!is_file($image))
+    {
+        $image = "view\contents\images\pas-image-disponible.png";
+    }
+    else {
+        $image = "view\contents\images\pas-image-disponible.png";
+    }
+*/
     /*
     if (isset($picture["picture"]) && $picture["picture"]["size"] > 0){
         $data["picture"] = uploadPicture($picture);
@@ -124,7 +139,7 @@ function adUpdate($id, $data, $picture, $Users_id){
     //créer l'article
     else {
         $strSeparator = "'";
-        $query = "INSERT INTO advertisements (title, category, description, image, price, Users_id) VALUES ('$title', $category, '$description','$image', $price,$Users_id)";
+        $query = "INSERT INTO advertisements (title, category, description, image, price, enable, Users_id) VALUES ('$title', $category, '$description','$image', $price, $enable,$Users_id)";
 
     }
     require_once 'model/dbConnector.php';
