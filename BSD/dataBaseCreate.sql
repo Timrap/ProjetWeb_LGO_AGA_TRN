@@ -46,6 +46,8 @@ CREATE TABLE IF NOT EXISTS `annoncesfaciles`.`Advertisements` (
   `description` VARCHAR(512) NOT NULL,
   `image` VARCHAR(128) NULL,
   `price` DECIMAL(7) NOT NULL,
+  `street` VARCHAR(100) NOT NULL,
+  `city` VARCHAR (100) NOT NULL,
   `enable` TINYINT NOT NULL,
   `Users_id` INT NOT NULL,
   PRIMARY KEY (`id`),
