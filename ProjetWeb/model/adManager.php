@@ -39,16 +39,42 @@ function uploadPicture($picture)
 /**
  * @return mixed
  */
-function viewArticles($id)
+function viewArticles($id, $category)
 {
-    $strSeparator = "'";
-    $query = "SELECT advertisements.id, advertisements.title, advertisements.category, advertisements.description, advertisements.image, advertisements.price, advertisements.Users_id FROM advertisements WHERE id = " . $strSeparator . $id . $strSeparator;
-
-    require_once 'model/dbConnector.php';
-    $queryResult = executeQuerySelect($query);
-    if ($queryResult){
-        $article = $queryResult[0];
+    if (isset($id) && $id != NULL){
+        $strSeparator = "'";
+        $query = "SELECT advertisements.id, advertisements.title, advertisements.category, advertisements.description, advertisements.image, advertisements.price, advertisements.Users_id FROM advertisements WHERE id = " . $strSeparator . $id . $strSeparator;
+    
+        require_once 'model/dbConnector.php';
+        $queryResult = executeQuerySelect($query);
+        if ($queryResult){
+            $article = $queryResult[0];
+        }
     }
+    else if (isset($category) && $category != NULL){
+        $strSeparator = "'";
+        $query = "SELECT advertisements.id, advertisements.title, advertisements.category, advertisements.description, advertisements.image, advertisements.price, advertisements.Users_id FROM advertisements WHERE advertisements.category = " . $strSeparator . $category . $strSeparator;
+    
+        require_once 'model/dbConnector.php';
+        $queryResult = executeQuerySelect($query);
+        if ($queryResult){
+            $articles = $queryResult;
+            return $articles;
+        }
+    }
+    else{
+        $strSeparator = "'";
+        $query = "SELECT advertisements.id, advertisements.title, advertisements.category, advertisements.description, advertisements.image, advertisements.price, advertisements.Users_id FROM advertisements INNER JOIN users ON advertisements.Users_id = users.id WHERE users.mail =" . $strSeparator . $_SESSION['userEmailAddress'] . $strSeparator;
+    
+        require_once 'model/dbConnector.php';
+        $queryResult = executeQuerySelect($query);
+        if ($queryResult){
+            $articles = $queryResult;
+            return $articles;
+        }
+    }
+    
+    
     return  $article;
 }
 
@@ -76,7 +102,7 @@ function deleteAd($id)
  * @param $picture
  * @return bool
  */
-function adUpdate($id, $data,$Users_id){
+function adUpdate($id, $data, $userEmailAddress){
     $result = false;
 
     $title = $data['title'];
@@ -84,13 +110,14 @@ function adUpdate($id, $data,$Users_id){
     $description = $data['description'];
     $image = "view\contents\images\pas-image-disponible.png";
     $price = $data['price'];
-    $enable = $data['enable']='1';
+    $enable = $data['enable'];
 
 
     //transformation en int
 
     $price = intVal($price);
     $category = intVal($category);
+    $id = intVal($id);
 
 
     /* if(!is_file($image))
@@ -116,7 +143,7 @@ function adUpdate($id, $data,$Users_id){
     if (isset($id) && $id != ""){
 
         $strSeparator = "'";
-        $query = "UPDATE advertisements SET title = '$title', category = '$category', description = '$description', image = '$image', price = '$price', Users_id = '$Users_id' WHERE id = " . $strSeparator . $id . $strSeparator;
+        $query = "UPDATE advertisements SET title = '$title', category = $category, description = '$description', image = '$image', price = $price WHERE id = " . $id;
 
         }
     //créer l'article

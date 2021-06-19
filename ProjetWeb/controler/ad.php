@@ -4,7 +4,7 @@
  */
 function articles($categorie){
     require_once "model/adManager.php";
-    $articles = viewArticles();
+    $articles = viewArticles(NULL, $categorie["categorie"]);
     require_once "view/articles.php";
 }
 
@@ -21,9 +21,16 @@ function articleDelete($id){
  *
  */
 function dispayAd($id){
-    require_once "model/adManager.php";
-    $articles = viewArticles($id);
-    require_once "view/myAds.php";
+    if ($id != NULL){
+        require_once "model/adManager.php";
+        $articles = viewArticles($id, NULL);
+        require_once "view/myAds.php";
+    }
+    else{
+        require_once "model/adManager.php";
+        $articles = viewArticles(NULL, NULL);
+        require_once "view/myAds.php";
+    }
 }
 
 /**
@@ -31,7 +38,7 @@ function dispayAd($id){
  */
 function adManage($id){
     require_once "model/adManager.php";
-    $article = viewArticles($id);
+    $article = viewArticles($id, NULL);
 
     require_once "view/adManage.php";
     
@@ -44,6 +51,6 @@ function adManage($id){
  */
 function adValidation($id, $data){
         require_once "model/adManager.php";
-        adUpdate($id, $data,$_SESSION['id']);
-        dispayAd($id);
+        adUpdate($id, $data, $_SESSION['userEmailAddress']);
+        dispayAd(NULL);
 }

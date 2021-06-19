@@ -39,7 +39,7 @@ ob_start();
             <tr>
                 <?php if(isset($articles)): ?>
                 <?php foreach ($articles as $article): ?>
-                <?php if (isset($article['mail']) && $article['mail'] == $_SESSION['userEmailAddress']): ?>
+                
             <tr>
                 <td class="tableArticles">
                     <?php
@@ -75,7 +75,6 @@ ob_start();
                 <td class="tableArticles"><?=$article['price']; ?> CHF</td>
                 <td class="tableArticles"><a id="faficon" href="index.php?action=adManage&articleId=<?=$article['id']?>"class=" fa fa-cogs fa-2x"></a> <a id="faficon" href="index.php?action=articleDelete&articleId=<?=$article['id']?>" class=" fa fa-trash fa-2x"></a></td>
             </tr>
-            <?php endif; ?>
             <?php endforeach; ?>
             <?php endif; ?>
             </tbody>
