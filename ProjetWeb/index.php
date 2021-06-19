@@ -28,7 +28,7 @@ if (isset($_GET['action'])) {
             articles($_POST);
             break;
         case "mesAnnonces" :
-            dispayAd(NULL);
+            displayAd(NULL);
             break;
         case "articleDelete" :
             articleDelete($_GET['articleId']);

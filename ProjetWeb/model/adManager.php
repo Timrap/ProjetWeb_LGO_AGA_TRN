@@ -143,11 +143,12 @@ function adUpdate($id, $data, $image, $userEmailAddress){
     }
     else{
         $image = "view\contents\images\pas-image-disponible.png";
+        $query = "SELECT advertisements.image FROM advertisements WHERE advertisements.id =" . $id;
+        require_once 'model/dbConnector.php';
+        $image = executeQuerySelect($query)[0][0];
     }
 
-    //$data['street'], 'city' => $data['city'], 'userEmail' => $_SESSION['userEmailAddress']);
-
-    //si l'article existe déjà modifi l'article
+    //si l'article existe déjà modifie l'article
     if (isset($id) && $id != ""){
 
         $strSeparator = "'";

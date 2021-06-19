@@ -14,13 +14,13 @@ function articles($categorie){
 function articleDelete($id){
     require_once "model/adManager.php";
     deleteAd($id);
-    dispayAd($id);
+    displayAd($id);
 }
 
 /**
  *
  */
-function dispayAd($id){
+function displayAd($id){
     if ($id != NULL){
         require_once "model/adManager.php";
         $articles = viewArticles($id, NULL);
@@ -55,7 +55,12 @@ function adManage($id){
 function adValidation($id, $data, $image){
         require_once "model/adManager.php";
         adUpdate($id, $data, $image['image'], $_SESSION['userEmailAddress']);
-        dispayAd(NULL);
+        if (isset($id) && $id != NULL && $id != ""){
+            articleDetails($id);
+        }
+        else{
+            displayAd(NULL);
+        }
 }
 
 function articleDetails($id){
