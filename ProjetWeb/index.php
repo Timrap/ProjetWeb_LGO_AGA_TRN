@@ -54,7 +54,9 @@ if (isset($_GET['action'])) {
         case 'userManage' :
             userAccountManage($_POST, $_GET);
             break;
-
+        case 'articleDetails' :
+            articleDetails($_GET['id']);
+            break;
 
         default :
             lost();

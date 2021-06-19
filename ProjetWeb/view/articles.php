@@ -54,26 +54,27 @@ ob_start();
                     <!-- Block2 -->
                     <div class="block2">
                         <div class="block2-img wrap-pic-w of-hidden pos-relative">
-                            <?php if(is_file($article["image"])) : ?>
-                                    <img class="imageProductList" src="<?=$article["image"]; ?>" alt="IMG-PRODUCT"/>
-                                <?php else :?>
-                                    <img class="imageProductList" src="view/contents/images/noImages.jpg" alt="no image"/>
-                                <?php endif;?>
-
-                            <div class="block2-overlay trans-0-3">
-                                <a href="#" class="block2-btn-addwishlist hov-pointer trans-0-3">
-                                    <i class="icon-wishlist icon_heart_alt" aria-hidden="true"></i>
-                                    <i class="icon-wishlist icon_heart dis-none" aria-hidden="true"></i>
-                                </a>
-                                <h3><?=$article["title"]; ?></h3>
-                                <p><?=$article["description"]; ?></p>
-                                <p>CHF <?=$article["price"]; ?> .-</p>
-                                <div class="block2-btn-addcart w-size1 trans-0-3">
-                                    <!-- Button -->
+                            <a href="index.php?action=articleDetails&id=<?=$article['id'] ?>">
+                                <?php if(is_file($article["image"])) : ?>
+                                        <img class="imageProductList" src="<?=$article["image"]; ?>" alt="IMG-PRODUCT"/>
+                                    <?php else :?>
+                                        <img class="imageProductList" src="view/contents/images/noImages.jpg" alt="no image"/>
+                                    <?php endif;?>
+    
+                                <div class="block2-overlay trans-0-3">
+                                    <a href="#" class="block2-btn-addwishlist hov-pointer trans-0-3">
+                                        <i class="icon-wishlist icon_heart_alt" aria-hidden="true"></i>
+                                        <i class="icon-wishlist icon_heart dis-none" aria-hidden="true"></i>
+                                    </a>
+                                    <h3><?=$article["title"]; ?></h3>
+                                    <p><?=$article["description"]; ?></p>
+                                    <p>CHF <?=$article["price"]; ?> .-</p>
+                                    <div class="block2-btn-addcart w-size1 trans-0-3">
+                                        <!-- Button -->
+                                    </div>
                                 </div>
-                            </div>
+                            </a>
                         </div>
-
                     </div>
                 </div>
             <?php endforeach; ?>

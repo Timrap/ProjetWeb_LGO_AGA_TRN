@@ -33,7 +33,7 @@ $title = 'annoncesfaciles - articleDetails';
                 <div class="slick3">
                     <div class="item-slick3">
                         <div class="wrap-pic-w">
-                            <img src="<?=$article['photo'];?>" alt="IMG-PRODUCT">
+                            <img src="<?=$article['image'];?>" alt="IMG-PRODUCT">
                         </div>
                     </div>
 

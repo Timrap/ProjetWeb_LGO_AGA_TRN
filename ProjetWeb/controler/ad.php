@@ -57,3 +57,9 @@ function adValidation($id, $data, $image){
         adUpdate($id, $data, $image['image'], $_SESSION['userEmailAddress']);
         dispayAd(NULL);
 }
+
+function articleDetails($id){
+    require_once "model/adManager.php";
+    $article = viewArticles($id, NULL);
+    require_once "view/articleDetails.php";
+}
