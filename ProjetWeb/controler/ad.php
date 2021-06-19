@@ -37,11 +37,14 @@ function dispayAd($id){
  * @param $id
  */
 function adManage($id){
-    require_once "model/adManager.php";
-    $article = viewArticles($id, NULL);
-
-    require_once "view/adManage.php";
-    
+    if ($id != NULL){
+        require_once "model/adManager.php";
+        $article = viewArticles($id, NULL);
+        require_once "view/adManage.php";
+    }
+    else{
+        require_once "view/adManage.php";
+    }
 }
 
 /**

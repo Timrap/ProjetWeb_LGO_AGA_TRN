@@ -34,7 +34,7 @@ ob_start();
 
                         <h2 class="m-text26 p-b-36 p-t-15">
                             <?php if (isset($article)){
-                            echo "Modifier mon annonce";
+                            echo "Modifier l'annonce";
                             }
                             else{
                             echo "Créer une annonce";
@@ -126,6 +126,19 @@ ob_start();
                             <br> <input class="sizefull s-text7 p-l-22 p-r-22" id="Npa" type="text" name="city" value="<?php if (isset($article['city']))echo $article['city'] ?>" placeholder="Ville, NPA" >
                         </div>
 
+                        <br>
+
+                        <!-- enable -->
+                        <?php if (isset($article)) : ?>
+                            <h4>
+                                <select name="enable" id="choice">
+                                    <option value="1" <?php if (isset($article['enable']) && $article['enable'] == 1): ?> selected<?php endif;?>>Activé</option>
+                                    <option value="0" <?php if (isset($article['enable']) && $article['enable'] == 0): ?> selected<?php endif;?>>Désactivé</option>
+                                </select>
+                            </h4>
+                        <?php endif; ?>
+                        
+                        
                         <br>
 
                         <div class="boutonmenuad">

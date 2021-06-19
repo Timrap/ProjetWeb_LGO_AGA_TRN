@@ -32,7 +32,7 @@ ob_start();
                 <th class="tableArticles">Titre</th>
                 <th class="tableArticles">Description</th>
                 <th class="tableArticles">Prix</th>
-                <th class="tableArticles"><a  href="index.php?action=adManage&articleId="> <button class="button"> Ajouter</button></a></th>
+                <th class="tableArticles"><a  href="index.php?action=adManage&articleId=NULL"> <button class="button"> Ajouter</button></a></th>
             </tr>
             </thead>
             <tbody>
@@ -40,7 +40,7 @@ ob_start();
                 <?php if(isset($articles)): ?>
                 <?php foreach ($articles as $article): ?>
                 
-            <tr>
+            <tr class="<?php if (isset($article['enable']) && $article['enable'] == 0){echo "disable";} ?>">
                 <td class="tableArticles">
                     <?php
                     switch ($article['category']){

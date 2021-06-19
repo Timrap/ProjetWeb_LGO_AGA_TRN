@@ -84,7 +84,7 @@ $title = 'annoncesfaciles - home';
             <?php if(isset($articles)): ?>
             <?php foreach ($articles as $article): ?>
             
-        <tr>
+        <tr class="<?php if (isset($article['enable']) && $article['enable'] == 0){echo "disable";} ?>">
             <td class="tableArticles">
                 <?php
                 switch ($article['category']){
@@ -117,7 +117,7 @@ $title = 'annoncesfaciles - home';
             <td class="tableArticles"><?=$article['title']; ?></td>
             <td class="tableArticles"> <textarea class="descriptionArea"  readonly> <?=$article['description']; ?></textarea></td>
             <td class="tableArticles"><?=$article['price']; ?> CHF</td>
-            <td class="tableArticles"><a id="faficon" href="index.php?action=adManage&articleId=<?=$article['id']?>"class=" fa fa-cogs fa-2x"></a> <a id="faficon" href="index.php?action=articleDelete&articleId=<?=$article['id']?>" class=" fa fa-trash fa-2x"></a></td>
+            <td class="tableArticles"><a id="faficon" href="index.php?action=adManage&articleId=<?=$article['id']?>"class=" fa fa-cogs fa-2x"></a></td>
         </tr>
         <?php endforeach; ?>
         <?php endif; ?>

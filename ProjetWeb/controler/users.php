@@ -93,7 +93,7 @@ function administration ()
     $users = $queryResult;
 
     // Récupérer les articles
-    $query = "SELECT advertisements.id, advertisements.title, advertisements.category, advertisements.description, advertisements.image, advertisements.price FROM advertisements";
+    $query = "SELECT advertisements.id, advertisements.title, advertisements.category, advertisements.description, advertisements.image, advertisements.price, advertisements.enable FROM advertisements";
     $queryResult = executeQuerySelect($query);
     //$queryResult = $queryResult[0];
     $articles = $queryResult;

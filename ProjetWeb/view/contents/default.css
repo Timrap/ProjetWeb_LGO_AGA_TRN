@@ -874,3 +874,7 @@
 	th{
 		cursor: pointer;
 	}
+	
+	tr.disable{
+		background-color: rgba(180,0,0,0.5);
+	}
