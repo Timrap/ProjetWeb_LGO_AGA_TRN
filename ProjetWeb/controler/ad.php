@@ -52,8 +52,8 @@ function adManage($id){
  * @param $data
  * @param $picture
  */
-function adValidation($id, $data){
+function adValidation($id, $data, $image){
         require_once "model/adManager.php";
-        adUpdate($id, $data, $_SESSION['userEmailAddress']);
+        adUpdate($id, $data, $image['image'], $_SESSION['userEmailAddress']);
         dispayAd(NULL);
 }

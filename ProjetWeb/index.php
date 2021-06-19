@@ -43,7 +43,7 @@ if (isset($_GET['action'])) {
             adManage($_GET['articleId']);
             break;
         case "adValidation" :
-            adValidation($_GET['articleId'], $_POST);
+            adValidation($_GET['articleId'], $_POST, $_FILES);
             break;
         case "viewType" :
             viewType($_POST);

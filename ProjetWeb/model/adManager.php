@@ -4,16 +4,16 @@
  * @param $picture
  * @return string
  */
-function uploadPicture($picture)
+function uploadPicture($image)
 {
-    if (isset($picture['picture'])) {
-        $uploaddir = './model/data/uploads/';
-        $uploadfile = $uploaddir . basename($picture['picture']['name']);
+    if (isset($image)) {
+        $uploaddir = './view/contents/images';
+        $uploadfile = $uploaddir . basename($image['name']);
         $errors = array();
-        $file_name = $picture['picture']['name'];
-        $file_size = $picture['picture']['size'];
-        $file_tmp = $picture['picture']['tmp_name'];
-        $file_type = $picture['picture']['type'];
+        $file_name = $image['name'];
+        $file_size = $image['size'];
+        $file_tmp = $image['tmp_name'];
+        $file_type = $image['type'];
         $file_ext = substr( strrchr($file_name, '.'), 1);
 
         $extensions = array("jpeg", "jpg", "png", "svg", "gif");
@@ -100,13 +100,13 @@ function deleteAd($id)
  * @param $picture
  * @return bool
  */
-function adUpdate($id, $data, $userEmailAddress){
+function adUpdate($id, $data, $image, $userEmailAddress){
     $result = false;
 
     $title = $data['title'];
     $category = $data['category'];
     $description = $data['description'];
-    $image = "view\contents\images\pas-image-disponible.png";
+    
     $price = $data['price'];
     if (isset($data['enable']) && $data['enable'] >=0 && $data['enable'] <2){
         $enable = $data['enable'];
@@ -125,8 +125,8 @@ function adUpdate($id, $data, $userEmailAddress){
     }
     
 
-
-    /* if(!is_file($image))
+/*
+    if(!is_file($data['image']))
     {
         $image = "view\contents\images\pas-image-disponible.png";
     }
@@ -134,14 +134,13 @@ function adUpdate($id, $data, $userEmailAddress){
         $image = "view\contents\images\pas-image-disponible.png";
     }
 */
-    /*
-    if (isset($picture["picture"]) && $picture["picture"]["size"] > 0){
-        $data["picture"] = uploadPicture($picture);
+    
+    if (isset($image) && $image["size"] > 0){
+        $image = uploadPicture($image);
     }
     else{
-        $data["picture"] = $articles[$id-1]->picture;
+        $image = "view\contents\images\pas-image-disponible.png";
     }
-    */
 
     //$data['street'], 'city' => $data['city'], 'userEmail' => $_SESSION['userEmailAddress']);
 

@@ -64,10 +64,11 @@ ob_start();
                             break;
                     }
                     ?>
-                <td> <?php if(is_file($article['image'])) : ?>
+                <td>
+                    <?php if(is_file($article['image'])) : ?>
                         <img class="imageProduct" src="<?=$article['image']; ?>" alt="IMG-PRODUCT"/>
                     <?php else :?>
-                    <img class="imageProduct" src="view/contents/images/pas-image-disponible.png" alt="no image"/>
+                        <img class="imageProduct" src="view/contents/images/pas-image-disponible.png" alt="no image"/>
                 <?php endif;?>
                 </td>
                 <td class="tableArticles"><?=$article['title']; ?></td>
