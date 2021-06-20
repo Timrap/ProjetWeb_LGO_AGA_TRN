@@ -57,6 +57,9 @@ if (isset($_GET['action'])) {
         case 'articleDetails' :
             articleDetails($_GET['id']);
             break;
+        case 'like' :
+            like($_GET['id']);
+            break;
 
         default :
             lost();

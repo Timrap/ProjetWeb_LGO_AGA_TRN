@@ -36,6 +36,13 @@ $title = 'annoncesfaciles - articleDetails';
                         <div class="wrap-pic-w">
                             <img src="<?=$article['image'];?>" alt="IMG-PRODUCT">
                         </div>
+                        <a href="index.php?action=like&id=<?=$article['id']; ?>">
+                            <?php if (isset($like[0])) : ?>
+                                <img src="view/contents/images/icons/heart-fill.svg">
+                            <?php else: ?>
+                                <img src="view/contents/images/icons/heart.svg">
+                            <?php endif; ?>
+                        </a>
                     </div>
 
                 </div>

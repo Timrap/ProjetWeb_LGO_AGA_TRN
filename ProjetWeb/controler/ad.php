@@ -68,3 +68,11 @@ function articleDetails($id){
     $article = viewArticles($id, NULL);
     require_once "view/articleDetails.php";
 }
+
+function like($id){
+    require_once "model/adManager.php";
+    addLike($id, $_SESSION['userEmailAddress']);
+    $article = viewArticles($id, NULL);
+    $like = existLike($id, $_SESSION['userEmailAddress']);
+    require_once "view/articleDetails.php";
+}

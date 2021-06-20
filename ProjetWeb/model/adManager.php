@@ -7,7 +7,7 @@
 function uploadPicture($image)
 {
     if (isset($image)) {
-        $uploaddir = './view/contents/images';
+        $uploaddir = './view/contents/images/';
         $uploadfile = $uploaddir . basename($image['name']);
         $errors = array();
         $file_name = $image['name'];
@@ -180,3 +180,59 @@ function adUpdate($id, $data, $image, $userEmailAddress){
     return true;
 }
 */
+
+function addLike($adId, $userEmailAddress)
+{
+    $userId = userId($userEmailAddress);
+    
+    if (existLike($adId, $userEmailAddress)){
+        $query = "DELETE FROM advertisements_has_users WHERE Advertisements_id = " . $adId . " AND Users_id = " . $userId;
+        $queryResult = executeQuerySelect($query);
+        if ($queryResult) {
+            $result = $queryResult;
+        }
+    }
+    else{
+        
+        //$timezone = date_default_timezone_get();
+        //$timestamp = strtotime("now", $timezone);
+        date_default_timezone_set('Europe/Zurich');
+        $timestamp = time();
+        $datetime = date('Y-m-d H:i:s', $timestamp);
+    
+        $query = "INSERT INTO advertisements_has_users (Advertisements_id, Users_id, date) VALUE ($adId, $userId, '$datetime')";
+        $queryResult = executeQueryInsert($query);
+        if ($queryResult) {
+            $result = $queryResult;
+        }
+    }
+}
+    
+function existLike($adId, $userEmailAddress){
+    $userId = userId($userEmailAddress);
+    
+    //transformation en int
+    $adId = intVal($adId);
+    
+    $strSeparator = "'";
+    $query = "SELECT Advertisements_id, Users_id FROM advertisements_has_users WHERE Advertisements_id  = " . $adId . " AND Users_id = " . $userId;
+    require_once "model/dbConnector.php";
+    $queryResult = executeQuerySelect($query);
+    
+    return $queryResult;
+}
+
+function userId ($userEmailAddress){
+    $strSeparator = "'";
+    $query = "SELECT users.id FROM users WHERE users.mail = " . $strSeparator . $userEmailAddress . $strSeparator;
+    require_once "model/dbConnector.php";
+    $queryResult = executeQuerySelect($query);
+    if ($queryResult) {
+        $userId = $queryResult[0][0];
+        
+        //transformation en int
+        $userId = intVal($userId);
+        
+        return $userId;
+    }
+}
