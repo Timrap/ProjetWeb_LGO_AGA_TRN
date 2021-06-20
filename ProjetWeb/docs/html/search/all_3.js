@@ -1,0 +1,19 @@
+var searchData=
+[
+  ['accountmanage_5',['accountManage',['../users_8php.html#ad5c65e0473d2e22ae1c5479eb1cda1d2',1,'users.php']]],
+  ['ad_2ephp_6',['ad.php',['../ad_8php.html',1,'']]],
+  ['addlike_7',['addLike',['../ad_manager_8php.html#aed40b1fa47d03e29217eafaee75125c3',1,'adManager.php']]],
+  ['admanage_8',['adManage',['../ad_8php.html#ae3a86cf9c7b934f58a442f945ccc00ab',1,'ad.php']]],
+  ['admanage_2ephp_9',['adManage.php',['../ad_manage_8php.html',1,'']]],
+  ['admanager_2ephp_10',['adManager.php',['../ad_manager_8php.html',1,'']]],
+  ['administration_11',['administration',['../users_8php.html#ab3af92a7770ac8888c92e60f95cee6de',1,'users.php']]],
+  ['administration_2ephp_12',['administration.php',['../administration_8php.html',1,'']]],
+  ['adupdate_13',['adUpdate',['../ad_manager_8php.html#af434cefd90394f295fd5a52dee797830',1,'adManager.php']]],
+  ['advalidation_14',['adValidation',['../ad_8php.html#a734b9cbad914398a823a60e46795f0a5',1,'ad.php']]],
+  ['articledelete_15',['articleDelete',['../ad_8php.html#a1e75f2768b928ef6b734c20a6aa5cd16',1,'ad.php']]],
+  ['articledetails_16',['articleDetails',['../ad_8php.html#aa9c0fc086b52cd3a89106e3cf5e64acd',1,'ad.php']]],
+  ['articledetails_2ephp_17',['articleDetails.php',['../article_details_8php.html',1,'']]],
+  ['articles_18',['articles',['../ad_8php.html#af1dd24de5764884a6a47665f49d4f60a',1,'ad.php']]],
+  ['articles_2ephp_19',['articles.php',['../articles_8php.html',1,'']]],
+  ['articlesdetails_2ephp_20',['articlesDetails.php',['../articles_details_8php.html',1,'']]]
+];
