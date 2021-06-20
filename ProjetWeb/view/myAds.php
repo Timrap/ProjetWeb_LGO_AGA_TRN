@@ -39,8 +39,9 @@ ob_start();
             <tr>
                 <?php if(isset($articles)): ?>
                 <?php foreach ($articles as $article): ?>
-                
-            <tr class="<?php if (isset($article['enable']) && $article['enable'] == 0){echo "disable";} ?>">
+
+                <?php if (isset($article['enable']) && $article['enable'] == 0){echo "disable";} ?>
+            <tr>
                 <td class="tableArticles">
                     <?php
                     switch ($article['category']){

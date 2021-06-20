@@ -23,8 +23,8 @@ function executeQuerySelect($query)
 
     $dbConnexion = openDBConnexion();
     if ($dbConnexion != null) {
-        $statement = $dbConnexion->prepare($query);     // Préparation de la requête
-        $statement->execute();                          // Exécution de la requête
+        $statement = $dbConnexion->prepare($query);     // préparation de la requêre
+        $statement->execute();                          // Execution de la requête
         $queryResult = $statement->fetchAll();          // Préparation des résultats pour le client
     }
     $dbConnexion = null;                                // Fermeture de ma connection à la DB
@@ -74,12 +74,12 @@ function openDBConnexion()
     $tempDBConnexion = null;
 
     $sqlDriver = 'mysql';
-    $hostname = 'localhost';
+    $hostname = 'play.koppa.pro';
     $port = 3306;
     $charset = 'utf8';
     $dbName = 'annoncesfaciles';
     $userName = 'annoncesfaciles';
-    $userPsw = 'Pa$$w0rd';
+    $userPsw = 'GDASGADSGDSAD.GDSRESSDGASsdiugdsziu2121354';
     $dsn = $sqlDriver . ':host=' . $hostname . ';dbname=' . $dbName . ';port=' . $port . ';charset=' . $charset;
 
     try {
